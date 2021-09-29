@@ -1,10 +1,57 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories on My New Hugo Site</title>
-    <link>http://example.org/categories/</link>
-    <description>Recent content in Categories on My New Hugo Site</description>
+    <title>Categories on R John Victor</title>
+    <link>https://examplesite.com/categories/</link>
+    <description>Recent content in Categories on R John Victor</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="http://example.org/categories/index.xml" rel="self" type="application/rss+xml" />
+    <language>en-us</language>
+    <copyright>Copyright &amp;copy; 2020 a hugo theme</copyright>
+    <lastBuildDate>Tue, 12 May 2020 12:14:34 +0600</lastBuildDate><atom:link href="https://examplesite.com/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>database</title>
+      <link>https://examplesite.com/categories/database/</link>
+      <pubDate>Tue, 12 May 2020 12:14:34 +0600</pubDate>
+      
+      <guid>https://examplesite.com/categories/database/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>design</title>
+      <link>https://examplesite.com/categories/design/</link>
+      <pubDate>Tue, 12 May 2020 12:14:34 +0600</pubDate>
+      
+      <guid>https://examplesite.com/categories/design/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>development</title>
+      <link>https://examplesite.com/categories/development/</link>
+      <pubDate>Tue, 12 May 2020 12:14:34 +0600</pubDate>
+      
+      <guid>https://examplesite.com/categories/development/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>logo</title>
+      <link>https://examplesite.com/categories/logo/</link>
+      <pubDate>Tue, 12 May 2020 12:14:34 +0600</pubDate>
+      
+      <guid>https://examplesite.com/categories/logo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>sketch</title>
+      <link>https://examplesite.com/categories/sketch/</link>
+      <pubDate>Tue, 12 May 2020 12:14:34 +0600</pubDate>
+      
+      <guid>https://examplesite.com/categories/sketch/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>
