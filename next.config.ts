@@ -1,7 +1,7 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  // Allow importing JSON files for dictionaries
 };
 
 export default nextConfig;

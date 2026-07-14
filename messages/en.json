@@ -1,0 +1,83 @@
+{
+  "nav": {
+    "about": "About",
+    "skills": "Skills",
+    "experience": "Experience",
+    "projects": "Projects",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hello, I'm",
+    "tagline": "Building things that stand the test of time.",
+    "viewProjects": "View Projects",
+    "getInTouch": "Get in Touch",
+    "yearsExperience": "Years Experience",
+    "coreStack": "Core Stack",
+    "basedIn": "Based In",
+    "scroll": "scroll"
+  },
+  "about": {
+    "label": "About",
+    "heading": "Engineer who cares about the craft.",
+    "p1": "I'm {name}, a Full Stack Software Engineer based in {location} with over {years} years of experience. I specialize in building web applications and cloud-native systems that are fast, maintainable, and built to last.",
+    "p2": "My work spans the full stack — from pixel-precise UIs in React and Next.js to distributed backend services in NestJS and Go, running on AWS and Kubernetes. I'm comfortable owning features from architecture through deployment.",
+    "p3": "I believe great software comes from clarity of purpose, disciplined architecture, and a relentless focus on the people who use and maintain it.",
+    "quickFacts": "Quick Facts",
+    "factExperience": "Experience",
+    "factLocation": "Location",
+    "factSpecialization": "Specialization",
+    "factCurrentFocus": "Current Focus",
+    "factOpenTo": "Open To",
+    "factExperienceValue": "~{years} years",
+    "factSpecializationValue": "Full Stack + Cloud",
+    "factCurrentFocusValue": "React · NestJS · AWS · K8s",
+    "factOpenToValue": "Senior / Staff roles",
+    "github": "GitHub",
+    "linkedin": "LinkedIn"
+  },
+  "skills": {
+    "label": "Skills",
+    "heading": "What I work with.",
+    "subtitle": "Technologies I reach for on a regular basis, from frontend to cloud infrastructure."
+  },
+  "experience": {
+    "label": "Experience",
+    "heading": "Where I've worked."
+  },
+  "projects": {
+    "label": "Projects",
+    "heading": "Selected work.",
+    "subtitle": "Projects that demonstrate my approach to architecture, performance, and engineering quality.",
+    "highlights": "Highlights"
+  },
+  "manifesto": {
+    "label": "Manifesto",
+    "heading": "Resilience. Journey. Vision.",
+    "resilience": "Resilience",
+    "resilienceBody": "Software is messy. Requirements change, systems fail, deadlines slip. What separates great engineers is how they respond — with methodical thinking, grit, and a bias for action.",
+    "journey": "Journey",
+    "journeyBody": "I don't believe in destinations. Every project, every bug, every late-night debugging session is a step forward. The engineer I am today exists because I stayed curious and kept building.",
+    "vision": "Vision",
+    "visionBody": "Code is the easy part. Seeing three years ahead — knowing which abstractions will hold, which shortcuts will cost you — that's the hard part. I build with the long game in mind."
+  },
+  "philosophy": {
+    "label": "Engineering Philosophy",
+    "heading": "How I think about software.",
+    "subtitle": "Principles that guide my decisions, from architecture to code review."
+  },
+  "techStack": {
+    "label": "Tech Stack",
+    "heading": "Tools of the trade."
+  },
+  "contact": {
+    "label": "Contact",
+    "heading": "Let's work together.",
+    "body": "I'm open to senior and staff engineering roles where I can build impactful products and collaborate with strong teams. Reach out via email or connect on LinkedIn.",
+    "sendEmail": "Send Email",
+    "linkedin": "LinkedIn",
+    "github": "GitHub"
+  },
+  "footer": {
+    "builtWith": "Built with Next.js · TypeScript · Tailwind CSS"
+  }
+}

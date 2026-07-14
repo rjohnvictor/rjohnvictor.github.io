@@ -1,26 +1,301 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ─── Professional Mode (default) ──────────────────────────── */
+:root,
+[data-theme='professional'] {
+    --bg: #080c10;
+    --bg-card: #0d1117;
+    --bg-subtle: #161b22;
+    --border: #21262d;
+    --text-primary: #e6edf3;
+    --text-secondary: #8b949e;
+    --text-muted: #484f58;
+    --accent: #58a6ff;
+    --accent-dim: #1f6feb;
+    --accent-glow: rgba(88, 166, 255, 0.15);
+    --green: #3fb950;
+    --purple: #bc8cff;
+    --font-body:
+        var(--font-roboto), -apple-system, BlinkMacSystemFont, 'Segoe UI',
+        sans-serif;
+    --font-display: var(--font-roboto), -apple-system, sans-serif;
+    --font-mono: var(--font-geist-mono), 'Fira Code', monospace;
+    --line-height-body: 1.6;
+    --body-font-size: 1rem;
+    --section-padding: 8rem 0;
+    --container-max: 1300px;
+    --hero-align: flex-start;
+    --hero-text-align: left;
+}
+
+/* ─── Power Mode (DBZ Sun — purple ki, gold sun energy) ─────── */
+[data-theme='power'] {
+    --bg: #060010;
+    --bg-card: #0c001c;
+    --bg-subtle: #14002e;
+    --border: #260045;
+    --text-primary: #f2eeff;
+    --text-secondary: #a898c8;
+    --text-muted: #58487a;
+    --accent: #bf5fff;
+    --accent-dim: #8b00d4;
+    --accent-glow: rgba(191, 95, 255, 0.2);
+    --green: #fbbf24;
+    --purple: #e879f9;
+    --font-body: var(--font-exo2), -apple-system, sans-serif;
+    --font-display: var(--font-exo2), -apple-system, sans-serif;
+    --font-mono: var(--font-geist-mono), 'Fira Code', monospace;
+    --line-height-body: 1.6;
+    --body-font-size: 1rem;
+    --section-padding: 9rem 0;
+    --container-max: 1300px;
+    --hero-align: center;
+    --hero-text-align: center;
+}
+
+/* ─── Zen Mode (Leaf — light forest green) ──────────────────── */
+[data-theme='zen'] {
+    --bg: #0f150d;
+    --bg-card: #161e13;
+    --bg-subtle: #1e281a;
+    --border: #2e3d28;
+    --text-primary: #e6f0e2;
+    --text-secondary: #9ab090;
+    --text-muted: #5a7050;
+    --accent: #86efac;
+    --accent-dim: #4ade80;
+    --accent-glow: rgba(134, 239, 172, 0.15);
+    --green: #86efac;
+    --purple: #a8c4a0;
+    --font-body: var(--font-lora), Georgia, serif;
+    --font-display: var(--font-lora), Georgia, serif;
+    --font-mono: var(--font-geist-mono), 'Fira Code', monospace;
+    --line-height-body: 1.85;
+    --body-font-size: 1.0625rem;
+    --section-padding: 6rem 0;
+    --container-max: 680px;
+    --hero-align: flex-start;
+    --hero-text-align: left;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+    --color-background: var(--bg);
+    --color-foreground: var(--text-primary);
+    --font-sans: var(--font-geist-sans);
+    --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+/* Ensure page content always renders above the Three.js terrain canvas (z:0) */
+main,
+footer {
+    position: relative;
+    z-index: 1;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+    background: var(--bg);
+    color: var(--text-primary);
+    font-family: var(--font-body);
+    font-size: var(--body-font-size);
+    line-height: var(--line-height-body);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition:
+        background 0.5s ease,
+        color 0.4s ease;
+}
+
+/* ─── Always hide system cursor on fine-pointer (desktop) devices ─── */
+@media (pointer: fine) {
+    *,
+    *::before,
+    *::after {
+        cursor: none !important;
+    }
+}
+
+/* ─── Color transitions ─────────────────────────────────────── */
+*,
+*::before,
+*::after {
+    transition-property: background-color, border-color, color, box-shadow;
+    transition-duration: 0.35s;
+    transition-timing-function: ease;
+}
+/* Reset transition for transforms/opacity (shouldn't be globally delayed) */
+canvas,
+img,
+video,
+svg {
+    transition: none !important;
+}
+
+::selection {
+    background: var(--accent-glow);
+    color: var(--accent);
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+::-webkit-scrollbar-track {
+    background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--text-muted);
+}
+[data-theme='power']::-webkit-scrollbar-thumb {
+    background: var(--accent-dim);
+    box-shadow: 0 0 6px var(--accent);
+}
+
+/* ─── Layout containers ─────────────────────────────────────── */
+.section-container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* ─── Power Mode: ambient glow (sun corona at top, ki at corner) */
+[data-theme='power'] body::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+        radial-gradient(
+            ellipse 100% 35% at 50% -5%,
+            rgba(251, 191, 36, 0.07) 0%,
+            rgba(191, 95, 255, 0.03) 50%,
+            transparent 70%
+        ),
+        radial-gradient(
+            ellipse 50% 45% at 85% 95%,
+            rgba(191, 95, 255, 0.05) 0%,
+            transparent 60%
+        );
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Power mode: energy cards */
+[data-theme='power'] .ki-card {
+    position: relative;
+    box-shadow:
+        0 0 0 1px var(--border),
+        0 0 16px rgba(191, 95, 255, 0.04);
+}
+[data-theme='power'] .ki-card:hover {
+    box-shadow:
+        0 0 0 1px var(--accent-dim),
+        0 0 24px rgba(191, 95, 255, 0.15),
+        0 0 48px rgba(191, 95, 255, 0.07);
+}
+
+/* Power mode: section energy divider */
+[data-theme='power'] section {
+    border-top: 1px solid transparent;
+    background-image: none;
+}
+[data-theme='power'] section::before {
+    content: '';
+    display: block;
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        var(--accent-dim) 30%,
+        var(--accent) 50%,
+        var(--accent-dim) 70%,
+        transparent 100%
+    );
+    opacity: 0.3;
+    margin-bottom: 0;
+}
+
+/* Power mode: navbar glow */
+[data-theme='power'] .navbar-scrolled {
+    background: rgba(6, 0, 16, 0.92) !important;
+    border-bottom: 1px solid var(--accent-dim) !important;
+    box-shadow: 0 1px 20px rgba(191, 95, 255, 0.12) !important;
+}
+
+/* Power mode: hero center */
+[data-theme='power'] .hero-content {
+    margin: 0 auto;
+    text-align: center;
+    align-items: center;
+}
+[data-theme='power'] .hero-ctas {
+    justify-content: center;
+}
+[data-theme='power'] .hero-stats {
+    justify-content: center;
+}
+
+/* Power mode: typography */
+[data-theme='power'] h1 {
+    letter-spacing: -0.02em;
+}
+[data-theme='power'] h2 {
+    font-size: clamp(2rem, 5vw, 3.25rem) !important;
+}
+
+/* ─── Professional: noise texture ──────────────────────────── */
+[data-theme='professional'] body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.4;
+}
+
+/* ─── Zen: typography ───────────────────────────────────────── */
+[data-theme='zen'] p {
+    max-width: 62ch;
+}
+[data-theme='zen'] h1,
+[data-theme='zen'] h2,
+[data-theme='zen'] h3 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    letter-spacing: -0.01em;
+}
+/* Zen: remove alternating section backgrounds */
+[data-theme='zen'] section {
+    background: transparent !important;
+}
+[data-theme='zen'] section {
+    border-top: 1px solid var(--border) !important;
+}
+
+.gradient-text {
+    background: linear-gradient(
+        135deg,
+        var(--text-primary) 0%,
+        var(--accent) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Material Symbols size override */
+.material-symbols-outlined {
+    font-size: 18px !important;
+    line-height: 1 !important;
+    vertical-align: middle;
+    user-select: none;
 }
