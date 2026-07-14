@@ -1,0 +1,215 @@
+/* ─── About section ──────────────────────────────────────── */
+
+.section {
+  padding: 8rem 0;
+  border-top: 1px solid var(--border);
+}
+
+/* ─── Two-column grid ────────────────────────────────────── */
+
+.twoColumnGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .twoColumnGrid {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+}
+
+/* ─── Left column ────────────────────────────────────────── */
+
+.sectionLabel {
+  color: var(--accent);
+  font-family: var(--font-geist-mono);
+  font-size: 0.8125rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+.heading {
+  font-size: clamp(1.75rem, 4vw, 2.75rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  margin-bottom: 2rem;
+  line-height: 1.15;
+  color: var(--text-primary);
+}
+
+.bodyText {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  color: var(--text-secondary);
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+/* ─── Tagline quote ──────────────────────────────────────── */
+
+.tagline {
+  color: var(--accent);
+  font-family: var(--font-geist-mono);
+  font-size: 0.9375rem;
+  border-left: 2px solid var(--accent-dim);
+  padding-left: 1rem;
+  margin-top: 0.5rem;
+}
+
+/* power: stronger border + text-shadow */
+:global([data-theme="power"]) .tagline {
+  border-left-color: var(--accent);
+  text-shadow: 0 0 12px rgba(191, 95, 255, 0.4);
+}
+
+/* ─── Quick-facts card ───────────────────────────────────── */
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px; /* professional default */
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+:global([data-theme="power"]) .card {
+  border-radius: 6px;
+  padding: 2rem;
+}
+
+:global([data-theme="zen"]) .card {
+  border-radius: 8px;
+  padding: 1.75rem;
+}
+
+/* ki-card glow effect in power mode */
+:global([data-theme="power"]) .card {
+  box-shadow: 0 0 0 1px rgba(0, 212, 255, 0.08), 0 4px 32px rgba(0, 0, 0, 0.4);
+}
+
+/* ─── Top accent line (power only) ──────────────────────── */
+
+.topAccent {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent-dim), transparent);
+  opacity: 0.6;
+}
+
+:global([data-theme="power"]) .topAccent {
+  display: block;
+}
+
+/* ─── Quick-facts label ──────────────────────────────────── */
+
+.quickFactsLabel {
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  font-family: var(--font-geist-mono);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+/* ─── Fact row ───────────────────────────────────────────── */
+
+.factRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.875rem 0;
+  border-bottom: 1px solid var(--bg-subtle);
+}
+
+.factLabel {
+  color: var(--text-muted);
+  font-size: 0.875rem;
+  font-family: var(--font-geist-mono);
+}
+
+.factValue {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--text-primary); /* professional + zen default */
+}
+
+:global([data-theme="power"]) .factValue {
+  color: var(--accent);
+  text-shadow: 0 0 12px rgba(191, 95, 255, 0.4);
+}
+
+:global([data-theme="zen"]) .factValue {
+  color: var(--text-secondary);
+}
+
+/* ─── Social pills row ───────────────────────────────────── */
+
+.socialLinks {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 0.75rem;
+}
+
+/* ─── Prose (Zen) layout ─────────────────────────────────── */
+
+.sectionProse {
+  padding: 6rem 0;
+  border-top: 1px solid var(--border);
+}
+
+.sectionLabelProse {
+  color: var(--accent);
+  font-family: var(--font-geist-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  opacity: 0.7;
+}
+
+.headingProse {
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-bottom: 3rem;
+  line-height: 1.2;
+  color: var(--text-primary);
+  font-family: var(--font-display);
+}
+
+.bodyTextProse {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  color: var(--text-secondary);
+  font-size: 1.0625rem;
+  line-height: 1.9;
+  max-width: 62ch;
+}
+
+.blockquote {
+  margin: 3rem 0 0;
+  padding: 1.5rem 2rem;
+  border-left: 2px solid var(--accent-dim);
+  color: var(--text-secondary);
+  font-style: italic;
+  font-size: 1.0625rem;
+  line-height: 1.75;
+  max-width: 52ch;
+}
+
+.socialLinksProse {
+  margin-top: 3rem;
+  display: flex;
+  gap: 2rem;
+}

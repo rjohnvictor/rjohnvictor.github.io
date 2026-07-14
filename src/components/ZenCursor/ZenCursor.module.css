@@ -1,0 +1,28 @@
+.outer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid var(--accent);
+  background: radial-gradient(circle, rgba(122, 158, 122, 0.12) 0%, transparent 80%);
+  pointer-events: none;
+  z-index: 99998;
+  transition: width 0.35s ease, height 0.35s ease, opacity 0.3s;
+  will-change: transform;
+}
+
+.inner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--accent);
+  pointer-events: none;
+  z-index: 99999;
+  transition: opacity 0.2s;
+  will-change: transform;
+}

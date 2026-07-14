@@ -1,0 +1,221 @@
+/* ─── Shared ──────────────────────────────────────────────── */
+.section {
+  padding: 6rem 0;
+  border-top: 1px solid var(--border);
+}
+
+.label {
+  color: var(--accent);
+  font-family: var(--font-geist-mono);
+  font-size: 0.8125rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+/* ─── Professional ────────────────────────────────────────── */
+.heading {
+  font-size: clamp(1.5rem, 3.5vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+  margin-bottom: 3.5rem;
+  line-height: 1.15;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3rem;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+.index {
+  display: block;
+  font-family: var(--font-geist-mono);
+  font-size: 0.75rem;
+  color: var(--accent);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+  opacity: 0.7;
+}
+
+.pillarTitle {
+  font-size: 1.375rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.875rem;
+  letter-spacing: -0.02em;
+}
+
+.pillarBody {
+  color: var(--text-secondary);
+  font-size: 0.9375rem;
+  line-height: 1.75;
+}
+
+/* ─── Power ───────────────────────────────────────────────── */
+.sectionPower {
+  padding: 8rem 0;
+  border-top: 1px solid var(--border);
+  position: relative;
+  overflow: hidden;
+}
+
+.corona {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(ellipse 80% 60% at 50% 50%, rgba(191, 95, 255, 0.06) 0%, transparent 70%);
+}
+
+.containerRelative {
+  position: relative;
+}
+
+.labelPower {
+  color: var(--accent);
+  font-family: var(--font-geist-mono);
+  font-size: 0.8125rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.gradientHeading {
+  font-size: clamp(2.5rem, 7vw, 5rem);
+  font-weight: 800;
+  letter-spacing: -0.04em;
+  line-height: 1.05;
+  text-align: center;
+  margin-bottom: 5rem;
+  background: linear-gradient(135deg, #fde68a 0%, #bf5fff 50%, #e879f9 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  filter: drop-shadow(0 0 40px rgba(191, 95, 255, 0.3));
+}
+
+.powerGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .powerGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.pillarCard {
+  padding: 2rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+  transition: border-color 0.2s;
+}
+
+.pillarCard:hover {
+  border-color: rgba(191, 95, 255, 0.4);
+}
+
+.accentLine {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  opacity: 0.5;
+}
+
+.powerIndex {
+  display: block;
+  font-family: var(--font-geist-mono);
+  font-size: 0.6875rem;
+  color: var(--accent);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  opacity: 0.6;
+}
+
+.gradientTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+  background: linear-gradient(135deg, #f2eeff 0%, #bf5fff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ─── Zen ─────────────────────────────────────────────────── */
+.sectionZen {
+  padding: 7rem 0;
+  border-top: 1px solid var(--border);
+}
+
+.zenInner {
+  max-width: 52ch;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.labelZen {
+  color: var(--accent);
+  font-family: var(--font-geist-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+  opacity: 0.6;
+}
+
+.headingZen {
+  font-family: var(--font-display);
+  font-size: clamp(1.75rem, 4vw, 3rem);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--text-primary);
+  line-height: 1.2;
+  margin-bottom: 4rem;
+}
+
+.zenPillars {
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+}
+
+.zenPillar {
+  text-align: left;
+}
+
+.zenPillarTitle {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+  letter-spacing: -0.01em;
+}
+
+.zenPillarBody {
+  color: var(--text-secondary);
+  font-size: 1.0625rem;
+  line-height: 1.9;
+  font-family: var(--font-body);
+}

@@ -38,7 +38,8 @@ export async function generateMetadata({
 }: {
     params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
-    const { locale } = await params;
+    await params;
+    const canonicalLocale = 'en';
 
     return {
         metadataBase: new URL(BASE_URL),
@@ -79,9 +80,9 @@ export async function generateMetadata({
         openGraph: {
             title: TITLE,
             description: DESCRIPTION,
-            url: `${BASE_URL}/${locale}`,
+            url: `${BASE_URL}/${canonicalLocale}`,
             siteName: 'R John Victor',
-            locale: locale === 'es' ? 'es_ES' : 'en_US',
+            locale: 'en_US',
             type: 'website',
         },
         twitter: {
@@ -91,10 +92,9 @@ export async function generateMetadata({
             creator: '@rjohnvictor',
         },
         alternates: {
-            canonical: `${BASE_URL}/${locale}`,
+            canonical: `${BASE_URL}/${canonicalLocale}`,
             languages: {
                 en: `${BASE_URL}/en`,
-                es: `${BASE_URL}/es`,
             },
         },
     };
@@ -108,10 +108,11 @@ export default async function LocaleLayout({
     params: Promise<{ locale: string }>;
 }) {
     const { locale } = await params;
+    const lang = locale === 'en' ? 'en' : 'en';
 
     return (
         <html
-            lang={locale}
+            lang={lang}
             data-theme="professional"
             className={`${geistSans.variable} ${geistMono.variable} ${roboto.variable} ${exo2.variable} ${lora.variable} h-full`}
             suppressHydrationWarning

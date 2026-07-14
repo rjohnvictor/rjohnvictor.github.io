@@ -299,3 +299,80 @@ svg {
     vertical-align: middle;
     user-select: none;
 }
+
+/* ─── Touch devices: fast tap, no stuck hover ───────────── */
+@media (pointer: coarse) {
+    a,
+    button,
+    [role='button'] {
+        touch-action: manipulation;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    /* Kill JS onMouseEnter hover states that get stuck on tap */
+    .ki-card:hover,
+    .ki-card:focus {
+        box-shadow: none !important;
+        border-color: var(--border) !important;
+        transform: none !important;
+    }
+}
+
+/* ─── Mobile responsiveness ─────────────────────────────── */
+@media (max-width: 768px) {
+    body {
+        overflow-x: hidden;
+    }
+
+    /* Skills grid → single column */
+    .skills-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Projects professional grid → single column */
+    .projects-pro-grid {
+        grid-template-columns: 1fr !important;
+    }
+
+    /* Power featured card → stack columns */
+    .featured-power-card {
+        grid-template-columns: 1fr !important;
+        gap: 2rem !important;
+    }
+}
+
+@media (max-width: 640px) {
+    /* Reduce section vertical padding on phones */
+    section {
+        padding-top: 4rem !important;
+        padding-bottom: 4rem !important;
+    }
+
+    /* Tighter horizontal gutter */
+    .section-container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    /* Experience cards — reduce padding */
+    .exp-card {
+        padding: 1.5rem !important;
+    }
+
+    /* Hero stats row — tighter gap */
+    .hero-stats {
+        gap: 1.5rem !important;
+        flex-wrap: wrap;
+    }
+
+    /* About prose social links — wrap */
+    .about-social-links {
+        flex-wrap: wrap !important;
+        gap: 1rem !important;
+    }
+
+    /* Power h2 override — prevent too-small text */
+    [data-theme='power'] h2 {
+        font-size: clamp(1.5rem, 5vw, 3.25rem) !important;
+    }
+}
