@@ -1459,8 +1459,7 @@ export default function TerrainScene() {
                 for (const { sprite, speed, wrapX } of clouds) {
                     sprite.position.x += speed * (1 + boost);
                     const m = sprite.material as THREE.SpriteMaterial;
-                    const cloudLift =
-                        cur === 'zen' ? 0 : weatherRef.cloud01 * 0.42;
+                    const cloudLift = weatherRef.cloud01 * 0.42;
                     m.opacity = Math.min(0.85, cfg.cloudOpacity + cloudLift);
                     if (sprite.position.x > wrapX) sprite.position.x = -wrapX;
                 }
