@@ -8,6 +8,6 @@ export default function robots(): MetadataRoute.Robots {
                 allow: '/',
             },
         ],
-        sitemap: 'https://rjohnvictor.dev/sitemap.xml',
+        sitemap: 'https://rjohnvictor.com/sitemap.xml',
     };
 }
