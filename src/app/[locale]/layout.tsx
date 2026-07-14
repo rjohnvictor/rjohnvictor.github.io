@@ -7,6 +7,8 @@ import ThemeSwitcher from '@/components/ThemeSwitcher';
 import CursorManager from '@/components/CursorManager';
 import ThemeEffects from '@/components/ThemeEffects';
 import TerrainScene from '@/components/TerrainScene';
+import { Analytics } from '@vercel/analytics/next';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 const geistSans = Geist({ variable: '--font-geist-sans', subsets: ['latin'] });
 const geistMono = Geist_Mono({
@@ -115,6 +117,10 @@ export default async function LocaleLayout({
             suppressHydrationWarning
         >
             <head>
+                <meta
+                    name="google-site-verification"
+                    content="MxXAQCIeZFRhVIkCUqasbQ8GGaNNErFrLdM9LCVoc2s"
+                />
                 {/* Apply stored theme before React hydrates — prevents flash */}
                 <script
                     dangerouslySetInnerHTML={{
@@ -170,6 +176,8 @@ export default async function LocaleLayout({
                         <TerrainScene />
                         {children}
                         <ThemeSwitcher />
+                        <Analytics />
+                        <SpeedInsights />
                     </EnergyProvider>
                 </ThemeProvider>
             </body>
