@@ -1,0 +1,35 @@
+# R John Victor Portfolio
+
+> Solutions Engineer portfolio focused on full-stack, platform, cloud, and real-time systems engineering.
+
+## Summary
+R John Victor is a Solutions Engineer with 8+ years of experience building enterprise software, cloud-native platforms, and scalable full-stack applications.
+
+## Canonical
+- https://www.rjohnvictor.com/
+
+## Primary pages
+- Home (EN): https://www.rjohnvictor.com/en
+- Home (HI): https://www.rjohnvictor.com/hi
+- Home (TA): https://www.rjohnvictor.com/ta
+
+## Key sections
+- About: https://www.rjohnvictor.com/en#about
+- Skills: https://www.rjohnvictor.com/en#skills
+- Experience: https://www.rjohnvictor.com/en#experience
+- Achievements: https://www.rjohnvictor.com/en#achievements
+- Education: https://www.rjohnvictor.com/en#education
+- Featured Work: https://www.rjohnvictor.com/en#featured-work
+- Technical Contributions: https://www.rjohnvictor.com/en#technical-contributions
+- Philosophy: https://www.rjohnvictor.com/en#philosophy
+- Contact: https://www.rjohnvictor.com/en#contact
+
+## Structured resources
+- Sitemap: https://www.rjohnvictor.com/sitemap.xml
+- Robots: https://www.rjohnvictor.com/robots.txt
+- Manifest: https://www.rjohnvictor.com/manifest.webmanifest
+
+## Contact
+- Email: johnvictor2406@gmail.com
+- GitHub: https://github.com/rjohnvictor
+- LinkedIn: https://www.linkedin.com/in/r-john-victor-295a6382

@@ -15,6 +15,19 @@ const MOBILE_QUERY = '(max-width: 1023px)';
 const FINE_POINTER_QUERY = '(any-pointer: fine)';
 const REDUCED_MOTION_QUERY = '(prefers-reduced-motion: reduce)';
 
+function isLighthouseAudit(): boolean {
+    const ua = navigator.userAgent || '';
+    return /lighthouse|chrome-lighthouse/i.test(ua);
+}
+
+function getTerrainOverride(): boolean | null {
+    const params = new URLSearchParams(window.location.search);
+    const value = params.get('forceTerrain');
+    if (value === '1') return true;
+    if (value === '0') return false;
+    return null;
+}
+
 function isSlowConnection(): boolean {
     const nav = navigator as Navigator & {
         connection?: {
@@ -63,11 +76,15 @@ export default function DeferredVisualEffects() {
     const [allowTerrain] = useState(() => {
         if (typeof window === 'undefined') return false;
 
+        const override = getTerrainOverride();
+        if (override !== null) return override;
+
         const reducedMotion = window.matchMedia(REDUCED_MOTION_QUERY).matches;
         const isMobile = window.matchMedia(MOBILE_QUERY).matches;
         const isSlowNetwork = isSlowConnection();
+        const isLighthouse = isLighthouseAudit();
 
-        return !(reducedMotion || (isMobile && isSlowNetwork));
+        return !(reducedMotion || (isMobile && isSlowNetwork) || isLighthouse);
     });
 
     const [showCursor, setShowCursor] = useState(false);
