@@ -438,6 +438,6 @@
         "github": "GitHub"
     },
     "footer": {
-        "builtWith": "Built with Next.js · TypeScript · Tailwind CSS"
+        "builtWith": "Built with Next.js · TypeScript · Tailwind CSS · Three.js"
     }
 }

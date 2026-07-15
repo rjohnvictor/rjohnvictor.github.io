@@ -86,24 +86,29 @@ export default function Navbar({ dict, locale }: Props) {
             className={`${styles.header} ${scrolled ? 'navbar-scrolled' : ''}`}
             data-scrolled={scrolled}
         >
-            <div className={`section-container ${styles.inner}`}>
+            <div className={styles.inner}>
                 <NavLogo />
 
                 {/* Desktop nav */}
                 {!isCompactView && (
-                    <nav className={styles.desktopNav}>
-                        {NAV_LINKS.map((link) => (
-                            <a
-                                key={link.href}
-                                href={link.href}
-                                className={styles.navLink}
-                            >
-                                {link.label}
-                            </a>
-                        ))}
+                    <>
+                        <nav className={styles.desktopNav}>
+                            {NAV_LINKS.map((link) => (
+                                <a
+                                    key={link.href}
+                                    href={link.href}
+                                    className={styles.navLink}
+                                >
+                                    {link.label}
+                                </a>
+                            ))}
+                        </nav>
 
                         {/* Language dropdown */}
-                        <div ref={languageRef} className={styles.langWrapper}>
+                        <div
+                            ref={languageRef}
+                            className={`${styles.langWrapper} ${styles.desktopLangWrapper}`}
+                        >
                             <button
                                 type="button"
                                 onClick={() => setLanguageOpen((open) => !open)}
@@ -160,7 +165,7 @@ export default function Navbar({ dict, locale }: Props) {
                                 </div>
                             )}
                         </div>
-                    </nav>
+                    </>
                 )}
 
                 {/* Mobile toggle */}

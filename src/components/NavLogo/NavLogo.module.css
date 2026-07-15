@@ -1,55 +1,50 @@
 /* ─── Anchor wrapper ──────────────────────────────────────── */
 .link {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
 }
 
 /* ─── LogoMark ────────────────────────────────────────────── */
 .mark {
-  flex-shrink: 0;
-  filter: none;
+    flex-shrink: 0;
+    filter: none;
 }
 
-:global([data-theme="power"]) .mark {
-  filter: drop-shadow(0 0 6px var(--accent));
-}
-
-:global([data-theme="zen"]) .mark {
-  filter: drop-shadow(0 0 4px var(--accent));
+:global([data-theme='power']) .mark {
+    filter: drop-shadow(0 0 6px var(--accent));
 }
 
 /* ─── LogoType wrapper ────────────────────────────────────── */
 .logoType {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.1;
-  font-family: var(--font-roboto), sans-serif;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+    font-family: var(--font-roboto), sans-serif;
+    white-space: nowrap;
 }
 
-:global([data-theme="power"]) .logoType {
-  font-family: var(--font-exo2), sans-serif;
-}
-
-:global([data-theme="zen"]) .logoType {
-  font-family: var(--font-lora), serif;
+:global([data-theme='power']) .logoType {
+    font-family: var(--font-exo2), sans-serif;
 }
 
 /* ─── Name & subtitle ─────────────────────────────────────── */
 .name {
-  font-size: 0.9375rem;
-  font-weight: 700;
-  color: var(--text-primary);
-  letter-spacing: -0.03em;
+    font-size: 0.9375rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    letter-spacing: -0.03em;
+    white-space: nowrap;
 }
 
 .subtitle {
-  font-size: 0.625rem;
-  font-weight: 500;
-  color: var(--accent);
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  opacity: 0.75;
-  font-family: var(--font-geist-mono), monospace;
+    font-size: 0.625rem;
+    font-weight: 500;
+    color: var(--accent);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    opacity: 0.75;
+    font-family: var(--font-geist-mono), monospace;
+    white-space: nowrap;
 }
