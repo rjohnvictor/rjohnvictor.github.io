@@ -8,10 +8,9 @@ import ZenCursor from '../ZenCursor';
 export default function CursorManager() {
     const [isTouchInput, setIsTouchInput] = useState(() => {
         if (typeof window === 'undefined') return true;
-        return (
-            window.matchMedia('(pointer: coarse)').matches ||
-            navigator.maxTouchPoints > 0
-        );
+        const hasFinePointer = window.matchMedia('(any-pointer: fine)').matches;
+        const hasCoarsePointer = window.matchMedia('(pointer: coarse)').matches;
+        return hasCoarsePointer && !hasFinePointer;
     });
     const [hasFinePointer, setHasFinePointer] = useState(() => {
         if (typeof window === 'undefined') return false;
@@ -71,7 +70,7 @@ export default function CursorManager() {
         };
     }, []);
 
-    if (isTouchInput || !hasFinePointer) return null;
+    if (!hasFinePointer || isTouchInput) return null;
 
     return (
         <>

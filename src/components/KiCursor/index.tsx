@@ -29,8 +29,7 @@ export default function KiCursor() {
         if (typeof window === 'undefined') return true;
         return (
             window.matchMedia('(pointer: coarse)').matches ||
-            window.matchMedia('(hover: none)').matches ||
-            window.innerWidth <= 768
+            window.matchMedia('(hover: none)').matches
         );
     });
 
@@ -39,11 +38,7 @@ export default function KiCursor() {
         const noHoverQuery = window.matchMedia('(hover: none)');
 
         const recompute = () => {
-            setIsMobileLike(
-                coarseQuery.matches ||
-                    noHoverQuery.matches ||
-                    window.innerWidth <= 768,
-            );
+            setIsMobileLike(coarseQuery.matches || noHoverQuery.matches);
         };
 
         recompute();
