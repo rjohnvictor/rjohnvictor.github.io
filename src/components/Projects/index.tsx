@@ -20,7 +20,7 @@ export default function Projects({ dict }: Props) {
 
 /* ─── Professional layout ─────────────────────────────────── */
 function ProjectsProfessional({ dict }: Props) {
-    const sectionRef = useSectionEnergy('projects');
+    const sectionRef = useSectionEnergy('featured-work');
     return (
         <section
             id="projects"
@@ -105,7 +105,7 @@ function ProjectsProfessional({ dict }: Props) {
 function ProjectsPower({ dict }: Props) {
     const [featured, ...rest] = PROJECTS;
     const featuredLocalized = dict.projects.items[featured.id];
-    const sectionRef = useSectionEnergy('projects');
+    const sectionRef = useSectionEnergy('featured-work');
 
     return (
         <section
@@ -222,7 +222,7 @@ function ProjectsPower({ dict }: Props) {
 
 /* ─── Zen layout ──────────────────────────────────────────── */
 function ProjectsZen({ dict }: Props) {
-    const sectionRef = useSectionEnergy('projects');
+    const sectionRef = useSectionEnergy('featured-work');
     return (
         <section
             id="projects"

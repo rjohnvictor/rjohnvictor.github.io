@@ -177,7 +177,7 @@ function HeroZen({ dict }: Props) {
                     <p className={styles.zenSummary}>{dict.hero.summary}</p>
 
                     <p className={styles.zenTagline}>
-                        &ldquo;{PERSONAL.tagline}&rdquo;
+                        &ldquo;{dict.hero.tagline}&rdquo;
                     </p>
 
                     <div className={styles.zenLinks}>
