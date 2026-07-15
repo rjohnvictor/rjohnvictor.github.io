@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-const LOCALES = ['en'] as const;
+const LOCALES = ['en', 'hi', 'ta'] as const;
 const DEFAULT_LOCALE = 'en';
 
 function detectLocale(request: NextRequest): string {
@@ -13,33 +13,22 @@ function detectLocale(request: NextRequest): string {
 
 export function middleware(request: NextRequest) {
     const { pathname } = request.nextUrl;
-    const isSpanishPath = pathname === '/es' || pathname.startsWith('/es/');
-    const isEnglishHome = pathname === '/en' || pathname === '/en/';
-    const isRoot = pathname === '/';
-
-    if (isSpanishPath) {
-        const url = request.nextUrl.clone();
-        url.pathname = '/en';
-        return NextResponse.redirect(url);
-    }
-
-    if (isEnglishHome) return NextResponse.next();
-
-    if (!isRoot) {
-        const url = request.nextUrl.clone();
-        url.pathname = '/en';
-        return NextResponse.redirect(url);
-    }
-
     const hasLocale = LOCALES.some(
         (l) => pathname.startsWith(`/${l}/`) || pathname === `/${l}`,
     );
 
     if (hasLocale) return NextResponse.next();
 
+    const url = request.nextUrl.clone();
     const locale = detectLocale(request);
-    request.nextUrl.pathname = `/${locale}${pathname}`;
-    return NextResponse.redirect(request.nextUrl);
+
+    if (pathname === '/') {
+        url.pathname = `/${locale}`;
+    } else {
+        url.pathname = `/${DEFAULT_LOCALE}${pathname}`;
+    }
+
+    return NextResponse.redirect(url);
 }
 
 export const config = {

@@ -32,8 +32,10 @@ const materialSymbols = localFont({
 const BASE_URL = 'https://rjohnvictor.com';
 
 const BRAND_NAME = 'R John Victor';
+const SEO_TITLE =
+    'R John Victor | Solutions Engineer | Full Stack, Platform & Cloud Engineer';
 const DESCRIPTION =
-    'Full Stack Software Engineer with ~8 years of experience building scalable web applications, cloud-native systems, and developer platforms using React, Next.js, Node.js, AWS, and Kubernetes.';
+    'R John Victor is a Solutions Engineer with 8+ years of experience building enterprise software, cloud-native platforms, and scalable full-stack applications using React, Next.js, NestJS, Go, AWS, Kubernetes, and TypeScript.';
 
 export async function generateStaticParams() {
     return [{ locale: 'en' }, { locale: 'hi' }, { locale: 'ta' }];
@@ -50,7 +52,7 @@ export async function generateMetadata({
     return {
         metadataBase: new URL(BASE_URL),
         title: {
-            default: BRAND_NAME,
+            default: SEO_TITLE,
             template: `%s | ${BRAND_NAME}`,
         },
         applicationName: BRAND_NAME,
@@ -85,7 +87,7 @@ export async function generateMetadata({
             },
         },
         openGraph: {
-            title: BRAND_NAME,
+            title: SEO_TITLE,
             description: DESCRIPTION,
             url: `${BASE_URL}/${canonicalLocale}`,
             siteName: BRAND_NAME,
@@ -94,7 +96,7 @@ export async function generateMetadata({
         },
         twitter: {
             card: 'summary_large_image',
-            title: BRAND_NAME,
+            title: SEO_TITLE,
             description: DESCRIPTION,
             creator: '@rjohnvictor',
         },
@@ -102,6 +104,8 @@ export async function generateMetadata({
             canonical: `${BASE_URL}/${canonicalLocale}`,
             languages: {
                 en: `${BASE_URL}/en`,
+                hi: `${BASE_URL}/hi`,
+                ta: `${BASE_URL}/ta`,
             },
         },
     };
@@ -115,7 +119,8 @@ export default async function LocaleLayout({
     params: Promise<{ locale: string }>;
 }) {
     const { locale } = await params;
-    const lang = locale === 'en' ? 'en' : 'en';
+    const supportedLocales = new Set(['en', 'hi', 'ta']);
+    const lang = supportedLocales.has(locale) ? locale : 'en';
 
     return (
         <html
@@ -144,7 +149,7 @@ export default async function LocaleLayout({
                             '@type': 'Person',
                             'name': 'R John Victor',
                             'url': BASE_URL,
-                            'jobTitle': 'Full Stack Software Engineer',
+                            'jobTitle': 'Solutions Engineer',
                             'description': DESCRIPTION,
                             'knowsAbout': [
                                 'React',
