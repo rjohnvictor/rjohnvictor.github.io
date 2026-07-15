@@ -60,8 +60,17 @@ function scheduleIdle(callback: () => void, timeoutMs: number) {
 }
 
 export default function DeferredVisualEffects() {
+    const [allowTerrain] = useState(() => {
+        if (typeof window === 'undefined') return false;
+
+        const reducedMotion = window.matchMedia(REDUCED_MOTION_QUERY).matches;
+        const isMobile = window.matchMedia(MOBILE_QUERY).matches;
+        const isSlowNetwork = isSlowConnection();
+
+        return !(reducedMotion || (isMobile && isSlowNetwork));
+    });
+
     const [showCursor, setShowCursor] = useState(false);
-    const [showTerrain, setShowTerrain] = useState(false);
 
     useEffect(() => {
         const reducedMotion = window.matchMedia(REDUCED_MOTION_QUERY).matches;
@@ -78,19 +87,15 @@ export default function DeferredVisualEffects() {
             ? scheduleIdle(() => setShowCursor(true), 900)
             : () => undefined;
 
-        // Terrain is heavy; defer it on all devices, but skip entirely on slow mobile networks.
-        const cancelTerrain = scheduleIdle(() => setShowTerrain(true), 1800);
-
         return () => {
             cancelCursor();
-            cancelTerrain();
         };
     }, []);
 
     return (
         <>
             {showCursor ? <CursorManager /> : null}
-            {showTerrain ? <TerrainScene /> : null}
+            {allowTerrain ? <TerrainScene /> : null}
         </>
     );
 }
