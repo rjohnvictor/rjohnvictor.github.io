@@ -18,9 +18,14 @@ export default function Navbar({ dict, locale }: Props) {
     const [languageOpen, setLanguageOpen] = useState(false);
     const languageRef = useRef<HTMLDivElement>(null);
 
-    const localeOptions = [{ id: 'en', label: 'EN' }] as const;
+    const localeOptions = [
+        { id: 'en', label: 'EN' },
+        { id: 'hi', label: 'HI' },
+        { id: 'ta', label: 'TA' },
+    ] as const;
 
-    const currentLocaleLabel = 'EN';
+    const currentLocaleLabel =
+        localeOptions.find((option) => option.id === locale)?.label ?? 'EN';
 
     const NAV_LINKS = [
         { label: dict.nav.about, href: '#about' },

@@ -1,0 +1,443 @@
+{
+    "nav": {
+        "about": "परिचय",
+        "skills": "कौशल",
+        "experience": "अनुभव",
+        "achievements": "उपलब्धियां",
+        "education": "शिक्षा",
+        "featuredWork": "मुख्य कार्य",
+        "technicalContributions": "तकनीकी योगदान",
+        "projects": "प्रोजेक्ट्स",
+        "contact": "संपर्क"
+    },
+    "hero": {
+        "greeting": "नमस्ते, मैं हूं",
+        "tagline": "ऐसी चीजें बनाता हूं जो लंबे समय तक टिकें।",
+        "profileTitle": "सोल्यूशंस इंजीनियर • प्लेटफॉर्म इंजीनियर • UI/UX इंजीनियर",
+        "summary": "मैं कॉन्सेप्ट से प्रोडक्शन तक एंटरप्राइज़ सॉफ्टवेयर बनाता हूं। मेरी विशेषज्ञता फुल-स्टैक इंजीनियरिंग, क्लाउड-नेटिव प्लेटफॉर्म्स, डेवलपर एक्सपीरियंस और सहज यूज़र इंटरफेस में है जो बिजनेस जरूरतों के साथ स्केल हो।",
+        "viewProjects": "प्रोजेक्ट्स देखें",
+        "getInTouch": "संपर्क करें",
+        "yearsExperience": "वर्षों का अनुभव",
+        "coreStack": "कोर स्टैक",
+        "basedIn": "आधारित",
+        "scroll": "स्क्रॉल",
+        "stats": {
+            "yearsExperience": "वर्षों का अनुभव",
+            "enterpriseProjects": "एंटरप्राइज़ प्रोजेक्ट्स",
+            "technicalWorkshops": "तकनीकी वर्कशॉप्स",
+            "solutionsEngineer": "सोल्यूशंस इंजीनियर"
+        }
+    },
+    "about": {
+        "label": "परिचय",
+        "heading": "एक ऐसा इंजीनियर जिसे शिल्प की परवाह है।",
+        "p1": "मैं {name} हूं, {location} में रहने वाला एक फुल स्टैक सॉफ्टवेयर इंजीनियर, जिसके पास {years} वर्षों से अधिक का अनुभव है। मैं तेज, मेंटेन करने योग्य और लंबे समय तक चलने वाली वेब एप्लिकेशन और क्लाउड-नेटिव सिस्टम बनाने में विशेषज्ञ हूं।",
+        "p2": "मेरा काम पूरे स्टैक में फैला है — React और Next.js में पिक्सेल-परफेक्ट UI से लेकर NestJS और Go में डिस्ट्रिब्यूटेड बैकएंड सेवाओं तक, जो AWS और Kubernetes पर चलती हैं। मैं आर्किटेक्चर से डिप्लॉयमेंट तक फीचर्स की जिम्मेदारी लेता हूं।",
+        "p3": "मेरा मानना है कि बेहतरीन सॉफ्टवेयर स्पष्ट उद्देश्य, अनुशासित आर्किटेक्चर और उपयोगकर्ताओं व मेंटेनर्स पर निरंतर फोकस से बनता है।",
+        "quickFacts": "त्वरित तथ्य",
+        "factExperience": "अनुभव",
+        "factLocation": "स्थान",
+        "factSpecialization": "विशेषज्ञता",
+        "factCurrentFocus": "वर्तमान फोकस",
+        "factOpenTo": "उपलब्ध भूमिकाएं",
+        "factExperienceValue": "~{years} वर्ष",
+        "factSpecializationValue": "फुल स्टैक + क्लाउड",
+        "factCurrentFocusValue": "ग्राफ एनालिटिक्स और प्लेटफॉर्म इंजीनियरिंग",
+        "factOpenToValue": "सीनियर / स्टाफ भूमिकाएं",
+        "quickFactItems": {
+            "currentRole": {
+                "label": "वर्तमान भूमिका",
+                "value": "Solutions Engineer L4"
+            },
+            "careerJourney": {
+                "label": "करियर यात्रा",
+                "value": "Intern → L4"
+            },
+            "expertise": {
+                "label": "विशेषज्ञता",
+                "value": "Full Stack • Platform • UI/UX"
+            },
+            "currentFocus": {
+                "label": "वर्तमान फोकस",
+                "value": "एआई इंजीनियरिंग • प्लेटफॉर्म इंजीनियरिंग"
+            }
+        },
+        "openToRoles": {
+            "seniorSoftwareEngineer": "सीनियर सॉफ्टवेयर इंजीनियर",
+            "staffEngineer": "स्टाफ इंजीनियर",
+            "platformEngineer": "प्लेटफॉर्म इंजीनियर",
+            "solutionsEngineer": "सोल्यूशंस इंजीनियर"
+        },
+        "githubContributions": "GitHub योगदान",
+        "profileCard": {
+            "labels": {
+                "experience": "अनुभव",
+                "role": "भूमिका",
+                "hobbies": "शौक"
+            },
+            "yearsSuffix": "+ years",
+            "values": {
+                "profileData": "प्रोफाइल डेटा",
+                "solutionsFullStackPlatform": "सोल्यूशंस • फुल स्टैक • प्लेटफॉर्म",
+                "solutionsEngineerL4": "सोल्यूशंस इंजीनियर - L4",
+                "watchCollection": "घड़ी संग्रह",
+                "photography": "फोटोग्राफी",
+                "watchAnime": "एनीमे देखना",
+                "gymming": "जिम",
+                "hoverCardToFlip": "फ्लिप करने के लिए कार्ड पर होवर करें"
+            }
+        },
+        "github": "GitHub",
+        "linkedin": "LinkedIn"
+    },
+    "skills": {
+        "label": "कौशल",
+        "heading": "मैं किन तकनीकों के साथ काम करता हूं।",
+        "subtitle": "फ्रंटएंड से क्लाउड इंफ्रास्ट्रक्चर तक, वे तकनीकें जिनका मैं नियमित रूप से उपयोग करता हूं।",
+        "workSpans": "मेरा काम फैला है",
+        "categoryLabels": {
+            "frontend": "फ्रंटएंड",
+            "backend": "बैकएंड",
+            "cloudDevops": "क्लाउड और DevOps",
+            "databases": "डेटाबेस",
+            "stateApis": "स्टेट और APIs",
+            "interests": "रुचियां"
+        },
+        "spanItems": {
+            "solutionArchitecture": "सोल्यूशन आर्किटेक्चर",
+            "platformEngineering": "प्लेटफॉर्म इंजीनियरिंग",
+            "devOps": "DevOps",
+            "kubernetes": "Kubernetes",
+            "gitOps": "GitOps",
+            "cicd": "CI/CD",
+            "technicalLeadership": "तकनीकी नेतृत्व",
+            "mentoring": "मेंटोरिंग",
+            "hiring": "भर्ती",
+            "productOwnership": "प्रोडक्ट ओनरशिप",
+            "uxui": "UX/UI",
+            "security": "सुरक्षा",
+            "fullSdlc": "पूर्ण SDLC",
+            "customerFacingProducts": "ग्राहक-केंद्रित एंटरप्राइज़ प्रोडक्ट्स"
+        }
+    },
+    "experience": {
+        "label": "अनुभव",
+        "heading": "मैंने कहां काम किया है।",
+        "items": {
+            "meltwater": {
+                "role": "सोल्यूशंस इंजीनियर लेवल 4",
+                "progression": "इंटर्न -> जूनियर इंजीनियर -> जूनियर सोल्यूशंस इंजीनियर -> सोल्यूशंस इंजीनियर लेवल 1 -> लेवल 2 -> लेवल 3 -> लेवल 4",
+                "bullets": [
+                    "एंटरप्राइज़ डैशबोर्ड समाधानों और API प्लेटफॉर्म्स की आर्किटेक्चर और डिलीवरी का नेतृत्व किया।",
+                    "समाधान डिज़ाइन से प्रोडक्शन ऑपरेशंस तक पूरे सॉफ्टवेयर डेवलपमेंट लाइफसायकल में परियोजनाओं की जिम्मेदारी ली।",
+                    "तकनीकी वर्कशॉप्स और दैनिक डिलीवरी सपोर्ट के माध्यम से इंजीनियर्स और इंटर्न्स का मार्गदर्शन किया।",
+                    "Git, GitHub, Docker, Kubernetes, CI/CD और क्लाउड-नेटिव इंजीनियरिंग पर तकनीकी सत्र आयोजित किए।",
+                    "तकनीकी इंटरव्यू और हायरिंग पैनल में भाग लिया।",
+                    "Drone CI से GitHub Actions में reusable workflows के साथ माइग्रेशन किया।",
+                    "ArgoCD, Helm और Kustomize का उपयोग करके GitOps प्रथाएं लागू कीं।",
+                    "सुरक्षा सुधार और बड़े पैमाने पर फ्रेमवर्क माइग्रेशन का नेतृत्व किया।",
+                    "नॉलेज शेयरिंग और आंतरिक पहलों के माध्यम से इंजीनियरिंग टीम का प्रतिनिधित्व किया।"
+                ]
+            }
+        }
+    },
+    "achievements": {
+        "label": "उपलब्धियां",
+        "heading": "प्रभावशाली परिणाम।",
+        "subtitle": "आर्किटेक्चर, डिलिवरी, प्लेटफॉर्म और लीडरशिप में चुने हुए परिणाम।",
+        "items": {
+            "deliveryScale": "12+ डैशबोर्ड और API समाधान सफलतापूर्वक डिलीवर और स्केल किए।",
+            "dashboardPrograms": "IMDA, HONOR, Hotel Radisson Groups, Samvada और FWD जैसे कई डैशबोर्ड समाधान बनाए।",
+            "widgetArchitecture": "डैशबोर्ड अनुभवों के लिए reusable widget architecture डिज़ाइन और डिलीवर की।",
+            "segmentTracking": "Segment analytics के साथ consistent event instrumentation हेतु reusable tracking packages बनाए।",
+            "rabbitmqOnboarding": "API समाधान टीमों के लिए RabbitMQ-आधारित onboarding और integration workflows पर काम किया।",
+            "fullstackOwnership": "फ्रंटएंड, बैकएंड APIs, डिप्लॉयमेंट और प्रोडक्शन सपोर्ट सहित full-stack delivery की जिम्मेदारी ली।",
+            "onboardingApis": "ग्राहक provisioning सरल बनाने के लिए onboarding APIs विकसित किए।",
+            "cicdMigration": "Drone CI से GitHub Actions में reusable CI workflows के साथ माइग्रेशन किया।",
+            "gitopsAdoption": "ArgoCD, Helm और Kustomize के साथ GitOps adoption में योगदान दिया।",
+            "securityMigrations": "सुरक्षा सुधार, dependency upgrades और framework migrations संचालित किए।"
+        }
+    },
+    "education": {
+        "label": "शिक्षा",
+        "heading": "मैंने कहां पढ़ाई की।",
+        "items": {
+            "christUniversity": {
+                "degree": "मास्टर ऑफ कंप्यूटर एप्लिकेशंस (MCA), कंप्यूटर साइंस",
+                "grade": "65.67% - First Class",
+                "notes": [
+                    "Computer Science Designing Head",
+                    "Invigilation Incharge"
+                ]
+            },
+            "loyolaCollege": {
+                "degree": "बैचलर ऑफ कंप्यूटर एप्लिकेशन, कंप्यूटर साइंस",
+                "grade": "80% - First Class with Distinction",
+                "notes": ["Outreach", "NCC"]
+            },
+            "stAntonyHs": {
+                "degree": "PU, गणित और कंप्यूटर साइंस",
+                "grade": "82% - First Class with Distinction",
+                "notes": ["NCC", "Basketball Team"]
+            },
+            "stAntonySchool": {
+                "degree": "10वीं कक्षा",
+                "grade": "92% - First Class with Distinction",
+                "notes": ["NCC", "Basketball Team"]
+            },
+            "stJosephMatriculation": {
+                "degree": "प्राथमिक विद्यालय",
+                "notes": ["Sports Team"]
+            }
+        }
+    },
+    "featuredWork": {
+        "label": "मुख्य कार्य",
+        "heading": "फ्लैगशिप प्रोजेक्ट्स।",
+        "subtitle": "उच्च उत्पाद और इंजीनियरिंग प्रभाव वाले चुने हुए प्रोजेक्ट्स।",
+        "whyItMatters": "यह क्यों महत्वपूर्ण है",
+        "technologiesLabel": "तकनीकें",
+        "responsibilitiesLabel": "जिम्मेदारियां",
+        "projects": {
+            "networkGraphWidget": {
+                "title": "Network Graph Widget",
+                "category": "डेटा विज़ुअलाइज़ेशन",
+                "impact": [
+                    "Meltwater Unified Search प्लेटफॉर्म में इंटरैक्टिव रिलेशनशिप विज़ुअलाइज़ेशन जोड़ा।",
+                    "ग्राफ एनालिटिक्स के जरिए जटिल इकाई संबंधों की खोज बेहतर की।",
+                    "D3 force simulations और Leiden clustering के साथ स्केलेबल विज़ुअलाइज़ेशन आर्किटेक्चर डिज़ाइन किया।"
+                ],
+                "responsibilities": [
+                    "टेक्निकल लीड",
+                    "सोल्यूशन आर्किटेक्चर",
+                    "फ्रंटएंड इंजीनियरिंग",
+                    "डेटा विज़ुअलाइज़ेशन",
+                    "परफॉर्मेंस ऑप्टिमाइज़ेशन",
+                    "UX डिज़ाइन"
+                ]
+            },
+            "activeDisplay": {
+                "title": "Active Display",
+                "category": "एंटरप्राइज़ डैशबोर्ड",
+                "impact": [
+                    "60+ एंटरप्राइज़ ग्राहकों द्वारा अपनाया गया configurable dashboard platform डिलीवर किया।",
+                    "तेज़ डैशबोर्ड विकास के लिए reusable widget architecture डिज़ाइन की।",
+                    "ग्राहक onboarding आसान करने हेतु onboarding APIs और Google Sheets integration बनाया।",
+                    "मेंटेनेबिलिटी और स्केलेबिलिटी सुधारने के लिए SOLID सिद्धांत लागू किए।"
+                ],
+                "responsibilities": [
+                    "टेक्निकल लीड",
+                    "आर्किटेक्चर",
+                    "डैशबोर्ड डेवलपमेंट",
+                    "बैकएंड APIs",
+                    "प्रोडक्शन रिलीज़"
+                ]
+            },
+            "skriftPressroom": {
+                "title": "Skrift Pressroom",
+                "category": "एंटरप्राइज़ प्लेटफॉर्म",
+                "impact": [
+                    "500+ संगठनों द्वारा उपयोग की जाने वाली एंटरप्राइज़ newsroom capabilities बनाई।",
+                    "पब्लिशिंग workflows और प्लेटफॉर्म विश्वसनीयता में सुधार किया।",
+                    "फ्रंटएंड, बैकएंड, सुरक्षा सुधार और प्रोडक्शन सपोर्ट में योगदान दिया।"
+                ]
+            },
+            "messageHandler": {
+                "title": "Message Handler",
+                "category": "एंटरप्राइज़ मैसेजिंग",
+                "impact": [
+                    "WhatsApp, Teams, Slack और Email में enterprise notifications को एकीकृत किया।",
+                    "एक reusable template engine बनाया जो कई communication channels को सपोर्ट करता है।",
+                    "केंद्रीकृत संदेश प्रणाली से ग्राहक संचार workflows बेहतर हुए।"
+                ]
+            },
+            "projectSamavad": {
+                "title": "Project Samavad",
+                "category": "थ्रेट इंटेलिजेंस",
+                "impact": [
+                    "एकीकृत threat-intelligence dashboard अनुभव के implementation का नेतृत्व किया।",
+                    "external cybersecurity intelligence providers को एक product workflow में एकीकृत किया।",
+                    "consolidated analytics और dashboard views से निर्णय दृश्यता बेहतर हुई।"
+                ],
+                "responsibilities": [
+                    "टेक्निकल लीड",
+                    "सोल्यूशन आर्किटेक्चर",
+                    "इंटीग्रेशन डिज़ाइन",
+                    "डैशबोर्ड इंजीनियरिंग"
+                ]
+            },
+            "platformEngineering": {
+                "title": "प्लेटफॉर्म इंजीनियरिंग",
+                "category": "डेवलपर एक्सपीरियंस",
+                "impact": [
+                    "इंजीनियरिंग टीमों का Drone CI से GitHub Actions में माइग्रेशन किया।",
+                    "कई प्रोजेक्ट्स में अपनाए गए reusable GitHub Actions बनाए।",
+                    "ArgoCD, Helm और Kustomize के साथ GitOps deployment model लागू किया।",
+                    "deployment consistency और developer productivity में सुधार किया।"
+                ]
+            }
+        }
+    },
+    "technicalContributions": {
+        "label": "तकनीकी योगदान",
+        "heading": "इंजीनियरिंग योगदान।",
+        "subtitle": "डिलिवरी पैटर्न, आर्किटेक्चर निर्णय और प्लेटफॉर्म सुधार जिनका नेतृत्व किया गया।",
+        "groups": {
+            "platformEngineering": {
+                "title": "प्लेटफॉर्म इंजीनियरिंग",
+                "items": [
+                    "Drone CI -> GitHub Actions माइग्रेशन",
+                    "Reusable GitHub Actions",
+                    "GitOps अपनाना",
+                    "ArgoCD",
+                    "Helm",
+                    "Kustomize",
+                    "Kubernetes",
+                    "Secrets Management",
+                    "OIDC Authentication"
+                ]
+            },
+            "architecture": {
+                "title": "आर्किटेक्चर",
+                "items": [
+                    "SOLID सिद्धांत",
+                    "Widget architecture",
+                    "Dynamic components",
+                    "Reusable UI libraries",
+                    "Management APIs",
+                    "Highcharts"
+                ]
+            },
+            "leadershipMentoring": {
+                "title": "लीडरशिप और मेंटरिंग",
+                "items": [
+                    "इंटर्न्स और इंजीनियर्स का मार्गदर्शन किया",
+                    "आर्किटेक्चर मार्गदर्शन और डिज़ाइन रिव्यू",
+                    "हैंड्स-ऑन कोड रिव्यू और डिलीवरी कोचिंग",
+                    "आंतरिक तकनीकी वर्कशॉप्स और नॉलेज शेयरिंग सत्र"
+                ]
+            },
+            "security": {
+                "title": "सुरक्षा",
+                "items": [
+                    "Dependency upgrades",
+                    "Security fixes",
+                    "Framework migrations",
+                    "Production hardening"
+                ]
+            }
+        }
+    },
+    "projects": {
+        "label": "प्रोजेक्ट्स",
+        "heading": "चुना हुआ कार्य।",
+        "subtitle": "ऐसे प्रोजेक्ट्स जो आर्किटेक्चर, प्रदर्शन और इंजीनियरिंग गुणवत्ता के प्रति मेरे दृष्टिकोण को दिखाते हैं।",
+        "highlights": "मुख्य बिंदु",
+        "items": {
+            "activeDisplay": {
+                "title": "Active Display",
+                "description": "स्केलेबल widget architecture और dynamic data sources के साथ 60+ ग्राहकों को सेवा देने वाला enterprise dashboard platform।",
+                "highlights": [
+                    "स्केलेबल widget architecture",
+                    "dynamic data integration",
+                    "enterprise-grade dashboard performance"
+                ],
+                "type": "एंटरप्राइज़ डैशबोर्ड"
+            },
+            "skriftPressroom": {
+                "title": "Skrift Pressroom",
+                "description": "500+ संगठनों द्वारा उपयोग किया जाने वाला बड़े पैमाने का newsroom platform।",
+                "highlights": [
+                    "enterprise newsroom workflows के लिए निर्मित",
+                    "500+ संगठनों द्वारा उपयोग",
+                    "high-availability content platform"
+                ],
+                "type": "एंटरप्राइज़ प्लेटफॉर्म"
+            },
+            "messageHandler": {
+                "title": "Message Handler",
+                "description": "WhatsApp, Twilio, Microsoft Teams, Slack और Email को एकीकृत करने वाला multi-channel notification platform।",
+                "highlights": [
+                    "एकीकृत multi-channel delivery",
+                    "queue-based reliable processing",
+                    "enterprise communication workflows"
+                ],
+                "type": "मैसेजिंग प्लेटफॉर्म"
+            },
+            "developerPlatform": {
+                "title": "Developer Platform",
+                "description": "Drone CI से GitHub Actions में reusable workflows और GitOps deployment architecture के साथ माइग्रेशन।",
+                "highlights": [
+                    "reusable CI workflow templates",
+                    "GitOps deployment model",
+                    "release consistency में सुधार"
+                ],
+                "type": "प्लेटफॉर्म इंजीनियरिंग"
+            }
+        }
+    },
+    "manifesto": {
+        "label": "मैनिफेस्टो",
+        "heading": "धैर्य। यात्रा। दृष्टि।",
+        "resilience": "धैर्य",
+        "resilienceBody": "सॉफ्टवेयर जटिल होता है। जरूरतें बदलती हैं, सिस्टम फेल होते हैं, डेडलाइन फिसलती हैं। बेहतरीन इंजीनियर वही हैं जो व्यवस्थित सोच, दृढ़ता और कार्रवाई की मानसिकता से जवाब देते हैं।",
+        "journey": "यात्रा",
+        "journeyBody": "मैं मंजिलों में विश्वास नहीं करता। हर प्रोजेक्ट, हर बग, हर देर रात की डीबगिंग एक कदम आगे है। आज का इंजीनियर मैं इसलिए हूं क्योंकि मैं जिज्ञासु रहा और बनाता रहा।",
+        "vision": "दृष्टि",
+        "visionBody": "कोड लिखना आसान हिस्सा है। तीन साल आगे देखना — कौन-सी abstraction टिकेगी और कौन-सा shortcut महंगा पड़ेगा — यही कठिन है। मैं लंबी अवधि को ध्यान में रखकर निर्माण करता हूं।"
+    },
+    "philosophy": {
+        "label": "इंजीनियरिंग दर्शन",
+        "heading": "मैं सॉफ्टवेयर के बारे में कैसे सोचता हूं।",
+        "subtitle": "वे सिद्धांत जो आर्किटेक्चर से कोड रिव्यू तक मेरे निर्णयों का मार्गदर्शन करते हैं।",
+        "items": {
+            "cleanArchitecture": {
+                "title": "क्लीन आर्किटेक्चर",
+                "description": "हर लेयर में concerns का स्पष्ट विभाजन। business logic कभी transport या persistence लेयर में नहीं जाना चाहिए।"
+            },
+            "typeSafety": {
+                "title": "टाइप सेफ्टी",
+                "description": "end-to-end TypeScript। types वह दस्तावेज़ हैं जिन्हें compiler लागू करता है।"
+            },
+            "performanceByDesign": {
+                "title": "डिज़ाइन से परफॉर्मेंस",
+                "description": "सही स्तर पर optimize करें — cache से पहले algorithm, hardware से पहले cache। पहले profile करें, फिर optimize करें।"
+            },
+            "developerExperience": {
+                "title": "डेवलपर एक्सपीरियंस",
+                "description": "अच्छा DX टीम के आउटपुट को कई गुना बढ़ाता है। CI pipelines, tooling और documentation, features जितने ही महत्वपूर्ण हैं।"
+            },
+            "maintainabilityOverCleverness": {
+                "title": "चतुराई से अधिक maintainability",
+                "description": "कोड लिखा कम और पढ़ा ज्यादा जाता है। साफ और सरल कोड, चतुर कोड से अधिक टिकता है।"
+            },
+            "testWhatMatters": {
+                "title": "जो महत्वपूर्ण है वही टेस्ट करें",
+                "description": "implementation नहीं, behavior को टेस्ट करें। critical paths के लिए mocks से बेहतर integration tests।"
+            }
+        }
+    },
+    "techStack": {
+        "label": "टेक स्टैक",
+        "heading": "काम के उपकरण।",
+        "categoryLabels": {
+            "frontend": "फ्रंटएंड",
+            "backend": "बैकएंड",
+            "cloudDevops": "क्लाउड और DevOps",
+            "databases": "डेटाबेस",
+            "stateApis": "स्टेट और APIs",
+            "interests": "रुचियां"
+        }
+    },
+    "contact": {
+        "label": "संपर्क",
+        "heading": "आइए साथ काम करें।",
+        "body": "मैं सीनियर और स्टाफ इंजीनियरिंग भूमिकाओं के लिए उपलब्ध हूं, जहां मैं प्रभावशाली उत्पाद बना सकूं और मजबूत टीमों के साथ सहयोग कर सकूं। ईमेल करें या LinkedIn पर जुड़ें।",
+        "sendEmail": "ईमेल भेजें",
+        "linkedin": "LinkedIn",
+        "github": "GitHub"
+    },
+    "footer": {
+        "builtWith": "Next.js · TypeScript · Tailwind CSS · Three.js के साथ निर्मित"
+    }
+}

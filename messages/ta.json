@@ -1,0 +1,443 @@
+{
+    "nav": {
+        "about": "அறிமுகம்",
+        "skills": "திறன்கள்",
+        "experience": "அனுபவம்",
+        "achievements": "சாதனைகள்",
+        "education": "கல்வி",
+        "featuredWork": "முக்கிய பணிகள்",
+        "technicalContributions": "தொழில்நுட்ப பங்களிப்புகள்",
+        "projects": "திட்டங்கள்",
+        "contact": "தொடர்பு"
+    },
+    "hero": {
+        "greeting": "வணக்கம், நான்",
+        "tagline": "நீண்ட காலம் நிலைக்கும் தயாரிப்புகளை உருவாக்குகிறேன்.",
+        "profileTitle": "Solutions Engineer • Platform Engineer • UI/UX Engineer",
+        "summary": "கருத்திலிருந்து தயாரிப்பு சூழல் வரை எண்டர்பிரைஸ் மென்பொருட்களை உருவாக்குகிறேன். full-stack engineering, cloud-native platforms, developer experience, மற்றும் business தேவைகளுக்கு ஏற்ப விரிவடையும் user interfaces ஆகியவற்றில் நிபுணத்துவம் பெற்றவன்.",
+        "viewProjects": "திட்டங்களை பார்க்க",
+        "getInTouch": "தொடர்பு கொள்ள",
+        "yearsExperience": "அனுபவ ஆண்டுகள்",
+        "coreStack": "முக்கிய தொழில்நுட்பங்கள்",
+        "basedIn": "அடிப்படை இடம்",
+        "scroll": "ஸ்க்ரோல்",
+        "stats": {
+            "yearsExperience": "அனுபவ ஆண்டுகள்",
+            "enterpriseProjects": "எண்டர்பிரைஸ் திட்டங்கள்",
+            "technicalWorkshops": "தொழில்நுட்ப பட்டறைகள்",
+            "solutionsEngineer": "Solutions Engineer"
+        }
+    },
+    "about": {
+        "label": "அறிமுகம்",
+        "heading": "தொழில்நுட்ப கைவினைக்கு மதிப்பு கொடுக்கும் பொறியாளர்.",
+        "p1": "நான் {name}, {location} ஐ அடிப்படையாகக் கொண்ட Full Stack Software Engineer. {years}+ ஆண்டுகளாக வேகமான, பராமரிக்க எளிதான மற்றும் நீடித்த web applications மற்றும் cloud-native systems உருவாக்கி வருகிறேன்.",
+        "p2": "என் பணிகள் முழு stack-இலும் விரிகின்றன — React/Next.js UI-களிலிருந்து NestJS/Go backend சேவைகள் வரை, AWS மற்றும் Kubernetes மீது இயக்கப்படும் அளவிலான அமைப்புகள் வரை.",
+        "p3": "சிறந்த மென்பொருள் தெளிவான நோக்கம், கட்டுப்பாடான architecture, மற்றும் பயன்படுத்துபவர்களையும் பராமரிப்பவர்களையும் மையமாகக் கொண்ட அணுகுமுறையிலிருந்து வருகிறது என்று நம்புகிறேன்.",
+        "quickFacts": "விரைவு தகவல்கள்",
+        "factExperience": "அனுபவம்",
+        "factLocation": "இடம்",
+        "factSpecialization": "நிபுணத்துவம்",
+        "factCurrentFocus": "தற்போதைய கவனம்",
+        "factOpenTo": "திறந்துள்ள பணியிடங்கள்",
+        "factExperienceValue": "~{years} ஆண்டுகள்",
+        "factSpecializationValue": "Full Stack + Cloud",
+        "factCurrentFocusValue": "Graph Analytics & பிளாட்ஃபார்ம் பொறியியல்",
+        "factOpenToValue": "Senior / Staff பணியிடங்கள்",
+        "quickFactItems": {
+            "currentRole": {
+                "label": "தற்போதைய பணி",
+                "value": "Solutions Engineer L4"
+            },
+            "careerJourney": {
+                "label": "தொழில் பயணம்",
+                "value": "Intern → L4"
+            },
+            "expertise": {
+                "label": "நிபுணத்துவம்",
+                "value": "Full Stack • Platform • UI/UX"
+            },
+            "currentFocus": {
+                "label": "தற்போதைய கவனம்",
+                "value": "AI Engineering • பிளாட்ஃபார்ம் பொறியியல்"
+            }
+        },
+        "openToRoles": {
+            "seniorSoftwareEngineer": "மூத்த மென்பொருள் பொறியாளர்",
+            "staffEngineer": "ஸ்டாஃப் பொறியாளர்",
+            "platformEngineer": "பிளாட்ஃபார்ம் பொறியாளர்",
+            "solutionsEngineer": "சொல்யூஷன்ஸ் பொறியாளர்"
+        },
+        "githubContributions": "GitHub பங்களிப்புகள்",
+        "profileCard": {
+            "labels": {
+                "experience": "அனுபவம்",
+                "role": "பங்கு",
+                "hobbies": "விருப்பங்கள்"
+            },
+            "yearsSuffix": "+ years",
+            "values": {
+                "profileData": "சுயவிவர தரவு",
+                "solutionsFullStackPlatform": "Solutions • Full Stack • Platform",
+                "solutionsEngineerL4": "Solutions Engineer - L4",
+                "watchCollection": "கடிகார சேகரிப்பு",
+                "photography": "புகைப்படக்கலை",
+                "watchAnime": "அனிமே பார்க்குதல்",
+                "gymming": "ஜிம்",
+                "hoverCardToFlip": "திருப்ப கார்டின் மேல் ஹோவர் செய்யவும்"
+            }
+        },
+        "github": "GitHub",
+        "linkedin": "LinkedIn"
+    },
+    "skills": {
+        "label": "திறன்கள்",
+        "heading": "நான் பயன்படுத்தும் தொழில்நுட்பங்கள்.",
+        "subtitle": "frontend முதல் cloud infrastructure வரை, நான் தொடர்ந்து பயன்படுத்தும் கருவிகள் மற்றும் தொழில்நுட்பங்கள்.",
+        "workSpans": "என் பணி விரியும் துறைகள்",
+        "categoryLabels": {
+            "frontend": "முன்தளம்",
+            "backend": "பின்தளம்",
+            "cloudDevops": "கிளவுட் & DevOps",
+            "databases": "தரவுத்தளங்கள்",
+            "stateApis": "State & APIs",
+            "interests": "ஆர்வங்கள்"
+        },
+        "spanItems": {
+            "solutionArchitecture": "தீர்வு கட்டமைப்பு",
+            "platformEngineering": "பிளாட்ஃபார்ம் பொறியியல்",
+            "devOps": "DevOps",
+            "kubernetes": "Kubernetes",
+            "gitOps": "GitOps",
+            "cicd": "CI/CD",
+            "technicalLeadership": "தொழில்நுட்ப தலைமையேற்பு",
+            "mentoring": "வழிகாட்டுதல்",
+            "hiring": "நியமனம்",
+            "productOwnership": "தயாரிப்பு பொறுப்பேற்பு",
+            "uxui": "UX/UI",
+            "security": "பாதுகாப்பு",
+            "fullSdlc": "முழு SDLC",
+            "customerFacingProducts": "வாடிக்கையாளர் நோக்கு எண்டர்பிரைஸ் தயாரிப்புகள்"
+        }
+    },
+    "experience": {
+        "label": "அனுபவம்",
+        "heading": "நான் பணியாற்றிய இடங்கள்.",
+        "items": {
+            "meltwater": {
+                "role": "Solutions Engineer நிலை 4",
+                "progression": "இன்டர்ன் -> ஜூனியர் இன்ஜினியர் -> ஜூனியர் Solutions Engineer -> Solutions Engineer நிலை 1 -> நிலை 2 -> நிலை 3 -> நிலை 4",
+                "bullets": [
+                    "எண்டர்பிரைஸ் டாஷ்போர்டு தீர்வுகள் மற்றும் API பிளாட்ஃபார்ம்களின் architecture மற்றும் delivery-ஐ வழிநடத்தினேன்.",
+                    "solution design முதல் production operations வரை முழு software development lifecycle-இல் திட்டங்களை own செய்தேன்.",
+                    "தொழில்நுட்ப பட்டறைகள் மற்றும் தினசரி delivery ஆதரவின் மூலம் இன்ஜினியர்கள் மற்றும் இன்டர்ன்களை வழிகாட்டினேன்.",
+                    "Git, GitHub, Docker, Kubernetes, CI/CD மற்றும் cloud-native engineering குறித்து தொழில்நுட்ப அமர்வுகளை நடத்தியேன்.",
+                    "தொழில்நுட்ப நேர்முகத் தேர்வுகள் மற்றும் நியமன குழுக்களில் பங்கேற்றேன்.",
+                    "Drone CI இலிருந்து GitHub Actions-க்கு reusable workflows உடன் migration செய்தேன்.",
+                    "ArgoCD, Helm மற்றும் Kustomize கொண்டு GitOps நடைமுறைகளை அறிமுகப்படுத்தினேன்.",
+                    "பாதுகாப்பு மேம்பாடுகள் மற்றும் பெரிய அளவிலான framework migrations-ஐ முன்னெடுத்தேன்.",
+                    "அறிவு பகிர்வு மற்றும் உள்நாட்டு முயற்சிகள் மூலம் engineering அணியை பிரதிநிதித்துவப்படுத்தினேன்."
+                ]
+            }
+        }
+    },
+    "achievements": {
+        "label": "சாதனைகள்",
+        "heading": "நான் உருவாக்கிய தாக்கம்.",
+        "subtitle": "architecture, delivery, platform, leadership ஆகிய துறைகளில் தேர்ந்தெடுக்கப்பட்ட முடிவுகள்.",
+        "items": {
+            "deliveryScale": "12+ டாஷ்போர்டு மற்றும் API தீர்வுகளை வெற்றிகரமாக வழங்கி விரிவாக்கினேன்.",
+            "dashboardPrograms": "IMDA, HONOR, Hotel Radisson Groups, Samvada மற்றும் FWD போன்ற பல dashboard தீர்வுகளை உருவாக்கினேன்.",
+            "widgetArchitecture": "dashboard அனுபவங்களுக்கு reusable widget architecture-ஐ வடிவமைத்து வெளியிட்டேன்.",
+            "segmentTracking": "Segment analytics மூலம் consistent event instrumentation-க்கு reusable tracking packages உருவாக்கினேன்.",
+            "rabbitmqOnboarding": "API solution அணிகளுக்கான RabbitMQ அடிப்படையிலான onboarding மற்றும் integration workflows-ல் பணியாற்றினேன்.",
+            "fullstackOwnership": "frontend, backend APIs, deployment மற்றும் production support உட்பட full-stack delivery-ஐ own செய்தேன்.",
+            "onboardingApis": "வாடிக்கையாளர் provisioning எளிமையாக்க onboarding APIs உருவாக்கினேன்.",
+            "cicdMigration": "Drone CI இலிருந்து GitHub Actions-க்கு reusable CI workflows உடன் migration செய்தேன்.",
+            "gitopsAdoption": "ArgoCD, Helm, Kustomize பயன்படுத்தி GitOps adoption-க்கு பங்களித்தேன்.",
+            "securityMigrations": "பாதுகாப்பு மேம்பாடுகள், dependency upgrades மற்றும் framework migrations-ஐ முன்னெடுத்தேன்."
+        }
+    },
+    "education": {
+        "label": "கல்வி",
+        "heading": "நான் பயின்ற இடங்கள்.",
+        "items": {
+            "christUniversity": {
+                "degree": "மாஸ்டர் ஆஃப் கம்ப்யூட்டர் அப்ளிகேஷன்ஸ் (MCA), கணினி அறிவியல்",
+                "grade": "65.67% - First Class",
+                "notes": [
+                    "Computer Science Designing Head",
+                    "Invigilation Incharge"
+                ]
+            },
+            "loyolaCollege": {
+                "degree": "பச்சலர் ஆஃப் கம்ப்யூட்டர் அப்ளிகேஷன், கணினி அறிவியல்",
+                "grade": "80% - First Class with Distinction",
+                "notes": ["Outreach", "NCC"]
+            },
+            "stAntonyHs": {
+                "degree": "PU, கணிதம் மற்றும் கணினி அறிவியல்",
+                "grade": "82% - First Class with Distinction",
+                "notes": ["NCC", "Basketball Team"]
+            },
+            "stAntonySchool": {
+                "degree": "10ஆம் வகுப்பு",
+                "grade": "92% - First Class with Distinction",
+                "notes": ["NCC", "Basketball Team"]
+            },
+            "stJosephMatriculation": {
+                "degree": "தொடக்கப்பள்ளி",
+                "notes": ["Sports Team"]
+            }
+        }
+    },
+    "featuredWork": {
+        "label": "முக்கிய பணிகள்",
+        "heading": "முன்னணி திட்டங்கள்.",
+        "subtitle": "தயாரிப்பு மற்றும் பொறியியல் தாக்கம் அதிகமான தேர்ந்தெடுக்கப்பட்ட திட்டங்கள்.",
+        "whyItMatters": "இது ஏன் முக்கியம்",
+        "technologiesLabel": "தொழில்நுட்பங்கள்",
+        "responsibilitiesLabel": "பொறுப்புகள்",
+        "projects": {
+            "networkGraphWidget": {
+                "title": "Network Graph Widget",
+                "category": "தரவு காட்சிப்படுத்தல்",
+                "impact": [
+                    "Meltwater Unified Search பிளாட்ஃபார்மில் interactive relationship visualization சேர்க்கப்பட்டது.",
+                    "graph analytics மூலம் சிக்கலான entity உறவுகளை ஆராய்வது மேம்பட்டது.",
+                    "D3 force simulations மற்றும் Leiden clustering கொண்டு scalable visualization architecture வடிவமைக்கப்பட்டது."
+                ],
+                "responsibilities": [
+                    "Technical Lead",
+                    "Solution Architecture",
+                    "Frontend Engineering",
+                    "Data Visualization",
+                    "Performance Optimization",
+                    "UX Design"
+                ]
+            },
+            "activeDisplay": {
+                "title": "Active Display",
+                "category": "எண்டர்பிரைஸ் டாஷ்போர்டு",
+                "impact": [
+                    "60+ enterprise வாடிக்கையாளர்கள் பயன்படுத்தும் configurable dashboard platform வழங்கப்பட்டது.",
+                    "வேகமான dashboard மேம்பாட்டுக்கு reusable widget architecture வடிவமைக்கப்பட்டது.",
+                    "வாடிக்கையாளர் onboarding எளிமையாக்க onboarding APIs மற்றும் Google Sheets integration உருவாக்கப்பட்டது.",
+                    "maintainability மற்றும் scalability மேம்படுத்த SOLID principles பயன்படுத்தப்பட்டது."
+                ],
+                "responsibilities": [
+                    "Technical Lead",
+                    "Architecture",
+                    "Dashboard Development",
+                    "Backend APIs",
+                    "Production Release"
+                ]
+            },
+            "skriftPressroom": {
+                "title": "Skrift Pressroom",
+                "category": "எண்டர்பிரைஸ் பிளாட்ஃபாரம்",
+                "impact": [
+                    "500+ நிறுவனங்கள் பயன்படுத்தும் enterprise newsroom திறன்கள் உருவாக்கப்பட்டது.",
+                    "publishing workflows மற்றும் platform reliability மேம்படுத்தப்பட்டது.",
+                    "frontend, backend, security மேம்பாடுகள் மற்றும் production support-இல் பங்களித்தேன்."
+                ]
+            },
+            "messageHandler": {
+                "title": "Message Handler",
+                "category": "எண்டர்பிரைஸ் மெசேஜிங்",
+                "impact": [
+                    "WhatsApp, Teams, Slack மற்றும் Email வழிகளில் enterprise notifications ஒருங்கிணைக்கப்பட்டது.",
+                    "பல communication channels-ஐ ஆதரிக்கும் reusable template engine உருவாக்கப்பட்டது.",
+                    "centralized messaging மூலம் customer communication workflows மேம்படுத்தப்பட்டது."
+                ]
+            },
+            "projectSamavad": {
+                "title": "Project Samavad",
+                "category": "அச்சுறுத்தல் நுண்ணறிவு",
+                "impact": [
+                    "ஒருங்கிணைந்த threat-intelligence dashboard அனுபவத்தை நடைமுறைப்படுத்த வழிநடத்தினேன்.",
+                    "வெளியக cybersecurity intelligence providers-ஐ ஒரே product workflow-இல் இணைத்தோம்.",
+                    "consolidated analytics மற்றும் dashboard views மூலம் முடிவு தெளிவு மேம்பட்டது."
+                ],
+                "responsibilities": [
+                    "Technical Lead",
+                    "Solution Architecture",
+                    "Integration Design",
+                    "Dashboard Engineering"
+                ]
+            },
+            "platformEngineering": {
+                "title": "பிளாட்ஃபார்ம் பொறியியல்",
+                "category": "டெவலப்பர் அனுபவம்",
+                "impact": [
+                    "engineering அணிகளை Drone CI இலிருந்து GitHub Actions-க்கு மாற்றினோம்.",
+                    "பல திட்டங்களில் பயன்படுத்தப்பட்ட reusable GitHub Actions உருவாக்கப்பட்டது.",
+                    "ArgoCD, Helm, Kustomize கொண்டு GitOps deployment model அறிமுகப்படுத்தப்பட்டது.",
+                    "deployment consistency மற்றும் developer productivity மேம்பட்டது."
+                ]
+            }
+        }
+    },
+    "technicalContributions": {
+        "label": "தொழில்நுட்ப பங்களிப்புகள்",
+        "heading": "பொறியியல் பங்களிப்புகள்.",
+        "subtitle": "delivery patterns, architecture முடிவுகள் மற்றும் platform மேம்பாடுகளில் நான் வழங்கிய பங்களிப்புகள்.",
+        "groups": {
+            "platformEngineering": {
+                "title": "பிளாட்ஃபார்ம் பொறியியல்",
+                "items": [
+                    "Drone CI -> GitHub Actions migration",
+                    "Reusable GitHub Actions",
+                    "GitOps adoption",
+                    "ArgoCD",
+                    "Helm",
+                    "Kustomize",
+                    "Kubernetes",
+                    "Secrets Management",
+                    "OIDC Authentication"
+                ]
+            },
+            "architecture": {
+                "title": "கட்டமைப்பு",
+                "items": [
+                    "SOLID principles",
+                    "Widget architecture",
+                    "Dynamic components",
+                    "Reusable UI libraries",
+                    "Management APIs",
+                    "Highcharts"
+                ]
+            },
+            "leadershipMentoring": {
+                "title": "தலைமைத்துவம் மற்றும் வழிகாட்டுதல்",
+                "items": [
+                    "இன்டர்ன்கள் மற்றும் இன்ஜினியர்களுக்கு வழிகாட்டுதல் வழங்கினேன்",
+                    "architecture வழிகாட்டுதல் மற்றும் design reviews",
+                    "hands-on code reviews மற்றும் delivery coaching",
+                    "உள்நாட்டு தொழில்நுட்ப பட்டறைகள் மற்றும் knowledge-sharing அமர்வுகள்"
+                ]
+            },
+            "security": {
+                "title": "பாதுகாப்பு",
+                "items": [
+                    "Dependency upgrades",
+                    "Security fixes",
+                    "Framework migrations",
+                    "Production hardening"
+                ]
+            }
+        }
+    },
+    "projects": {
+        "label": "திட்டங்கள்",
+        "heading": "தேர்ந்தெடுக்கப்பட்ட பணிகள்.",
+        "subtitle": "architecture, performance மற்றும் engineering quality குறித்து எனது அணுகுமுறையை காட்டும் திட்டங்கள்.",
+        "highlights": "முக்கிய அம்சங்கள்",
+        "items": {
+            "activeDisplay": {
+                "title": "Active Display",
+                "description": "scalable widget architecture மற்றும் dynamic data sources உடன் 60+ வாடிக்கையாளர்களுக்கு சேவை செய்யும் enterprise dashboard platform.",
+                "highlights": [
+                    "Scalable widget architecture",
+                    "Dynamic data integration",
+                    "Enterprise-grade dashboard performance"
+                ],
+                "type": "எண்டர்பிரைஸ் டாஷ்போர்டு"
+            },
+            "skriftPressroom": {
+                "title": "Skrift Pressroom",
+                "description": "500+ நிறுவனங்கள் பயன்படுத்தும் பெரிய அளவிலான newsroom platform.",
+                "highlights": [
+                    "enterprise newsroom workflows-க்காக உருவாக்கப்பட்டது",
+                    "500+ நிறுவனங்கள் பயன்படுத்துகிறது",
+                    "high-availability content platform"
+                ],
+                "type": "எண்டர்பிரைஸ் பிளாட்ஃபாரம்"
+            },
+            "messageHandler": {
+                "title": "Message Handler",
+                "description": "WhatsApp, Twilio, Microsoft Teams, Slack மற்றும் Email-ஐ ஒருங்கிணைக்கும் multi-channel notification platform.",
+                "highlights": [
+                    "unified multi-channel delivery",
+                    "queue-based reliable processing",
+                    "enterprise communication workflows"
+                ],
+                "type": "மெசேஜிங் பிளாட்ஃபாரம்"
+            },
+            "developerPlatform": {
+                "title": "Developer Platform",
+                "description": "Drone CI இலிருந்து GitHub Actions-க்கு reusable workflows மற்றும் GitOps deployment architecture உடன் migration.",
+                "highlights": [
+                    "reusable CI workflow templates",
+                    "GitOps deployment model",
+                    "release consistency மேம்பாடு"
+                ],
+                "type": "பிளாட்ஃபார்ம் பொறியியல்"
+            }
+        }
+    },
+    "manifesto": {
+        "label": "கொள்கை",
+        "heading": "திடப்பற்று. பயணம். பார்வை.",
+        "resilience": "திடப்பற்று",
+        "resilienceBody": "மென்பொருள் உலகம் சிக்கலானது. தேவைகள் மாறும், அமைப்புகள் தோல்வியடையும், காலக்கெடுக்கள் மாறும். சிறந்த பொறியாளர்கள் முறையான சிந்தனை, உறுதி, மற்றும் செயலில் தீவிரம் கொண்டு பதிலளிப்பவர்களே.",
+        "journey": "பயணம்",
+        "journeyBody": "நான் முடிவை அல்ல, வளர்ச்சியை நம்புகிறேன். ஒவ்வொரு திட்டமும், ஒவ்வொரு பிழையும், ஒவ்வொரு இரவு debugging-மும் ஒரு முன்னேற்றப்படியாகும்.",
+        "vision": "பார்வை",
+        "visionBody": "கோடு எழுதுவது எளிது. மூன்று ஆண்டுகள் முன்கூட்டியே சிந்தித்து, எந்த abstraction நீடிக்கும், எந்த shortcut பின்னர் செலவாகும் என்பதை அறிதலே சவால். நான் நீண்டகால நோக்கத்துடன் உருவாக்குகிறேன்."
+    },
+    "philosophy": {
+        "label": "பொறியியல் அணுகுமுறை",
+        "heading": "மென்பொருளை பற்றி நான் சிந்திக்கும் விதம்.",
+        "subtitle": "architecture முதல் code review வரை, என் முடிவுகளை வழிநடத்தும் கோட்பாடுகள்.",
+        "items": {
+            "cleanArchitecture": {
+                "title": "தெளிவான கட்டமைப்பு",
+                "description": "ஒவ்வொரு அடுக்கிலும் பொறுப்புகளை தெளிவாக பிரிக்க வேண்டும். business logic, transport அல்லது persistence layer-இல் கலக்கக் கூடாது."
+            },
+            "typeSafety": {
+                "title": "Type பாதுகாப்பு",
+                "description": "end-to-end TypeScript. compiler கட்டாயப்படுத்தும் documentation ஆக types செயல்படுகின்றன."
+            },
+            "performanceByDesign": {
+                "title": "வடிவமைப்பிலேயே செயல்திறன்",
+                "description": "சரியான அடுக்கில் optimize செய்யுங்கள் — cache-க்கு முன் algorithm, hardware-க்கு முன் cache. முதலில் profile, பிறகு optimize."
+            },
+            "developerExperience": {
+                "title": "டெவலப்பர் அனுபவம்",
+                "description": "சிறந்த DX அணியின் output-ஐ பலமடங்கு உயர்த்தும். CI pipelines, tooling, documentation ஆகியவை features அளவுக்கு முக்கியமானவை."
+            },
+            "maintainabilityOverCleverness": {
+                "title": "கிளவர்னெஸ்ஸை விட பராமரிப்பு",
+                "description": "கோடு எழுதப்படுவதைக் காட்டிலும் அதிகம் வாசிக்கப்படுகிறது. தெளிவான எளிய கோடு நீண்டகாலம் நிலைக்கும்."
+            },
+            "testWhatMatters": {
+                "title": "முக்கியமானதைச் சோதிக்கவும்",
+                "description": "implementation அல்ல, behavior-ஐ சோதிக்கவும். critical paths-க்கு mocks-ஐ விட integration tests மேல்."
+            }
+        }
+    },
+    "techStack": {
+        "label": "டெக் ஸ்டாக்",
+        "heading": "வேலையின் கருவிகள்.",
+        "categoryLabels": {
+            "frontend": "முன்தளம்",
+            "backend": "பின்தளம்",
+            "cloudDevops": "கிளவுட் & DevOps",
+            "databases": "தரவுத்தளங்கள்",
+            "stateApis": "State & APIs",
+            "interests": "ஆர்வங்கள்"
+        }
+    },
+    "contact": {
+        "label": "தொடர்பு",
+        "heading": "நாம் சேர்ந்து வேலை செய்வோம்.",
+        "body": "நான் senior மற்றும் staff engineering பணியிடங்களுக்கு திறந்துள்ளேன். தாக்கமுள்ள தயாரிப்புகளை உருவாக்கவும், வலுவான அணிகளுடன் பணியாற்றவும் தயார். மின்னஞ்சல் செய்யுங்கள் அல்லது LinkedIn-ல் தொடர்புகொள்ளுங்கள்.",
+        "sendEmail": "மின்னஞ்சல் அனுப்பு",
+        "linkedin": "LinkedIn",
+        "github": "GitHub"
+    },
+    "footer": {
+        "builtWith": "Next.js · TypeScript · Tailwind CSS · Three.js கொண்டு உருவாக்கப்பட்டது"
+    }
+}

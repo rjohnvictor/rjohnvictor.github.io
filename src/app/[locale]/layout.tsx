@@ -36,7 +36,7 @@ const DESCRIPTION =
     'Full Stack Software Engineer with ~8 years of experience building scalable web applications, cloud-native systems, and developer platforms using React, Next.js, Node.js, AWS, and Kubernetes.';
 
 export async function generateStaticParams() {
-    return [{ locale: 'en' }, { locale: 'es' }];
+    return [{ locale: 'en' }, { locale: 'hi' }, { locale: 'ta' }];
 }
 
 export async function generateMetadata({
