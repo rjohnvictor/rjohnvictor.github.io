@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Geist, Geist_Mono, Roboto, Exo_2, Lora } from 'next/font/google';
+import localFont from 'next/font/local';
 import '../globals.css';
 import { ThemeProvider } from '@/context/ThemeContext';
 import { EnergyProvider } from '@/context/EnergyContext';
@@ -22,6 +23,11 @@ const roboto = Roboto({
 });
 const exo2 = Exo_2({ variable: '--font-exo2', subsets: ['latin'] });
 const lora = Lora({ variable: '--font-lora', subsets: ['latin'] });
+const materialSymbols = localFont({
+    src: '../../../public/fonts/MaterialSymbolsOutlined.ttf',
+    variable: '--font-material-symbols',
+    display: 'optional',
+});
 
 const BASE_URL = 'https://rjohnvictor.com';
 
@@ -115,7 +121,7 @@ export default async function LocaleLayout({
         <html
             lang={lang}
             data-theme="professional"
-            className={`${geistSans.variable} ${geistMono.variable} ${roboto.variable} ${exo2.variable} ${lora.variable} h-full`}
+            className={`${geistSans.variable} ${geistMono.variable} ${roboto.variable} ${exo2.variable} ${lora.variable} ${materialSymbols.variable} h-full`}
             suppressHydrationWarning
         >
             <head>
