@@ -10,6 +10,23 @@
         "projects": "Projects",
         "contact": "Contact"
     },
+    "commandPalette": {
+        "title": "Quick navigation",
+        "searchLabel": "Search",
+        "triggerLabel": "Open command palette",
+        "placeholder": "Jump to a section...",
+        "noResultsLabel": "No matching sections",
+        "searchingLabel": "Searching your portfolio...",
+        "unavailableLabel": "Semantic search is temporarily unavailable.",
+        "semanticHint": "Semantic search understands intent, not just keywords.",
+        "scoreLabel": "Match",
+        "hint": "Use up/down to navigate, Enter to jump, Esc to close.",
+        "sections": {
+            "hero": "Home",
+            "manifesto": "Manifesto",
+            "philosophy": "Philosophy"
+        }
+    },
     "hero": {
         "greeting": "Hello, I'm",
         "tagline": "Building things that stand the test of time.",

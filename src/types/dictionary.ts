@@ -10,6 +10,23 @@ export interface Dictionary {
         projects: string;
         contact: string;
     };
+    commandPalette: {
+        title: string;
+        searchLabel: string;
+        triggerLabel: string;
+        placeholder: string;
+        noResultsLabel: string;
+        searchingLabel: string;
+        unavailableLabel: string;
+        semanticHint: string;
+        scoreLabel: string;
+        hint: string;
+        sections: {
+            hero: string;
+            manifesto: string;
+            philosophy: string;
+        };
+    };
     hero: {
         greeting: string;
         tagline: string;

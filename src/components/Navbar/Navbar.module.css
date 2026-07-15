@@ -45,6 +45,49 @@
     align-items: center;
 }
 
+.desktopActions {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+}
+
+.commandTrigger {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.35rem 0.7rem;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.02);
+    color: var(--text-secondary);
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 0.75rem;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.commandTrigger:hover {
+    color: var(--text-primary);
+}
+
+.commandTriggerIcon {
+    font-size: 15px;
+    line-height: 1;
+}
+
+.commandShortcut {
+    margin-left: 0.3rem;
+    padding: 0.05rem 0.35rem;
+    border-radius: 6px;
+    border: 1px solid var(--border);
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.04em;
+    color: var(--text-secondary);
+    opacity: 0.92;
+}
+
 /* ── Shared nav link ─────────────────────────────────────────────────── */
 .navLink {
     color: var(--text-secondary);
@@ -203,6 +246,28 @@
 }
 
 .mobileNavLink:hover {
+    color: var(--text-primary);
+}
+
+.mobileCommandTrigger {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.875rem 1.5rem;
+    border: 0;
+    border-bottom: 1px solid var(--bg-subtle);
+    width: 100%;
+    background: transparent;
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: color 0.2s;
+    cursor: pointer;
+    text-align: left;
+}
+
+.mobileCommandTrigger:hover {
     color: var(--text-primary);
 }
 
