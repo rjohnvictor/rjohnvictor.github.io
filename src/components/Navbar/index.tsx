@@ -26,7 +26,13 @@ export default function Navbar({ dict, locale }: Props) {
         { label: dict.nav.about, href: '#about' },
         { label: dict.nav.skills, href: '#skills' },
         { label: dict.nav.experience, href: '#experience' },
-        { label: dict.nav.projects, href: '#projects' },
+        { label: dict.nav.achievements, href: '#achievements' },
+        { label: dict.nav.education, href: '#education' },
+        { label: dict.nav.featuredWork, href: '#featured-work' },
+        {
+            label: dict.nav.technicalContributions,
+            href: '#technical-contributions',
+        },
         { label: dict.nav.contact, href: '#contact' },
     ];
 
@@ -115,7 +121,9 @@ export default function Navbar({ dict, locale }: Props) {
                                 <span
                                     className={`material-symbols-outlined ${styles.langButtonChevron}`}
                                 >
-                                    {languageOpen ? 'expand_less' : 'expand_more'}
+                                    {languageOpen
+                                        ? 'expand_less'
+                                        : 'expand_more'}
                                 </span>
                             </button>
 
@@ -189,9 +197,16 @@ export default function Navbar({ dict, locale }: Props) {
                                       ? 'code'
                                       : link.href === '#experience'
                                         ? 'work'
-                                        : link.href === '#projects'
-                                          ? 'folder'
-                                          : 'mail'}
+                                        : link.href === '#achievements'
+                                          ? 'workspace_premium'
+                                          : link.href === '#education'
+                                            ? 'school'
+                                            : link.href === '#featured-work'
+                                              ? 'star'
+                                              : link.href ===
+                                                  '#technical-contributions'
+                                                ? 'build'
+                                                : 'mail'}
                             </span>
                             {link.label}
                         </a>
@@ -241,7 +256,9 @@ export default function Navbar({ dict, locale }: Props) {
                                                 onClick={() =>
                                                     setLanguageOpen(false)
                                                 }
-                                                className={styles.mobileLangOption}
+                                                className={
+                                                    styles.mobileLangOption
+                                                }
                                                 data-active={active}
                                             >
                                                 <span>{option.label}</span>

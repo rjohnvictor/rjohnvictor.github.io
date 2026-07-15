@@ -8,7 +8,7 @@
  * No external API needed — purely time-based.
  */
 
-import { useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 
 /* ─── Solar maths (simplified, ±5 min accuracy for 13 °N) ── */
 
@@ -126,6 +126,8 @@ export default function SkyWeatherBg({
     const region = useMemo(() => resolveRegion(regionCode), [regionCode]);
     const [, setTick] = useState(0);
     const [morningWarp, setMorningWarp] = useState(false);
+    const [manualNow, setManualNow] = useState<number | null>(null);
+    const [isDraggingMarker, setIsDraggingMarker] = useState(false);
     const isTitleWidget = widgetPlacement === 'title-right';
 
     useEffect(() => {
@@ -136,7 +138,8 @@ export default function SkyWeatherBg({
     const { rise, set, now } = calcSunTimes(region);
     const realIsDay = now >= rise && now <= set;
     const warpHour = (rise + MORNING_WARP_OFFSET_HOURS) % 24;
-    const displayNow = morningWarp && !realIsDay ? warpHour : now;
+    const displayNow =
+        manualNow ?? (morningWarp && !realIsDay ? warpHour : now);
     const [top, bot] = skyColors(displayNow);
     const titleWidgetRight =
         'calc((100% - min(var(--container-max), 100%)) / 2 + 1.5rem)';
@@ -171,28 +174,100 @@ export default function SkyWeatherBg({
     const leftLabel = isDay ? fmt(rise) : fmt(set);
     const rightLabel = isDay ? fmt(set) : fmt(rise);
 
-    useEffect(() => {
-        const enabled = morningWarp && !realIsDay;
+    const markerCursor = isDraggingMarker ? 'grabbing' : 'grab';
 
-        localStorage.setItem(MORNING_WARP_ENABLED_KEY, enabled ? '1' : '0');
-        localStorage.setItem(MORNING_WARP_HOUR_KEY, String(warpHour));
+    const circularDistanceHours = (a: number, b: number): number => {
+        const raw = Math.abs(a - b) % 24;
+        return Math.min(raw, 24 - raw);
+    };
+
+    const normalizeHour = (hour: number): number => {
+        const mod = hour % 24;
+        return mod < 0 ? mod + 24 : mod;
+    };
+
+    const getProgressFromPointer = useCallback(
+        (clientX: number, clientY: number, svgEl: SVGSVGElement): number => {
+            const rect = svgEl.getBoundingClientRect();
+            if (rect.width === 0 || rect.height === 0) return 0;
+
+            const x = ((clientX - rect.left) / rect.width) * AW;
+            const y = ((clientY - rect.top) / rect.height) * (AH + 30);
+
+            const normalizedCos = (cx - x) / rx;
+            const normalizedSin = (cy - y) / ry;
+            const theta = Math.max(
+                0,
+                Math.min(Math.PI, Math.atan2(normalizedSin, normalizedCos)),
+            );
+
+            return theta / Math.PI;
+        },
+        [AH, AW, cx, cy, rx, ry],
+    );
+
+    const getHourFromProgress = useCallback(
+        (progress: number): number => {
+            const clamped = Math.max(0, Math.min(1, progress));
+            const dayHour = normalizeHour(rise + clamped * dayLength);
+            const nightHour = normalizeHour(set + clamped * nightLength);
+            const current = manualNow ?? displayNow;
+
+            return circularDistanceHours(dayHour, current) <=
+                circularDistanceHours(nightHour, current)
+                ? dayHour
+                : nightHour;
+        },
+        [dayLength, displayNow, manualNow, nightLength, rise, set],
+    );
+
+    const applyPointerTime = useCallback(
+        (clientX: number, clientY: number, svgEl: SVGSVGElement) => {
+            const progress = getProgressFromPointer(clientX, clientY, svgEl);
+            setMorningWarp(false);
+            setManualNow(getHourFromProgress(progress));
+        },
+        [getHourFromProgress, getProgressFromPointer],
+    );
+
+    useEffect(() => {
+        const overrideEnabled =
+            manualNow !== null || (morningWarp && !realIsDay);
+        const overrideHour = manualNow ?? warpHour;
+        const morningWarpEnabled = morningWarp && !realIsDay;
+
+        localStorage.setItem(
+            MORNING_WARP_ENABLED_KEY,
+            overrideEnabled ? '1' : '0',
+        );
+        localStorage.setItem(MORNING_WARP_HOUR_KEY, String(overrideHour));
 
         window.dispatchEvent(
             new CustomEvent('sky-morning-warp', {
-                detail: { enabled, hour: warpHour },
+                detail: {
+                    enabled: overrideEnabled,
+                    hour: overrideHour,
+                    morningWarpEnabled,
+                    manualEnabled: manualNow !== null,
+                },
             }),
         );
 
         return () => {
             localStorage.setItem(MORNING_WARP_ENABLED_KEY, '0');
-            localStorage.setItem(MORNING_WARP_HOUR_KEY, String(warpHour));
+            localStorage.setItem(MORNING_WARP_HOUR_KEY, String(overrideHour));
             window.dispatchEvent(
                 new CustomEvent('sky-morning-warp', {
-                    detail: { enabled: false, hour: warpHour },
+                    detail: {
+                        enabled: false,
+                        hour: overrideHour,
+                        morningWarpEnabled: false,
+                        manualEnabled: false,
+                    },
                 }),
             );
         };
-    }, [morningWarp, realIsDay, warpHour]);
+    }, [manualNow, morningWarp, realIsDay, warpHour]);
 
     return (
         <div
@@ -259,7 +334,7 @@ export default function SkyWeatherBg({
                     width: isTitleWidget
                         ? 'min(500px, calc(100vw - 3rem))'
                         : AW,
-                    pointerEvents: realIsDay ? 'none' : 'auto',
+                    pointerEvents: 'auto',
                     opacity: isTitleWidget ? 0.72 : 1,
                     zIndex: 4,
                 }}
@@ -288,6 +363,69 @@ export default function SkyWeatherBg({
                             <rect x={0} y={0} width={AW} height={cy} />
                         </clipPath>
                     </defs>
+
+                    {/* Drag rail (upper arc) */}
+                    <ellipse
+                        cx={cx}
+                        cy={cy}
+                        rx={rx}
+                        ry={ry}
+                        fill="none"
+                        stroke="rgba(255,255,255,0.001)"
+                        strokeWidth="26"
+                        clipPath="url(#arcClip)"
+                        style={{ cursor: markerCursor }}
+                        onPointerDown={(event) => {
+                            event.preventDefault();
+                            event.stopPropagation();
+                            setIsDraggingMarker(true);
+                            event.currentTarget.setPointerCapture(
+                                event.pointerId,
+                            );
+                            const svgEl = event.currentTarget.ownerSVGElement;
+                            if (!svgEl) return;
+                            applyPointerTime(
+                                event.clientX,
+                                event.clientY,
+                                svgEl,
+                            );
+                        }}
+                        onPointerMove={(event) => {
+                            if (!isDraggingMarker) return;
+                            event.preventDefault();
+                            const svgEl = event.currentTarget.ownerSVGElement;
+                            if (!svgEl) return;
+                            applyPointerTime(
+                                event.clientX,
+                                event.clientY,
+                                svgEl,
+                            );
+                        }}
+                        onPointerUp={(event) => {
+                            if (
+                                event.currentTarget.hasPointerCapture(
+                                    event.pointerId,
+                                )
+                            ) {
+                                event.currentTarget.releasePointerCapture(
+                                    event.pointerId,
+                                );
+                            }
+                            setIsDraggingMarker(false);
+                        }}
+                        onPointerCancel={(event) => {
+                            if (
+                                event.currentTarget.hasPointerCapture(
+                                    event.pointerId,
+                                )
+                            ) {
+                                event.currentTarget.releasePointerCapture(
+                                    event.pointerId,
+                                );
+                            }
+                            setIsDraggingMarker(false);
+                        }}
+                    />
 
                     {/* Horizon line */}
                     <line
@@ -360,24 +498,96 @@ export default function SkyWeatherBg({
                         strokeWidth="1"
                     />
 
-                    {/* Night easter egg: click marker to toggle morning view */}
-                    {!realIsDay && (
-                        <circle
-                            cx={markerX}
-                            cy={markerY}
-                            r="24"
-                            fill="rgba(255,255,255,0.001)"
-                            pointerEvents="all"
-                            style={{ cursor: 'pointer' }}
-                            onPointerDown={(event) => {
-                                event.preventDefault();
-                                event.stopPropagation();
-                                setMorningWarp((v) => !v);
-                            }}
-                        />
-                    )}
+                    {/* Marker hit area for easier drag start */}
+                    <circle
+                        cx={markerX}
+                        cy={markerY}
+                        r="24"
+                        fill="rgba(255,255,255,0.001)"
+                        pointerEvents="all"
+                        style={{ cursor: markerCursor }}
+                        onPointerDown={(event) => {
+                            event.preventDefault();
+                            event.stopPropagation();
+                            setIsDraggingMarker(true);
+                            event.currentTarget.setPointerCapture(
+                                event.pointerId,
+                            );
+                            const svgEl = event.currentTarget.ownerSVGElement;
+                            if (!svgEl) return;
+                            applyPointerTime(
+                                event.clientX,
+                                event.clientY,
+                                svgEl,
+                            );
+                        }}
+                        onPointerMove={(event) => {
+                            if (!isDraggingMarker) return;
+                            event.preventDefault();
+                            const svgEl = event.currentTarget.ownerSVGElement;
+                            if (!svgEl) return;
+                            applyPointerTime(
+                                event.clientX,
+                                event.clientY,
+                                svgEl,
+                            );
+                        }}
+                        onPointerUp={(event) => {
+                            if (
+                                event.currentTarget.hasPointerCapture(
+                                    event.pointerId,
+                                )
+                            ) {
+                                event.currentTarget.releasePointerCapture(
+                                    event.pointerId,
+                                );
+                            }
+                            setIsDraggingMarker(false);
+                        }}
+                        onPointerCancel={(event) => {
+                            if (
+                                event.currentTarget.hasPointerCapture(
+                                    event.pointerId,
+                                )
+                            ) {
+                                event.currentTarget.releasePointerCapture(
+                                    event.pointerId,
+                                );
+                            }
+                            setIsDraggingMarker(false);
+                        }}
+                    />
                 </svg>
             </div>
+
+            {manualNow !== null && (
+                <button
+                    type="button"
+                    onClick={() => setManualNow(null)}
+                    style={{
+                        position: 'absolute',
+                        bottom: isTitleWidget ? 'auto' : '2.3rem',
+                        top: isTitleWidget
+                            ? `calc(${titleWidgetTop} + ${AH + 10}px)`
+                            : 'auto',
+                        right: isTitleWidget ? titleWidgetRight : '1.5rem',
+                        border: '1px solid rgba(255,255,255,0.28)',
+                        background: 'rgba(0,0,0,0.24)',
+                        color: 'rgba(255,255,255,0.78)',
+                        fontFamily: 'var(--font-mono)',
+                        fontSize: '0.6rem',
+                        letterSpacing: '0.08em',
+                        lineHeight: 1,
+                        borderRadius: 999,
+                        padding: '0.22rem 0.5rem',
+                        cursor: 'pointer',
+                        zIndex: 5,
+                    }}
+                    aria-label="Resume live sky time"
+                >
+                    LIVE
+                </button>
+            )}
 
             {/* Time label bottom-right */}
             <p
@@ -396,6 +606,7 @@ export default function SkyWeatherBg({
                 }}
             >
                 {fmt(displayNow)} {region.label}
+                {manualNow !== null ? ' (manual)' : ''}
             </p>
         </div>
     );

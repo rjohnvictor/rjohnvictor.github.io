@@ -1,7 +1,8 @@
 'use client';
 
 import { useRef } from 'react';
-import { PERSONAL } from '@/data/portfolio';
+import { PERSONAL } from '@/data/portfolio/personal';
+import { STATS } from '@/data/portfolio/impact';
 import type { Dictionary } from '@/types/dictionary';
 import { useTheme } from '@/context/ThemeContext';
 import { useSectionEnergy } from '@/hooks/useSectionEnergy';
@@ -49,21 +50,19 @@ function HeroProfessional({
                         {dict.hero.greeting}
                     </p>
 
-                    <h1 className={styles.professionalName}>
-                        {PERSONAL.name}
-                    </h1>
+                    <h1 className={styles.professionalName}>{PERSONAL.name}</h1>
 
                     <h2 className={styles.professionalTitle}>
-                        {PERSONAL.title}
+                        {dict.hero.profileTitle}
                     </h2>
 
                     <p className={styles.professionalSummary}>
-                        {PERSONAL.summary}
+                        {dict.hero.summary}
                     </p>
 
                     <div className={`hero-ctas ${styles.professionalCtas}`}>
                         <a
-                            href="#projects"
+                            href="#featured-work"
                             className={styles.professionalCtaPrimary}
                         >
                             {dict.hero.viewProjects}
@@ -77,26 +76,13 @@ function HeroProfessional({
                     </div>
 
                     <div className={`hero-stats ${styles.professionalStats}`}>
-                        {[
-                            {
-                                value: `${PERSONAL.yearsExperience}+`,
-                                label: dict.hero.yearsExperience,
-                            },
-                            {
-                                value: 'React · Node · AWS',
-                                label: dict.hero.coreStack,
-                            },
-                            {
-                                value: PERSONAL.location,
-                                label: dict.hero.basedIn,
-                            },
-                        ].map((stat) => (
-                            <div key={stat.label}>
+                        {STATS.map((stat) => (
+                            <div key={stat.labelKey}>
                                 <p className={styles.professionalStatValue}>
                                     {stat.value}
                                 </p>
                                 <p className={styles.professionalStatLabel}>
-                                    {stat.label}
+                                    {dict.hero.stats[stat.labelKey]}
                                 </p>
                             </div>
                         ))}
@@ -121,53 +107,31 @@ function HeroPower({ dict }: Props) {
             {/* Radial vignette */}
             <div className={styles.powerVignette} />
 
-            <div className={`section-container hero-content ${styles.powerContent}`}>
-                <p className={styles.powerGreeting}>
-                    {dict.hero.greeting}
-                </p>
+            <div
+                className={`section-container hero-content ${styles.powerContent}`}
+            >
+                <p className={styles.powerGreeting}>{dict.hero.greeting}</p>
 
-                <h1 className={styles.powerName}>
-                    {PERSONAL.name}
-                </h1>
+                <h1 className={styles.powerName}>{PERSONAL.name}</h1>
 
-                <h2 className={styles.powerTitle}>
-                    {PERSONAL.title}
-                </h2>
+                <h2 className={styles.powerTitle}>{dict.hero.profileTitle}</h2>
 
-                <p className={styles.powerSummary}>
-                    {PERSONAL.summary}
-                </p>
+                <p className={styles.powerSummary}>{dict.hero.summary}</p>
 
                 <div className={`hero-ctas ${styles.powerCtas}`}>
-                    <a
-                        href="#projects"
-                        className={styles.powerCtaPrimary}
-                    >
+                    <a href="#featured-work" className={styles.powerCtaPrimary}>
                         {dict.hero.viewProjects}
                     </a>
-                    <a
-                        href="#contact"
-                        className={styles.powerCtaSecondary}
-                    >
+                    <a href="#contact" className={styles.powerCtaSecondary}>
                         {dict.hero.getInTouch}
                     </a>
                 </div>
 
                 {/* Energy stats */}
                 <div className={`hero-stats ${styles.powerStats}`}>
-                    {[
-                        {
-                            value: `${PERSONAL.yearsExperience}+`,
-                            label: dict.hero.yearsExperience,
-                        },
-                        {
-                            value: 'React · Node · AWS',
-                            label: dict.hero.coreStack,
-                        },
-                        { value: PERSONAL.location, label: dict.hero.basedIn },
-                    ].map((stat, i) => (
+                    {STATS.map((stat, i) => (
                         <div
-                            key={stat.label}
+                            key={stat.labelKey}
                             className={styles.powerStatItem}
                         >
                             {i > 0 && (
@@ -179,7 +143,7 @@ function HeroPower({ dict }: Props) {
                                 {stat.value}
                             </p>
                             <p className={styles.powerStatLabel}>
-                                {stat.label}
+                                {dict.hero.stats[stat.labelKey]}
                             </p>
                         </div>
                     ))}
@@ -202,21 +166,15 @@ function HeroZen({ dict }: Props) {
         >
             <div className={`section-container ${styles.zenContent}`}>
                 <div className={styles.zenInner}>
-                    <p className={styles.zenGreeting}>
-                        {dict.hero.greeting}
-                    </p>
+                    <p className={styles.zenGreeting}>{dict.hero.greeting}</p>
 
-                    <h1 className={styles.zenName}>
-                        {PERSONAL.name}
-                    </h1>
+                    <h1 className={styles.zenName}>{PERSONAL.name}</h1>
 
                     <h2 className={styles.zenTitle}>
-                        {PERSONAL.title}
+                        {dict.hero.profileTitle}
                     </h2>
 
-                    <p className={styles.zenSummary}>
-                        {PERSONAL.summary}
-                    </p>
+                    <p className={styles.zenSummary}>{dict.hero.summary}</p>
 
                     <p className={styles.zenTagline}>
                         &ldquo;{PERSONAL.tagline}&rdquo;
@@ -224,15 +182,12 @@ function HeroZen({ dict }: Props) {
 
                     <div className={styles.zenLinks}>
                         <a
-                            href="#projects"
+                            href="#featured-work"
                             className={styles.zenLinkPrimary}
                         >
                             {dict.hero.viewProjects} →
                         </a>
-                        <a
-                            href="#contact"
-                            className={styles.zenLinkSecondary}
-                        >
+                        <a href="#contact" className={styles.zenLinkSecondary}>
                             {dict.hero.getInTouch} →
                         </a>
                     </div>

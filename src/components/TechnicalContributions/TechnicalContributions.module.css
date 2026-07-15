@@ -1,0 +1,84 @@
+.section {
+    padding: 8rem 0;
+    border-top: 1px solid var(--border);
+    background: var(--bg-card);
+}
+
+.label {
+    color: var(--accent);
+    font-family: var(--font-geist-mono);
+    font-size: 0.8125rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.heading {
+    font-size: clamp(1.75rem, 4vw, 2.75rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    margin-bottom: 0.75rem;
+    color: var(--text-primary);
+}
+
+.subtitle {
+    color: var(--text-secondary);
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    max-width: 740px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.groupCard {
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--bg);
+    padding: 1rem;
+}
+
+.groupTitle {
+    margin: 0 0 0.75rem;
+    color: var(--text-primary);
+    font-size: 0.95rem;
+    letter-spacing: 0.02em;
+}
+
+.list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 0.6rem;
+}
+
+.item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+    color: var(--text-secondary);
+    padding: 0;
+    line-height: 1.5;
+}
+
+.dot {
+    color: var(--accent);
+    font-size: 0.75rem;
+    transform: translateY(0.2rem);
+}
+
+@media (max-width: 900px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .section {
+        padding: 6rem 0;
+    }
+}

@@ -1,83 +1,443 @@
 {
-  "nav": {
-    "about": "About",
-    "skills": "Skills",
-    "experience": "Experience",
-    "projects": "Projects",
-    "contact": "Contact"
-  },
-  "hero": {
-    "greeting": "Hello, I'm",
-    "tagline": "Building things that stand the test of time.",
-    "viewProjects": "View Projects",
-    "getInTouch": "Get in Touch",
-    "yearsExperience": "Years Experience",
-    "coreStack": "Core Stack",
-    "basedIn": "Based In",
-    "scroll": "scroll"
-  },
-  "about": {
-    "label": "About",
-    "heading": "Engineer who cares about the craft.",
-    "p1": "I'm {name}, a Full Stack Software Engineer based in {location} with over {years} years of experience. I specialize in building web applications and cloud-native systems that are fast, maintainable, and built to last.",
-    "p2": "My work spans the full stack — from pixel-precise UIs in React and Next.js to distributed backend services in NestJS and Go, running on AWS and Kubernetes. I'm comfortable owning features from architecture through deployment.",
-    "p3": "I believe great software comes from clarity of purpose, disciplined architecture, and a relentless focus on the people who use and maintain it.",
-    "quickFacts": "Quick Facts",
-    "factExperience": "Experience",
-    "factLocation": "Location",
-    "factSpecialization": "Specialization",
-    "factCurrentFocus": "Current Focus",
-    "factOpenTo": "Open To",
-    "factExperienceValue": "~{years} years",
-    "factSpecializationValue": "Full Stack + Cloud",
-    "factCurrentFocusValue": "React · NestJS · AWS · K8s",
-    "factOpenToValue": "Senior / Staff roles",
-    "github": "GitHub",
-    "linkedin": "LinkedIn"
-  },
-  "skills": {
-    "label": "Skills",
-    "heading": "What I work with.",
-    "subtitle": "Technologies I reach for on a regular basis, from frontend to cloud infrastructure."
-  },
-  "experience": {
-    "label": "Experience",
-    "heading": "Where I've worked."
-  },
-  "projects": {
-    "label": "Projects",
-    "heading": "Selected work.",
-    "subtitle": "Projects that demonstrate my approach to architecture, performance, and engineering quality.",
-    "highlights": "Highlights"
-  },
-  "manifesto": {
-    "label": "Manifesto",
-    "heading": "Resilience. Journey. Vision.",
-    "resilience": "Resilience",
-    "resilienceBody": "Software is messy. Requirements change, systems fail, deadlines slip. What separates great engineers is how they respond — with methodical thinking, grit, and a bias for action.",
-    "journey": "Journey",
-    "journeyBody": "I don't believe in destinations. Every project, every bug, every late-night debugging session is a step forward. The engineer I am today exists because I stayed curious and kept building.",
-    "vision": "Vision",
-    "visionBody": "Code is the easy part. Seeing three years ahead — knowing which abstractions will hold, which shortcuts will cost you — that's the hard part. I build with the long game in mind."
-  },
-  "philosophy": {
-    "label": "Engineering Philosophy",
-    "heading": "How I think about software.",
-    "subtitle": "Principles that guide my decisions, from architecture to code review."
-  },
-  "techStack": {
-    "label": "Tech Stack",
-    "heading": "Tools of the trade."
-  },
-  "contact": {
-    "label": "Contact",
-    "heading": "Let's work together.",
-    "body": "I'm open to senior and staff engineering roles where I can build impactful products and collaborate with strong teams. Reach out via email or connect on LinkedIn.",
-    "sendEmail": "Send Email",
-    "linkedin": "LinkedIn",
-    "github": "GitHub"
-  },
-  "footer": {
-    "builtWith": "Built with Next.js · TypeScript · Tailwind CSS"
-  }
+    "nav": {
+        "about": "About",
+        "skills": "Skills",
+        "experience": "Experience",
+        "achievements": "Achievements",
+        "education": "Education",
+        "featuredWork": "Featured Work",
+        "technicalContributions": "Technical Contributions",
+        "projects": "Projects",
+        "contact": "Contact"
+    },
+    "hero": {
+        "greeting": "Hello, I'm",
+        "tagline": "Building things that stand the test of time.",
+        "profileTitle": "Solutions Engineer • Platform Engineer • UI/UX Engineer",
+        "summary": "Building enterprise software from concept to production. I specialize in full-stack engineering, cloud-native platforms, developer experience, and intuitive user interfaces that scale with business needs.",
+        "viewProjects": "View Projects",
+        "getInTouch": "Get in Touch",
+        "yearsExperience": "Years Experience",
+        "coreStack": "Core Stack",
+        "basedIn": "Based In",
+        "scroll": "scroll",
+        "stats": {
+            "yearsExperience": "Years Experience",
+            "enterpriseProjects": "Enterprise Projects",
+            "technicalWorkshops": "Technical Workshops",
+            "solutionsEngineer": "Solutions Engineer"
+        }
+    },
+    "about": {
+        "label": "About",
+        "heading": "Engineer who cares about the craft.",
+        "p1": "I'm {name}, a Full Stack Software Engineer based in {location} with over {years} years of experience. I specialize in building web applications and cloud-native systems that are fast, maintainable, and built to last.",
+        "p2": "My work spans the full stack — from pixel-precise UIs in React and Next.js to distributed backend services in NestJS and Go, running on AWS and Kubernetes. I'm comfortable owning features from architecture through deployment.",
+        "p3": "I believe great software comes from clarity of purpose, disciplined architecture, and a relentless focus on the people who use and maintain it.",
+        "quickFacts": "Quick Facts",
+        "factExperience": "Experience",
+        "factLocation": "Location",
+        "factSpecialization": "Specialization",
+        "factCurrentFocus": "Current Focus",
+        "factOpenTo": "Open To",
+        "factExperienceValue": "~{years} years",
+        "factSpecializationValue": "Full Stack + Cloud",
+        "factCurrentFocusValue": "Graph Analytics & Platform Engineering",
+        "factOpenToValue": "Senior / Staff roles",
+        "quickFactItems": {
+            "currentRole": {
+                "label": "Current Role",
+                "value": "Solutions Engineer L4"
+            },
+            "careerJourney": {
+                "label": "Career Journey",
+                "value": "Intern → L4"
+            },
+            "expertise": {
+                "label": "Expertise",
+                "value": "Full Stack • Platform • UI/UX"
+            },
+            "currentFocus": {
+                "label": "Current Focus",
+                "value": "AI Engineering • Platform Engineering"
+            }
+        },
+        "openToRoles": {
+            "seniorSoftwareEngineer": "Senior Software Engineer",
+            "staffEngineer": "Staff Engineer",
+            "platformEngineer": "Platform Engineer",
+            "solutionsEngineer": "Solutions Engineer"
+        },
+        "githubContributions": "GitHub Contributions",
+        "profileCard": {
+            "labels": {
+                "experience": "Experience",
+                "role": "Role",
+                "hobbies": "Hobbies"
+            },
+            "yearsSuffix": "+ years",
+            "values": {
+                "profileData": "Profile Data",
+                "solutionsFullStackPlatform": "Solutions • Full Stack • Platform",
+                "solutionsEngineerL4": "Solutions Engineer - L4",
+                "watchCollection": "Watch Collection",
+                "photography": "Photography",
+                "watchAnime": "Watch Anime",
+                "gymming": "Gymming",
+                "hoverCardToFlip": "Hover card to flip"
+            }
+        },
+        "github": "GitHub",
+        "linkedin": "LinkedIn"
+    },
+    "skills": {
+        "label": "Skills",
+        "heading": "What I work with.",
+        "subtitle": "Technologies I reach for on a regular basis, from frontend to cloud infrastructure.",
+        "workSpans": "My work spans",
+        "categoryLabels": {
+            "frontend": "Frontend",
+            "backend": "Backend",
+            "cloudDevops": "Cloud & DevOps",
+            "databases": "Databases",
+            "stateApis": "State & APIs",
+            "interests": "Interests"
+        },
+        "spanItems": {
+            "solutionArchitecture": "Solution Architecture",
+            "platformEngineering": "Platform Engineering",
+            "devOps": "DevOps",
+            "kubernetes": "Kubernetes",
+            "gitOps": "GitOps",
+            "cicd": "CI/CD",
+            "technicalLeadership": "Technical Leadership",
+            "mentoring": "Mentoring",
+            "hiring": "Hiring",
+            "productOwnership": "Product Ownership",
+            "uxui": "UX/UI",
+            "security": "Security",
+            "fullSdlc": "Full SDLC",
+            "customerFacingProducts": "Customer-facing Enterprise Products"
+        }
+    },
+    "experience": {
+        "label": "Experience",
+        "heading": "Where I've worked.",
+        "items": {
+            "meltwater": {
+                "role": "Solutions Engineer Level 4",
+                "progression": "Intern -> Junior Engineer -> Junior Solutions Engineer -> Solutions Engineer Level 1 -> Level 2 -> Level 3 -> Level 4",
+                "bullets": [
+                    "Led architecture and delivery of enterprise dashboard solutions and API platforms.",
+                    "Owned projects through the complete software development lifecycle from solution design to production operations.",
+                    "Mentored engineers and interns through technical workshops and day-to-day delivery support.",
+                    "Conducted technical sessions on Git, GitHub, Docker, Kubernetes, CI/CD, and cloud-native engineering.",
+                    "Participated in technical interviews and hiring panels.",
+                    "Migrated CI/CD from Drone to GitHub Actions with reusable workflows.",
+                    "Introduced GitOps practices using ArgoCD, Helm, and Kustomize.",
+                    "Led security improvements and large-scale framework migrations.",
+                    "Represent the engineering team through knowledge sharing, internal initiatives, and participation in the company cultural committee."
+                ]
+            }
+        }
+    },
+    "achievements": {
+        "label": "Achievements",
+        "heading": "Impact delivered.",
+        "subtitle": "Selected outcomes across architecture, delivery, platform, and leadership.",
+        "items": {
+            "deliveryScale": "Delivered and scaled 12+ dashboard and API solutions across enterprise products.",
+            "dashboardPrograms": "Built multiple dashboard-based solutions including IMDA, HONOR, Hotel Radisson Groups, Samvada and FWD programs.",
+            "widgetArchitecture": "Designed and shipped widget-based solution architecture used across dashboard experiences.",
+            "segmentTracking": "Created reusable app-tracking packages using Segment analytics for consistent event instrumentation.",
+            "rabbitmqOnboarding": "Worked on RabbitMQ-based onboarding for API solution teams and integration workflows.",
+            "fullstackOwnership": "Owned full-stack delivery across frontend, backend APIs, deployment, and production support.",
+            "onboardingApis": "Developed onboarding APIs that simplified customer provisioning and reduced operational friction.",
+            "cicdMigration": "Migrated projects from Drone CI to GitHub Actions with reusable CI workflows and better reliability.",
+            "gitopsAdoption": "Contributed to GitOps adoption using ArgoCD, Helm, and Kustomize for centralized Kubernetes deployments.",
+            "securityMigrations": "Drove security improvements, dependency upgrades, and framework migrations across active products."
+        }
+    },
+    "education": {
+        "label": "Education",
+        "heading": "Where I studied.",
+        "items": {
+            "christUniversity": {
+                "degree": "Master of Computer Applications (MCA), Computer Science",
+                "grade": "65.67% - First Class",
+                "notes": [
+                    "Computer Science Designing Head",
+                    "Invigilation Incharge"
+                ]
+            },
+            "loyolaCollege": {
+                "degree": "Bachelor of Computer Application, Computer Science",
+                "grade": "80% - First Class with Distinction",
+                "notes": ["Outreach", "NCC"]
+            },
+            "stAntonyHs": {
+                "degree": "PU, Mathematics and Computer Science",
+                "grade": "82% - First Class with Distinction",
+                "notes": ["NCC", "Basketball Team"]
+            },
+            "stAntonySchool": {
+                "degree": "10th Std",
+                "grade": "92% - First Class with Distinction",
+                "notes": ["NCC", "Basketball Team"]
+            },
+            "stJosephMatriculation": {
+                "degree": "Primary School",
+                "notes": ["Sports Team"]
+            }
+        }
+    },
+    "featuredWork": {
+        "label": "Featured Work",
+        "heading": "Flagship projects.",
+        "subtitle": "Selected projects with strong product and engineering impact.",
+        "whyItMatters": "Why It Matters",
+        "technologiesLabel": "Technologies",
+        "responsibilitiesLabel": "Responsibilities",
+        "projects": {
+            "networkGraphWidget": {
+                "title": "Network Graph Widget",
+                "category": "Data Visualization",
+                "impact": [
+                    "Introduced interactive relationship visualization into Meltwater's Unified Search platform.",
+                    "Improved exploration of complex entity relationships through graph analytics.",
+                    "Designed a scalable visualization architecture using D3 force simulations and Leiden clustering."
+                ],
+                "responsibilities": [
+                    "Technical Lead",
+                    "Solution Architecture",
+                    "Frontend Engineering",
+                    "Data Visualization",
+                    "Performance Optimization",
+                    "UX Design"
+                ]
+            },
+            "activeDisplay": {
+                "title": "Active Display",
+                "category": "Enterprise Dashboard",
+                "impact": [
+                    "Delivered a configurable dashboard platform adopted by 60+ enterprise customers.",
+                    "Designed reusable widget architecture enabling rapid dashboard development.",
+                    "Built onboarding APIs and Google Sheets integration to simplify customer onboarding.",
+                    "Applied SOLID principles to improve maintainability and scalability."
+                ],
+                "responsibilities": [
+                    "Technical Lead",
+                    "Architecture",
+                    "Dashboard Development",
+                    "Backend APIs",
+                    "Production Release"
+                ]
+            },
+            "skriftPressroom": {
+                "title": "Skrift Pressroom",
+                "category": "Enterprise Platform",
+                "impact": [
+                    "Built enterprise newsroom capabilities used by over 500 organizations.",
+                    "Improved publishing workflows and platform reliability.",
+                    "Contributed to frontend, backend, security improvements, and production support."
+                ]
+            },
+            "messageHandler": {
+                "title": "Message Handler",
+                "category": "Enterprise Messaging",
+                "impact": [
+                    "Unified enterprise notifications across WhatsApp, Teams, Slack, and Email.",
+                    "Designed reusable template engine supporting multiple communication channels.",
+                    "Improved customer communication workflows through centralized messaging."
+                ]
+            },
+            "projectSamavad": {
+                "title": "Project Samavad",
+                "category": "Threat Intelligence",
+                "impact": [
+                    "Led implementation of a unified threat-intelligence dashboard experience.",
+                    "Integrated external cybersecurity intelligence providers into a single product workflow.",
+                    "Improved decision visibility through consolidated analytics and dashboard views."
+                ],
+                "responsibilities": [
+                    "Technical Lead",
+                    "Solution Architecture",
+                    "Integration Design",
+                    "Dashboard Engineering"
+                ]
+            },
+            "platformEngineering": {
+                "title": "Platform Engineering",
+                "category": "Developer Experience",
+                "impact": [
+                    "Migrated engineering teams from Drone CI to GitHub Actions.",
+                    "Built reusable GitHub Actions adopted across projects.",
+                    "Introduced GitOps deployment model using ArgoCD, Helm and Kustomize.",
+                    "Improved deployment consistency and developer productivity."
+                ]
+            }
+        }
+    },
+    "technicalContributions": {
+        "label": "Technical Contributions",
+        "heading": "Engineering contributions.",
+        "subtitle": "Delivery patterns, architecture decisions, and platform improvements driven across products.",
+        "groups": {
+            "platformEngineering": {
+                "title": "Platform Engineering",
+                "items": [
+                    "Drone CI -> GitHub Actions migration",
+                    "Reusable GitHub Actions",
+                    "GitOps adoption",
+                    "ArgoCD",
+                    "Helm",
+                    "Kustomize",
+                    "Kubernetes",
+                    "Secrets Management",
+                    "OIDC Authentication"
+                ]
+            },
+            "architecture": {
+                "title": "Architecture",
+                "items": [
+                    "SOLID principles",
+                    "Widget architecture",
+                    "Dynamic components",
+                    "Reusable UI libraries",
+                    "Management APIs",
+                    "Highcharts"
+                ]
+            },
+            "leadershipMentoring": {
+                "title": "Leadership & Mentoring",
+                "items": [
+                    "Mentored interns and engineers",
+                    "Architecture guidance and design reviews",
+                    "Hands-on code reviews and delivery coaching",
+                    "Internal technical workshops and knowledge-sharing sessions"
+                ]
+            },
+            "security": {
+                "title": "Security",
+                "items": [
+                    "Dependency upgrades",
+                    "Security fixes",
+                    "Framework migrations",
+                    "Production hardening"
+                ]
+            }
+        }
+    },
+    "projects": {
+        "label": "Projects",
+        "heading": "Selected work.",
+        "subtitle": "Projects that demonstrate my approach to architecture, performance, and engineering quality.",
+        "highlights": "Highlights",
+        "items": {
+            "activeDisplay": {
+                "title": "Active Display",
+                "description": "Enterprise dashboard platform serving 60+ customers with scalable widget architecture and dynamic data sources.",
+                "highlights": [
+                    "Scalable widget architecture",
+                    "Dynamic data integration",
+                    "Enterprise-grade dashboard performance"
+                ],
+                "type": "Enterprise Dashboard"
+            },
+            "skriftPressroom": {
+                "title": "Skrift Pressroom",
+                "description": "Large-scale newsroom platform used by over 500 organizations.",
+                "highlights": [
+                    "Built for enterprise newsroom workflows",
+                    "Used by 500+ organizations",
+                    "High-availability content platform"
+                ],
+                "type": "Enterprise Platform"
+            },
+            "messageHandler": {
+                "title": "Message Handler",
+                "description": "Multi-channel notification platform integrating WhatsApp, Twilio, Microsoft Teams, Slack, and Email.",
+                "highlights": [
+                    "Unified multi-channel delivery",
+                    "Queue-based reliable processing",
+                    "Enterprise communication workflows"
+                ],
+                "type": "Messaging Platform"
+            },
+            "developerPlatform": {
+                "title": "Developer Platform",
+                "description": "Migration from Drone CI to GitHub Actions with reusable workflows and GitOps deployment architecture.",
+                "highlights": [
+                    "Reusable CI workflow templates",
+                    "GitOps deployment model",
+                    "Improved release consistency"
+                ],
+                "type": "Platform Engineering"
+            }
+        }
+    },
+    "manifesto": {
+        "label": "Manifesto",
+        "heading": "Resilience. Journey. Vision.",
+        "resilience": "Resilience",
+        "resilienceBody": "Software is messy. Requirements change, systems fail, deadlines slip. What separates great engineers is how they respond — with methodical thinking, grit, and a bias for action.",
+        "journey": "Journey",
+        "journeyBody": "I don't believe in destinations. Every project, every bug, every late-night debugging session is a step forward. The engineer I am today exists because I stayed curious and kept building.",
+        "vision": "Vision",
+        "visionBody": "Code is the easy part. Seeing three years ahead — knowing which abstractions will hold, which shortcuts will cost you — that's the hard part. I build with the long game in mind."
+    },
+    "philosophy": {
+        "label": "Engineering Philosophy",
+        "heading": "How I think about software.",
+        "subtitle": "Principles that guide my decisions, from architecture to code review.",
+        "items": {
+            "cleanArchitecture": {
+                "title": "Clean Architecture",
+                "description": "Separation of concerns at every layer. Business logic should never bleed into transport or persistence layers."
+            },
+            "typeSafety": {
+                "title": "Type Safety",
+                "description": "TypeScript end-to-end. Types are documentation that the compiler enforces."
+            },
+            "performanceByDesign": {
+                "title": "Performance by Design",
+                "description": "Optimize at the right level - algorithm before cache, cache before hardware. Profile first, optimize second."
+            },
+            "developerExperience": {
+                "title": "Developer Experience",
+                "description": "Good DX multiplies team output. CI pipelines, tooling, and documentation matter as much as features."
+            },
+            "maintainabilityOverCleverness": {
+                "title": "Maintainability Over Cleverness",
+                "description": "Code is read far more than it is written. Clear, boring code outlasts clever code."
+            },
+            "testWhatMatters": {
+                "title": "Test What Matters",
+                "description": "Test behavior, not implementation. Integration tests over mocks for critical paths."
+            }
+        }
+    },
+    "techStack": {
+        "label": "Tech Stack",
+        "heading": "Tools of the trade.",
+        "categoryLabels": {
+            "frontend": "Frontend",
+            "backend": "Backend",
+            "cloudDevops": "Cloud & DevOps",
+            "databases": "Databases",
+            "stateApis": "State & APIs",
+            "interests": "Interests"
+        }
+    },
+    "contact": {
+        "label": "Contact",
+        "heading": "Let's work together.",
+        "body": "I'm open to senior and staff engineering roles where I can build impactful products and collaborate with strong teams. Reach out via email or connect on LinkedIn.",
+        "sendEmail": "Send Email",
+        "linkedin": "LinkedIn",
+        "github": "GitHub"
+    },
+    "footer": {
+        "builtWith": "Built with Next.js · TypeScript · Tailwind CSS"
+    }
 }
