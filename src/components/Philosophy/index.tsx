@@ -20,11 +20,13 @@ export default function Philosophy({ dict }: Props) {
 
     return (
         <section id="philosophy" className={styles.section}>
-            {/* Sky weather ambient background */}
-            {!isZen && <SkyWeatherBg widgetPlacement="title-right" />}
-
-            {/* Gradient overlay so text stays readable */}
-            {!isZen && <div className={styles.gradientOverlay} />}
+            {/* Sky weather ambient layer (desktop/tablet only) */}
+            {!isZen && (
+                <div className={styles.skyLayer}>
+                    <SkyWeatherBg widgetPlacement="title-right" />
+                    <div className={styles.gradientOverlay} />
+                </div>
+            )}
 
             <div className={`section-container ${styles.container}`}>
                 <div className={styles.header}>

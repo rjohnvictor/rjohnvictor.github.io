@@ -34,12 +34,12 @@
     padding: clamp(1rem, 2vw, 1.5rem);
     background: linear-gradient(
         160deg,
-        rgba(130, 186, 255, 0.22) 0%,
-        rgba(80, 133, 238, 0.2) 30%,
-        rgba(24, 40, 88, 0.38) 62%,
-        rgba(8, 16, 38, 0.62) 100%
+        rgba(76, 118, 186, 0.14) 0%,
+        rgba(42, 73, 132, 0.2) 30%,
+        rgba(17, 31, 62, 0.44) 62%,
+        rgba(8, 14, 30, 0.68) 100%
     );
-    border: 1px solid rgba(126, 180, 255, 0.28);
+    border: 1px solid rgba(126, 180, 255, 0.22);
     box-shadow:
         0 14px 42px rgba(2, 10, 30, 0.35),
         inset 0 1px 0 rgba(255, 255, 255, 0.14);
@@ -78,7 +78,7 @@
 .professionalTitle {
     font-size: clamp(1.25rem, 3.5vw, 2rem);
     font-weight: 400;
-    color: var(--text-secondary);
+    color: var(--text-primary);
     margin-bottom: 2rem;
     letter-spacing: -0.01em;
     line-height: 1.3;
@@ -86,7 +86,7 @@
 
 .professionalSummary {
     font-size: 1.0625rem;
-    color: var(--text-secondary);
+    color: color-mix(in srgb, var(--text-primary) 88%, var(--text-secondary));
     max-width: 560px;
     margin-bottom: 3rem;
     line-height: 1.7;
