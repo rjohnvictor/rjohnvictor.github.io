@@ -201,6 +201,7 @@
         "projects": {
             "networkGraphWidget": {
                 "title": "Network Graph Widget",
+                "status": "Now Working",
                 "category": "தரவு காட்சிப்படுத்தல்",
                 "impact": [
                     "Meltwater Unified Search பிளாட்ஃபார்மில் interactive relationship visualization சேர்க்கப்பட்டது.",
@@ -218,6 +219,7 @@
             },
             "activeDisplay": {
                 "title": "Active Display",
+                "status": "Active",
                 "category": "எண்டர்பிரைஸ் டாஷ்போர்டு",
                 "impact": [
                     "60+ enterprise வாடிக்கையாளர்கள் பயன்படுத்தும் configurable dashboard platform வழங்கப்பட்டது.",
@@ -236,34 +238,45 @@
             "skriftPressroom": {
                 "title": "Skrift Pressroom",
                 "category": "எண்டர்பிரைஸ் பிளாட்ஃபாரம்",
+                "status": "Active",
                 "impact": [
                     "500+ நிறுவனங்கள் பயன்படுத்தும் enterprise newsroom திறன்கள் உருவாக்கப்பட்டது.",
                     "publishing workflows மற்றும் platform reliability மேம்படுத்தப்பட்டது.",
                     "frontend, backend, security மேம்பாடுகள் மற்றும் production support-இல் பங்களித்தேன்."
                 ]
             },
-            "messageHandler": {
-                "title": "Message Handler",
-                "category": "எண்டர்பிரைஸ் மெசேஜிங்",
+            "realTimeContentIntelligencePlatform": {
+                "title": "நேரடி உள்ளடக்க நுண்ணறிவு தளம்",
+                "category": "நேரடி மீடியா நுண்ணறிவு",
+                "status": "Active",
                 "impact": [
-                    "WhatsApp, Teams, Slack மற்றும் Email வழிகளில் enterprise notifications ஒருங்கிணைக்கப்பட்டது.",
-                    "பல communication channels-ஐ ஆதரிக்கும் reusable template engine உருவாக்கப்பட்டது.",
-                    "centralized messaging மூலம் customer communication workflows மேம்படுத்தப்பட்டது."
-                ]
-            },
-            "projectSamavad": {
-                "title": "Project Samavad",
-                "category": "அச்சுறுத்தல் நுண்ணறிவு",
-                "impact": [
-                    "ஒருங்கிணைந்த threat-intelligence dashboard அனுபவத்தை நடைமுறைப்படுத்த வழிநடத்தினேன்.",
-                    "வெளியக cybersecurity intelligence providers-ஐ ஒரே product workflow-இல் இணைத்தோம்.",
-                    "consolidated analytics மற்றும் dashboard views மூலம் முடிவு தெளிவு மேம்பட்டது."
+                    "Australia-வின் leading publishers இலிருந்து வரும் live news-ஐ near real time-இல் ஒருங்கிணைக்கும் configurable enterprise homepage உருவாக்கப்பட்டது.",
+                    "web crawling, document enrichment மற்றும் AI-powered fallback extraction ஆகியவற்றை இணைத்த resilient ingestion pipeline வடிவமைக்கப்பட்டது.",
+                    "புதியதாக கண்டறியப்படும் உள்ளடக்கத்தை polling இன்றி நேரடியாக UI-க்கு stream செய்ய Server-Sent Events (SSE) செயல்படுத்தப்பட்டது."
                 ],
                 "responsibilities": [
                     "Technical Lead",
                     "Solution Architecture",
-                    "Integration Design",
-                    "Dashboard Engineering"
+                    "Real-Time Systems",
+                    "AI Integration",
+                    "Frontend Engineering",
+                    "Backend Engineering"
+                ]
+            },
+            "enterpriseDashboards": {
+                "title": "Enterprise Dashboards",
+                "status": "Production",
+                "category": "தரவு காட்சிப்படுத்தல்",
+                "impact": [
+                    "cybersecurity, media intelligence மற்றும் enterprise analytics தயாரிப்புகளுக்காக interactive dashboards வடிவமைத்து வழங்கப்பட்டது.",
+                    "பல external data providers-ஐ unified dashboard அனுபவங்களில் ஒருங்கிணைத்தோம்.",
+                    "configurable visualizations, filtering மற்றும் consolidated insights மூலம் decision-making மேம்படுத்தப்பட்டது."
+                ],
+                "responsibilities": [
+                    "Technical Lead",
+                    "Solution Architecture",
+                    "Dashboard Engineering",
+                    "Integration Design"
                 ]
             },
             "platformEngineering": {
@@ -354,15 +367,15 @@
                 ],
                 "type": "எண்டர்பிரைஸ் பிளாட்ஃபாரம்"
             },
-            "messageHandler": {
-                "title": "Message Handler",
-                "description": "WhatsApp, Twilio, Microsoft Teams, Slack மற்றும் Email-ஐ ஒருங்கிணைக்கும் multi-channel notification platform.",
+            "realTimeContentIntelligencePlatform": {
+                "title": "Real-Time Content Intelligence Platform",
+                "description": "Australia-வின் leading publishers இலிருந்து வரும் live news-ஐ near real time-இல் aggregate செய்யும் configurable enterprise homepage.",
                 "highlights": [
-                    "unified multi-channel delivery",
-                    "queue-based reliable processing",
-                    "enterprise communication workflows"
+                    "Resilient ingestion pipeline",
+                    "Web crawling + document enrichment + AI fallback extraction",
+                    "SSE-based live content streaming"
                 ],
-                "type": "மெசேஜிங் பிளாட்ஃபாரம்"
+                "type": "Real-Time Media Intelligence"
             },
             "developerPlatform": {
                 "title": "Developer Platform",

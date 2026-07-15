@@ -29,7 +29,7 @@ const materialSymbols = localFont({
     display: 'optional',
 });
 
-const BASE_URL = 'https://rjohnvictor.com';
+const BASE_URL = 'https://www.rjohnvictor.com';
 
 const BRAND_NAME = 'R John Victor';
 const SEO_TITLE =

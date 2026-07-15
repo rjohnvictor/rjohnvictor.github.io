@@ -201,6 +201,7 @@
         "projects": {
             "networkGraphWidget": {
                 "title": "Network Graph Widget",
+                "status": "Now Working",
                 "category": "Data Visualization",
                 "impact": [
                     "Introduced interactive relationship visualization into Meltwater's Unified Search platform.",
@@ -218,6 +219,7 @@
             },
             "activeDisplay": {
                 "title": "Active Display",
+                "status": "Active",
                 "category": "Enterprise Dashboard",
                 "impact": [
                     "Delivered a configurable dashboard platform adopted by 60+ enterprise customers.",
@@ -236,34 +238,47 @@
             "skriftPressroom": {
                 "title": "Skrift Pressroom",
                 "category": "Enterprise Platform",
+                "status": "Active",
                 "impact": [
                     "Built enterprise newsroom capabilities used by over 500 organizations.",
                     "Improved publishing workflows and platform reliability.",
                     "Contributed to frontend, backend, security improvements, and production support."
                 ]
             },
-            "messageHandler": {
-                "title": "Message Handler",
-                "category": "Enterprise Messaging",
+            "realTimeContentIntelligencePlatform": {
+                "title": "Real-Time Content Intelligence Platform",
+                "category": "Real-Time Media Intelligence",
+                "status": "Active",
                 "impact": [
-                    "Unified enterprise notifications across WhatsApp, Teams, Slack, and Email.",
-                    "Designed reusable template engine supporting multiple communication channels.",
-                    "Improved customer communication workflows through centralized messaging."
-                ]
-            },
-            "projectSamavad": {
-                "title": "Project Samavad",
-                "category": "Threat Intelligence",
-                "impact": [
-                    "Led implementation of a unified threat-intelligence dashboard experience.",
-                    "Integrated external cybersecurity intelligence providers into a single product workflow.",
-                    "Improved decision visibility through consolidated analytics and dashboard views."
+                    "Built a configurable enterprise homepage that aggregated live news from Australia's leading publishers in near real time.",
+                    "Designed a resilient ingestion pipeline combining web crawling, document enrichment, and AI-powered fallback extraction.",
+                    "Implemented Server-Sent Events (SSE) to stream newly discovered content directly to the UI without polling."
                 ],
                 "responsibilities": [
                     "Technical Lead",
                     "Solution Architecture",
-                    "Integration Design",
-                    "Dashboard Engineering"
+                    "Real-Time Systems",
+                    "AI Integration",
+                    "Frontend Engineering",
+                    "Backend Engineering"
+                ]
+            },
+            "enterpriseDashboards": {
+                "title": "Enterprise Dashboards",
+                "status": "Production",
+                "category": "Data Visualization",
+                "impact": [
+                    "Designed and delivered configurable dashboard solutions across cybersecurity, media intelligence, and enterprise products for diverse customer use cases.",
+                    "Built reusable dashboard architecture with modular widgets, configurable layouts, and centralized state management using NgRx.",
+                    "Integrated multiple external data providers and enterprise APIs into unified workflows, enabling customers to visualize and act on data from a single interface."
+                ],
+                "responsibilities": [
+                    "Technical Lead",
+                    "Solution Architecture",
+                    "Frontend Architecture",
+                    "Dashboard Engineering",
+                    "State Management",
+                    "Integration Design"
                 ]
             },
             "platformEngineering": {
@@ -354,7 +369,7 @@
                 ],
                 "type": "Enterprise Platform"
             },
-            "messageHandler": {
+            "realTimeContentIntelligencePlatform": {
                 "title": "Message Handler",
                 "description": "Multi-channel notification platform integrating WhatsApp, Twilio, Microsoft Teams, Slack, and Email.",
                 "highlights": [

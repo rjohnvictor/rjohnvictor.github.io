@@ -201,6 +201,7 @@
         "projects": {
             "networkGraphWidget": {
                 "title": "Network Graph Widget",
+                "status": "Now Working",
                 "category": "डेटा विज़ुअलाइज़ेशन",
                 "impact": [
                     "Meltwater Unified Search प्लेटफॉर्म में इंटरैक्टिव रिलेशनशिप विज़ुअलाइज़ेशन जोड़ा।",
@@ -218,6 +219,7 @@
             },
             "activeDisplay": {
                 "title": "Active Display",
+                "status": "Active",
                 "category": "एंटरप्राइज़ डैशबोर्ड",
                 "impact": [
                     "60+ एंटरप्राइज़ ग्राहकों द्वारा अपनाया गया configurable dashboard platform डिलीवर किया।",
@@ -236,34 +238,45 @@
             "skriftPressroom": {
                 "title": "Skrift Pressroom",
                 "category": "एंटरप्राइज़ प्लेटफॉर्म",
+                "status": "Active",
                 "impact": [
                     "500+ संगठनों द्वारा उपयोग की जाने वाली एंटरप्राइज़ newsroom capabilities बनाई।",
                     "पब्लिशिंग workflows और प्लेटफॉर्म विश्वसनीयता में सुधार किया।",
                     "फ्रंटएंड, बैकएंड, सुरक्षा सुधार और प्रोडक्शन सपोर्ट में योगदान दिया।"
                 ]
             },
-            "messageHandler": {
-                "title": "Message Handler",
-                "category": "एंटरप्राइज़ मैसेजिंग",
+            "realTimeContentIntelligencePlatform": {
+                "title": "रियल-टाइम कंटेंट इंटेलिजेंस प्लेटफॉर्म",
+                "category": "रियल-टाइम मीडिया इंटेलिजेंस",
+                "status": "Active",
                 "impact": [
-                    "WhatsApp, Teams, Slack और Email में enterprise notifications को एकीकृत किया।",
-                    "एक reusable template engine बनाया जो कई communication channels को सपोर्ट करता है।",
-                    "केंद्रीकृत संदेश प्रणाली से ग्राहक संचार workflows बेहतर हुए।"
-                ]
-            },
-            "projectSamavad": {
-                "title": "Project Samavad",
-                "category": "थ्रेट इंटेलिजेंस",
-                "impact": [
-                    "एकीकृत threat-intelligence dashboard अनुभव के implementation का नेतृत्व किया।",
-                    "external cybersecurity intelligence providers को एक product workflow में एकीकृत किया।",
-                    "consolidated analytics और dashboard views से निर्णय दृश्यता बेहतर हुई।"
+                    "एक configurable enterprise homepage बनाया जो Australia के leading publishers से live news को near real time में aggregate करता है।",
+                    "web crawling, document enrichment और AI-powered fallback extraction के साथ resilient ingestion pipeline डिज़ाइन किया।",
+                    "Server-Sent Events (SSE) लागू किया ताकि newly discovered content सीधे UI में बिना polling के stream हो सके।"
                 ],
                 "responsibilities": [
                     "टेक्निकल लीड",
                     "सोल्यूशन आर्किटेक्चर",
-                    "इंटीग्रेशन डिज़ाइन",
-                    "डैशबोर्ड इंजीनियरिंग"
+                    "रियल-टाइम सिस्टम्स",
+                    "एआई इंटीग्रेशन",
+                    "फ्रंटएंड इंजीनियरिंग",
+                    "बैकएंड इंजीनियरिंग"
+                ]
+            },
+            "enterpriseDashboards": {
+                "title": "Enterprise Dashboards",
+                "status": "Production",
+                "category": "डेटा विज़ुअलाइज़ेशन",
+                "impact": [
+                    "cybersecurity, media intelligence और enterprise analytics products में interactive dashboards डिज़ाइन और डिलीवर किए।",
+                    "कई external data providers को unified dashboard experiences में एकीकृत किया।",
+                    "configurable visualizations, filtering और consolidated insights के माध्यम से decision-making बेहतर किया।"
+                ],
+                "responsibilities": [
+                    "टेक्निकल लीड",
+                    "सोल्यूशन आर्किटेक्चर",
+                    "डैशबोर्ड इंजीनियरिंग",
+                    "इंटीग्रेशन डिज़ाइन"
                 ]
             },
             "platformEngineering": {
@@ -354,15 +367,15 @@
                 ],
                 "type": "एंटरप्राइज़ प्लेटफॉर्म"
             },
-            "messageHandler": {
-                "title": "Message Handler",
-                "description": "WhatsApp, Twilio, Microsoft Teams, Slack और Email को एकीकृत करने वाला multi-channel notification platform।",
+            "realTimeContentIntelligencePlatform": {
+                "title": "Real-Time Content Intelligence Platform",
+                "description": "एक configurable enterprise homepage जो Australia के leading publishers से live news को near real time में aggregate करता है।",
                 "highlights": [
-                    "एकीकृत multi-channel delivery",
-                    "queue-based reliable processing",
-                    "enterprise communication workflows"
+                    "Resilient ingestion pipeline",
+                    "Web crawling + document enrichment + AI fallback extraction",
+                    "SSE-based live content streaming"
                 ],
-                "type": "मैसेजिंग प्लेटफॉर्म"
+                "type": "Real-Time Media Intelligence"
             },
             "developerPlatform": {
                 "title": "Developer Platform",

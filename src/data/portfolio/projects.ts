@@ -8,8 +8,16 @@ export const PROJECTS = [
         tech: ['Next.js', 'React', 'Node.js', 'PostgreSQL', 'AWS'],
     },
     {
-        id: 'messageHandler',
-        tech: ['Node.js', 'AWS SQS', 'Twilio', 'WhatsApp', 'REST APIs'],
+        id: 'realTimeContentIntelligencePlatform',
+        tech: [
+            'Next.js',
+            'React',
+            'Node.js',
+            'Server-Sent Events (SSE)',
+            'Web Crawlers',
+            'LLM Vision',
+            'REST APIs',
+        ],
     },
     {
         id: 'developerPlatform',
@@ -39,19 +47,21 @@ export const FEATURED_PROJECTS = [
         technologies: ['React', 'Next.js', 'Node.js', 'AWS'],
     },
     {
-        id: 'messageHandler',
+        id: 'realTimeContentIntelligencePlatform',
+        duration: '2025',
         technologies: [
+            'Next.js',
+            'React',
             'Node.js',
-            'RabbitMQ',
-            'Twilio',
-            'WhatsApp',
-            'Slack',
-            'Teams',
+            'Server-Sent Events (SSE)',
+            'Web Crawlers',
+            'LLM Vision',
+            'REST APIs',
         ],
     },
     {
-        id: 'projectSamavad',
-        technologies: ['Cyfirma', 'Cybara', 'REST APIs', 'Dashboard'],
+        id: 'enterpriseDashboards',
+        technologies: ['Highcharts', 'REST APIs', 'Dashboard', 'Integrations'],
     },
     {
         id: 'platformEngineering',
