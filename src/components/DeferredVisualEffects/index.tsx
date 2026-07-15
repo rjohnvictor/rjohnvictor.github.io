@@ -11,7 +11,6 @@ const TerrainScene = dynamic(() => import('@/components/TerrainScene'), {
     ssr: false,
 });
 
-const DESKTOP_QUERY = '(min-width: 1024px)';
 const MOBILE_QUERY = '(max-width: 1023px)';
 const FINE_POINTER_QUERY = '(any-pointer: fine)';
 const REDUCED_MOTION_QUERY = '(prefers-reduced-motion: reduce)';
@@ -66,7 +65,6 @@ export default function DeferredVisualEffects() {
 
     useEffect(() => {
         const reducedMotion = window.matchMedia(REDUCED_MOTION_QUERY).matches;
-        const isDesktop = window.matchMedia(DESKTOP_QUERY).matches;
         const isMobile = window.matchMedia(MOBILE_QUERY).matches;
         const hasFinePointer = window.matchMedia(FINE_POINTER_QUERY).matches;
         const isSlowNetwork = isSlowConnection();
@@ -80,10 +78,8 @@ export default function DeferredVisualEffects() {
             ? scheduleIdle(() => setShowCursor(true), 900)
             : () => undefined;
 
-        // Terrain is the heaviest script path; mount only on desktop after idle.
-        const cancelTerrain = isDesktop
-            ? scheduleIdle(() => setShowTerrain(true), 1800)
-            : () => undefined;
+        // Terrain is heavy; defer it on all devices, but skip entirely on slow mobile networks.
+        const cancelTerrain = scheduleIdle(() => setShowTerrain(true), 1800);
 
         return () => {
             cancelCursor();
