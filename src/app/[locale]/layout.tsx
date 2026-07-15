@@ -25,7 +25,7 @@ const lora = Lora({ variable: '--font-lora', subsets: ['latin'] });
 
 const BASE_URL = 'https://rjohnvictor.com';
 
-const TITLE = 'R John Victor — Full Stack Engineer';
+const BRAND_NAME = 'R John Victor';
 const DESCRIPTION =
     'Full Stack Software Engineer with ~8 years of experience building scalable web applications, cloud-native systems, and developer platforms using React, Next.js, Node.js, AWS, and Kubernetes.';
 
@@ -44,9 +44,10 @@ export async function generateMetadata({
     return {
         metadataBase: new URL(BASE_URL),
         title: {
-            default: TITLE,
-            template: '%s | R John Victor',
+            default: BRAND_NAME,
+            template: `%s | ${BRAND_NAME}`,
         },
+        applicationName: BRAND_NAME,
         description: DESCRIPTION,
         keywords: [
             'Full Stack Engineer',
@@ -78,16 +79,16 @@ export async function generateMetadata({
             },
         },
         openGraph: {
-            title: TITLE,
+            title: BRAND_NAME,
             description: DESCRIPTION,
             url: `${BASE_URL}/${canonicalLocale}`,
-            siteName: 'R John Victor',
+            siteName: BRAND_NAME,
             locale: 'en_US',
             type: 'website',
         },
         twitter: {
             card: 'summary_large_image',
-            title: TITLE,
+            title: BRAND_NAME,
             description: DESCRIPTION,
             creator: '@rjohnvictor',
         },
@@ -128,11 +129,6 @@ export default async function LocaleLayout({
                         __html: `(function(){var t=localStorage.getItem('portfolio-theme');if(t&&['professional','power','zen'].includes(t)){document.documentElement.setAttribute('data-theme',t);}})();`,
                     }}
                 />
-                {/* Material Symbols for theme switcher */}
-                <link
-                    rel="stylesheet"
-                    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
-                />
                 {/* JSON-LD structured data — Person schema */}
                 <script
                     type="application/ld+json"
@@ -147,6 +143,7 @@ export default async function LocaleLayout({
                             'knowsAbout': [
                                 'React',
                                 'Next.js',
+                                'Angular',
                                 'TypeScript',
                                 'Node.js',
                                 'NestJS',
