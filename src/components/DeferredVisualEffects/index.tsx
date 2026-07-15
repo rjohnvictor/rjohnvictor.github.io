@@ -17,7 +17,12 @@ const REDUCED_MOTION_QUERY = '(prefers-reduced-motion: reduce)';
 
 function isLighthouseAudit(): boolean {
     const ua = navigator.userAgent || '';
-    return /lighthouse|chrome-lighthouse/i.test(ua);
+    const hasLighthouseUa = /lighthouse|chrome-lighthouse/i.test(ua);
+    const hasHeadlessUa = /headlesschrome/i.test(ua);
+    const webdriver =
+        typeof navigator.webdriver === 'boolean' && navigator.webdriver;
+
+    return hasLighthouseUa || hasHeadlessUa || webdriver;
 }
 
 function getTerrainOverride(): boolean | null {

@@ -2,34 +2,40 @@
 
 > Solutions Engineer portfolio focused on full-stack, platform, cloud, and real-time systems engineering.
 
-## Summary
 R John Victor is a Solutions Engineer with 8+ years of experience building enterprise software, cloud-native platforms, and scalable full-stack applications.
 
-## Canonical
-- https://www.rjohnvictor.com/
+## Primary Pages
 
-## Primary pages
-- Home (EN): https://www.rjohnvictor.com/en
-- Home (HI): https://www.rjohnvictor.com/hi
-- Home (TA): https://www.rjohnvictor.com/ta
+- [Home](https://www.rjohnvictor.com/): Canonical root
+- [Home (English)](https://www.rjohnvictor.com/en): Main localized entry point
+- [Home (Hindi)](https://www.rjohnvictor.com/hi): Hindi localized entry point
+- [Home (Tamil)](https://www.rjohnvictor.com/ta): Tamil localized entry point
 
-## Key sections
-- About: https://www.rjohnvictor.com/en#about
-- Skills: https://www.rjohnvictor.com/en#skills
-- Experience: https://www.rjohnvictor.com/en#experience
-- Achievements: https://www.rjohnvictor.com/en#achievements
-- Education: https://www.rjohnvictor.com/en#education
-- Featured Work: https://www.rjohnvictor.com/en#featured-work
-- Technical Contributions: https://www.rjohnvictor.com/en#technical-contributions
-- Philosophy: https://www.rjohnvictor.com/en#philosophy
-- Contact: https://www.rjohnvictor.com/en#contact
+## Navigation Anchors (EN)
 
-## Structured resources
-- Sitemap: https://www.rjohnvictor.com/sitemap.xml
-- Robots: https://www.rjohnvictor.com/robots.txt
-- Manifest: https://www.rjohnvictor.com/manifest.webmanifest
+- [About](https://www.rjohnvictor.com/en#about): Background and quick facts
+- [Skills](https://www.rjohnvictor.com/en#skills): Core technologies and domains
+- [Experience](https://www.rjohnvictor.com/en#experience): Career progression and scope
+- [Achievements](https://www.rjohnvictor.com/en#achievements): Outcome-focused highlights
+- [Education](https://www.rjohnvictor.com/en#education): Academic background
+- [Featured Work](https://www.rjohnvictor.com/en#featured-work): Flagship project portfolio
+- [Technical Contributions](https://www.rjohnvictor.com/en#technical-contributions): Engineering/platform contributions
+- [Philosophy](https://www.rjohnvictor.com/en#philosophy): Principles and approach
+- [Contact](https://www.rjohnvictor.com/en#contact): Contact and profile links
+
+## Structured Resources
+
+- [sitemap.xml](https://www.rjohnvictor.com/sitemap.xml): Crawlable URL inventory
+- [robots.txt](https://www.rjohnvictor.com/robots.txt): Crawl directives
+- [manifest.webmanifest](https://www.rjohnvictor.com/manifest.webmanifest): PWA metadata
 
 ## Contact
-- Email: johnvictor2406@gmail.com
-- GitHub: https://github.com/rjohnvictor
-- LinkedIn: https://www.linkedin.com/in/r-john-victor-295a6382
+
+- [Email](mailto:johnvictor2406@gmail.com): Direct contact
+- [GitHub](https://github.com/rjohnvictor): Source and engineering profile
+- [LinkedIn](https://www.linkedin.com/in/r-john-victor-295a6382): Professional profile
+
+## Optional
+
+- [Apple Icon](https://www.rjohnvictor.com/apple-icon.png): Touch icon asset
+- [Site Icon](https://www.rjohnvictor.com/icon.png): PNG icon asset
