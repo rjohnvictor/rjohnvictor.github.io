@@ -5,9 +5,8 @@ import '../globals.css';
 import { ThemeProvider } from '@/context/ThemeContext';
 import { EnergyProvider } from '@/context/EnergyContext';
 import ThemeSwitcher from '@/components/ThemeSwitcher';
-import CursorManager from '@/components/CursorManager';
 import ThemeEffects from '@/components/ThemeEffects';
-import TerrainScene from '@/components/TerrainScene';
+import DeferredVisualEffects from '@/components/DeferredVisualEffects';
 import { Analytics } from '@vercel/analytics/next';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 
@@ -197,8 +196,7 @@ export default async function LocaleLayout({
                 <ThemeProvider>
                     <EnergyProvider>
                         <ThemeEffects />
-                        <CursorManager />
-                        <TerrainScene />
+                        <DeferredVisualEffects />
                         {children}
                         <ThemeSwitcher />
                         <Analytics />
