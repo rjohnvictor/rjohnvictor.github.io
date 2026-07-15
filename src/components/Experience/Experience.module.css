@@ -340,3 +340,42 @@
     font-size: 0.9375rem;
     line-height: 1.8;
 }
+
+@media (max-width: 640px) {
+    :global([data-theme='power']) .timelineRow {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    :global([data-theme='power']) .timelineColumn {
+        display: none;
+    }
+
+    :global([data-theme='power']) .timelineRowSpaced {
+        margin-bottom: 1.2rem;
+    }
+
+    :global([data-theme='power']) .kiBulletList,
+    :global([data-theme='power']) .bulletList {
+        list-style: none !important;
+        margin: 0;
+        padding: 0;
+        padding-inline-start: 0;
+    }
+
+    :global([data-theme='power']) .kiBulletItem,
+    :global([data-theme='power']) .bulletItem {
+        list-style: none !important;
+        gap: 0;
+    }
+
+    :global([data-theme='power']) .kiBulletItem::marker,
+    :global([data-theme='power']) .bulletItem::marker {
+        content: '';
+    }
+
+    :global([data-theme='power']) .kiBulletIcon,
+    :global([data-theme='power']) .bulletIcon {
+        display: none;
+    }
+}
