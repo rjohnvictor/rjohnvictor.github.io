@@ -105,6 +105,7 @@ export interface Dictionary {
                 title: string;
                 category: string;
                 impact: string[];
+                status?: string;
                 responsibilities?: string[];
             }
         >;

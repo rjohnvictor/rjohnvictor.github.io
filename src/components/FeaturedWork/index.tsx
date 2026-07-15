@@ -44,11 +44,11 @@ export default function FeaturedWork({ dict }: Props) {
                                     <h3 className={styles.project}>
                                         {localized.title}
                                     </h3>
-                                    {(item.status || item.duration) && (
+                                    {(localized.status || item.duration) && (
                                         <div className={styles.badges}>
-                                            {item.status ? (
+                                            {localized.status ? (
                                                 <span className={styles.status}>
-                                                    {item.status}
+                                                    {localized.status}
                                                 </span>
                                             ) : null}
                                             {item.duration ? (
@@ -61,24 +61,16 @@ export default function FeaturedWork({ dict }: Props) {
                                         </div>
                                     )}
 
-                                    {Array.isArray(localized.impact) ? (
-                                        <ul className={styles.impactList}>
-                                            {localized.impact.map((point) => (
-                                                <li
-                                                    key={point}
-                                                    className={
-                                                        styles.impactItem
-                                                    }
-                                                >
-                                                    {point}
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    ) : (
-                                        <p className={styles.why}>
-                                            {localized.impact.join(' ')}
-                                        </p>
-                                    )}
+                                    <ul className={styles.impactList}>
+                                        {localized.impact.map((point) => (
+                                            <li
+                                                key={point}
+                                                className={styles.impactItem}
+                                            >
+                                                {point}
+                                            </li>
+                                        ))}
+                                    </ul>
 
                                     <p className={styles.listLabel}>
                                         {dict.featuredWork.technologiesLabel}
