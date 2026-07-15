@@ -12,8 +12,28 @@ const TerrainScene = dynamic(() => import('@/components/TerrainScene'), {
 });
 
 const DESKTOP_QUERY = '(min-width: 1024px)';
+const MOBILE_QUERY = '(max-width: 1023px)';
 const FINE_POINTER_QUERY = '(any-pointer: fine)';
 const REDUCED_MOTION_QUERY = '(prefers-reduced-motion: reduce)';
+
+function isSlowConnection(): boolean {
+    const nav = navigator as Navigator & {
+        connection?: {
+            effectiveType?: string;
+            saveData?: boolean;
+        };
+    };
+
+    const connection = nav.connection;
+    if (!connection) return false;
+
+    if (connection.saveData) return true;
+
+    return (
+        connection.effectiveType === 'slow-2g' ||
+        connection.effectiveType === '2g'
+    );
+}
 
 function scheduleIdle(callback: () => void, timeoutMs: number) {
     if (typeof window === 'undefined') return () => undefined;
@@ -47,11 +67,12 @@ export default function DeferredVisualEffects() {
     useEffect(() => {
         const reducedMotion = window.matchMedia(REDUCED_MOTION_QUERY).matches;
         const isDesktop = window.matchMedia(DESKTOP_QUERY).matches;
+        const isMobile = window.matchMedia(MOBILE_QUERY).matches;
         const hasFinePointer = window.matchMedia(FINE_POINTER_QUERY).matches;
+        const isSlowNetwork = isSlowConnection();
 
-        if (reducedMotion) {
-            setShowCursor(false);
-            setShowTerrain(false);
+        // Skip deferred visuals for constrained environments.
+        if (reducedMotion || (isMobile && isSlowNetwork)) {
             return;
         }
 
