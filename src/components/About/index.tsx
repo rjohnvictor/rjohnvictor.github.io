@@ -81,13 +81,36 @@ function ProfileCard({ dict }: { dict: Dictionary }) {
     const fallbackHp = Math.max(99, PERSONAL.yearsExperience * 13);
     const hp = useGithubContributionHp(fallbackHp);
     const cardData = PERSONAL.profileCard;
+    const [isFlipped, setIsFlipped] = useState(false);
     const locationMapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
         PERSONAL.locationMapQuery ?? PERSONAL.location,
     )}`;
 
+    const handleCardClick = (event: React.MouseEvent<HTMLDivElement>) => {
+        if ((event.target as HTMLElement).closest('a')) return;
+        setIsFlipped((prev) => !prev);
+    };
+
+    const handleCardKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            setIsFlipped((prev) => !prev);
+        }
+    };
+
     return (
-        <div className={styles.profileCard}>
-            <div className={styles.profileCardFlipper}>
+        <div
+            className={styles.profileCard}
+            role="button"
+            tabIndex={0}
+            aria-pressed={isFlipped}
+            aria-label={dict.about.profileCard.values[cardData.flipHintKey]}
+            onClick={handleCardClick}
+            onKeyDown={handleCardKeyDown}
+        >
+            <div
+                className={`${styles.profileCardFlipper}${isFlipped ? ` ${styles.isFlipped}` : ''}`}
+            >
                 <div
                     className={`${styles.profileFace} ${styles.profileFaceFront}`}
                 >
