@@ -714,7 +714,20 @@ export default function Navbar({ dict, locale }: Props) {
                                 {...params}
                                 placeholder={dict.commandPalette.placeholder}
                                 autoFocus
-                                onKeyDown={onCommandInputKeyDown}
+                                slotProps={{
+                                    ...params.slotProps,
+                                    htmlInput: {
+                                        ...params.slotProps?.htmlInput,
+                                        onKeyDown: (
+                                            event: ReactKeyboardEvent<HTMLInputElement>,
+                                        ) => {
+                                            params.slotProps?.htmlInput?.onKeyDown?.(
+                                                event,
+                                            );
+                                            onCommandInputKeyDown(event);
+                                        },
+                                    },
+                                }}
                             />
                         )}
                         slotProps={{
