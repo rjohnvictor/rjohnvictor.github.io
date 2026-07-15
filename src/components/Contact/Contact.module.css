@@ -1,75 +1,115 @@
 /* ─── Contact section ────────────────────────────────────── */
 
 .section {
-  padding: 8rem 0;
-  border-top: 1px solid var(--border);
+    padding: 8rem 0;
+    border-top: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+}
+
+.section::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(3, 7, 14, 0.7) 0%,
+        rgba(3, 8, 18, 0.5) 45%,
+        rgba(2, 6, 12, 0.72) 100%
+    );
+    pointer-events: none;
+    z-index: 0;
+}
+
+.section :global(.section-container) {
+    position: relative;
+    z-index: 1;
 }
 
 .inner {
-  max-width: 600px;
-  margin: 0 auto;
-  text-align: center;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    padding: clamp(1rem, 2vw, 1.75rem);
+    border-radius: 16px;
+    border: 1px solid color-mix(in srgb, var(--accent) 20%, var(--border));
+    background: color-mix(in srgb, var(--bg) 82%, transparent);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
 }
 
 /* ─── Section label ──────────────────────────────────────── */
 
 .sectionLabel {
-  color: var(--accent);
-  font-family: var(--font-geist-mono);
-  font-size: 0.8125rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  margin-bottom: 1rem;
+    color: var(--accent);
+    font-family: var(--font-geist-mono);
+    font-size: 0.8125rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
 }
 
 /* ─── Heading ────────────────────────────────────────────── */
 
 .heading {
-  font-size: clamp(1.75rem, 4vw, 2.75rem);
-  font-weight: 700;
-  letter-spacing: -0.03em;
-  margin-bottom: 1.25rem;
-  color: var(--text-primary);
-  line-height: 1.15;
+    font-size: clamp(1.75rem, 4vw, 2.75rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    margin-bottom: 1.25rem;
+    color: var(--text-primary);
+    line-height: 1.15;
 }
 
 /* ─── Body copy ──────────────────────────────────────────── */
 
 .body {
-  color: var(--text-secondary);
-  font-size: 1rem;
-  line-height: 1.7;
-  margin-bottom: 3rem;
+    color: color-mix(in srgb, var(--text-primary) 86%, var(--text-secondary));
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-bottom: 3rem;
 }
 
 /* ─── Button row ─────────────────────────────────────────── */
 
 .buttonRow {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  flex-wrap: wrap;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
 }
 
 /* ─── Primary email CTA ──────────────────────────────────── */
 
 .emailBtn {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.875rem 2rem;
-  background: var(--accent);
-  color: #08090a;
-  border: none;
-  border-radius: 6px;
-  font-weight: 600;
-  font-size: 0.9375rem;
-  text-decoration: none;
-  transition: opacity 0.2s, transform 0.2s;
-  box-shadow: 0 0 16px var(--accent-glow);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.875rem 2rem;
+    background: var(--accent);
+    color: #08090a;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.9375rem;
+    text-decoration: none;
+    transition:
+        opacity 0.2s,
+        transform 0.2s;
+    box-shadow: 0 0 16px var(--accent-glow);
 }
 
 .emailBtn:hover {
-  opacity: 0.9;
-  transform: translateY(-2px);
+    opacity: 0.9;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 640px) {
+    .section {
+        padding: 6.5rem 0;
+    }
+
+    .inner {
+        border-radius: 14px;
+        padding: 1rem;
+    }
 }
