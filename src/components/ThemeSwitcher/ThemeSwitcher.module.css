@@ -1,126 +1,154 @@
 /* ─── Keyframes ───────────────────────────────────────────── */
 @keyframes ts-slideUp {
-  from {
-    opacity: 0;
-    transform: translateY(8px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* ─── Root wrapper ────────────────────────────────────────── */
 .root {
-  position: fixed;
-  bottom: 1.75rem;
-  right: 1.75rem;
-  z-index: 9998;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 0.5rem;
+    position: fixed;
+    bottom: 1.75rem;
+    right: 1.75rem;
+    z-index: 9998;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.5rem;
 }
 
 /* ─── Options panel ───────────────────────────────────────── */
 .panel {
-  background: var(--bg-card, #0d1117);
-  border: 1px solid var(--border, #21262d);
-  border-radius: 12px;
-  padding: 0.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
-  animation: ts-slideUp 0.2s ease-out;
+    background: var(--bg-card, #0d1117);
+    border: 1px solid var(--border, #21262d);
+    border-radius: 12px;
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+    animation: ts-slideUp 0.2s ease-out;
 }
 
 /* ─── Mode button ─────────────────────────────────────────── */
 .modeBtn {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  padding: 0.625rem 1rem;
-  background: transparent;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  color: var(--text-secondary, #8b949e);
-  font-size: 0.875rem;
-  font-weight: 400;
-  text-align: left;
-  transition: background 0.15s, color 0.15s;
-  white-space: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.625rem 1rem;
+    background: transparent;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    color: var(--text-secondary, #8b949e);
+    font-size: 0.875rem;
+    font-weight: 400;
+    text-align: left;
+    transition:
+        background 0.15s,
+        color 0.15s;
+    white-space: nowrap;
 }
 
 .modeBtn:hover {
-  background: var(--bg-subtle, #161b22);
-  color: var(--text-primary, #e6edf3);
+    background: var(--bg-subtle, #161b22);
+    color: var(--text-primary, #e6edf3);
 }
 
-.modeBtn[data-active="true"] {
-  background: var(--bg-subtle, #161b22);
-  color: var(--text-primary, #e6edf3);
-  font-weight: 600;
+.modeBtn[data-active='true'] {
+    background: var(--bg-subtle, #161b22);
+    color: var(--text-primary, #e6edf3);
+    font-weight: 600;
 }
 
 .modeIcon {
-  font-size: 18px;
-  line-height: 1;
-  color: inherit;
+    font-size: 18px;
+    line-height: 1;
+    color: inherit;
 }
 
-.modeIcon[data-active="true"] {
-  color: var(--accent);
+.modeIcon[data-active='true'] {
+    color: var(--accent);
 }
 
 .modeLabel {
-  margin: 0;
-  line-height: 1.2;
+    margin: 0;
+    line-height: 1.2;
 }
 
 .modeDesc {
-  margin: 0;
-  font-size: 0.6875rem;
-  opacity: 0.6;
-  font-family: var(--font-geist-mono, monospace);
+    margin: 0;
+    font-size: 0.6875rem;
+    opacity: 0.6;
+    font-family: var(--font-geist-mono, monospace);
 }
 
 .modeCheck {
-  margin-left: auto;
-  color: var(--accent, #58a6ff);
-  font-size: 0.75rem;
+    margin-left: auto;
+    color: var(--accent, #58a6ff);
+    font-size: 0.75rem;
 }
 
 /* ─── Toggle button ───────────────────────────────────────── */
 .toggleBtn {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.5rem 1rem;
-  background: var(--bg-card, #0d1117);
-  border: 1px solid var(--border, #21262d);
-  border-radius: 24px;
-  cursor: pointer;
-  color: var(--text-secondary, #8b949e);
-  font-size: 0.8125rem;
-  font-weight: 500;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
-  transition: border-color 0.2s, color 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    background: var(--bg-card, #0d1117);
+    border: 1px solid var(--border, #21262d);
+    border-radius: 24px;
+    cursor: pointer;
+    color: var(--text-secondary, #8b949e);
+    font-size: 0.8125rem;
+    font-weight: 500;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    transition:
+        border-color 0.2s,
+        color 0.2s;
 }
 
 .toggleBtn:hover {
-  border-color: var(--text-muted, #484f58);
-  color: var(--text-primary, #e6edf3);
+    border-color: var(--text-muted, #484f58);
+    color: var(--text-primary, #e6edf3);
 }
 
 .toggleIcon {
-  font-size: 16px;
-  line-height: 1;
-  color: var(--accent);
+    font-size: 16px;
+    line-height: 1;
+    color: var(--accent);
 }
 
 .toggleChevron {
-  font-size: 0.625rem;
-  opacity: 0.7;
+    font-size: 0.625rem;
+    opacity: 0.7;
+}
+
+@media (max-width: 980px) {
+    .root {
+        right: 0.9rem;
+        bottom: calc(0.9rem + env(safe-area-inset-bottom, 0px));
+    }
+
+    .toggleBtn {
+        width: 44px;
+        height: 44px;
+        padding: 0;
+        justify-content: center;
+        border-radius: 50%;
+    }
+
+    .toggleLabel,
+    .toggleChevron {
+        display: none;
+    }
+
+    .toggleIcon {
+        font-size: 20px;
+    }
 }
