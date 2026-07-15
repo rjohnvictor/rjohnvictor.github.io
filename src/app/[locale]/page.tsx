@@ -12,6 +12,7 @@ import Manifesto from '@/components/Manifesto';
 import Philosophy from '@/components/Philosophy';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
+import ScrollNavigator from '@/components/ScrollNavigator';
 
 export default async function LocalePage({
     params,
@@ -37,6 +38,7 @@ export default async function LocalePage({
                 <Philosophy dict={dict} />
                 <Contact dict={dict} />
             </main>
+            <ScrollNavigator />
             <Footer dict={dict} />
         </>
     );

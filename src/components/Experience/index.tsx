@@ -102,7 +102,6 @@ function ExperienceEnergyTimeline({ dict }: Props) {
                             >
                                 {/* Timeline column */}
                                 <div className={styles.timelineColumn}>
-                                    <div className={styles.timelineNode} />
                                     {!isLast && (
                                         <div
                                             className={styles.timelineConnector}

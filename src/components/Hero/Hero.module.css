@@ -1,7 +1,12 @@
 /* ─── Shared keyframes ─────────────────────────────────────── */
 @keyframes hero-pulse {
-    0%, 100% { opacity: 0.3; }
-    50% { opacity: 1; }
+    0%,
+    100% {
+        opacity: 0.3;
+    }
+    50% {
+        opacity: 1;
+    }
 }
 
 /* ─── Professional variant ─────────────────────────────────── */
@@ -24,10 +29,33 @@
 .professionalContent {
     position: relative;
     z-index: 1;
+    width: min(100%, 1120px);
+    border-radius: 18px;
+    padding: clamp(1rem, 2vw, 1.5rem);
+    background: linear-gradient(
+        160deg,
+        rgba(130, 186, 255, 0.22) 0%,
+        rgba(80, 133, 238, 0.2) 30%,
+        rgba(24, 40, 88, 0.38) 62%,
+        rgba(8, 16, 38, 0.62) 100%
+    );
+    border: 1px solid rgba(126, 180, 255, 0.28);
+    box-shadow:
+        0 14px 42px rgba(2, 10, 30, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.14);
+    backdrop-filter: blur(10px) saturate(120%);
+    -webkit-backdrop-filter: blur(10px) saturate(120%);
 }
 
 .professionalInner {
     max-width: 720px;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    padding: 0;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    box-shadow: none;
 }
 
 .professionalGreeting {
@@ -81,7 +109,9 @@
     font-weight: 600;
     font-size: 0.9375rem;
     text-decoration: none;
-    transition: opacity 0.2s, transform 0.2s;
+    transition:
+        opacity 0.2s,
+        transform 0.2s;
 }
 
 .professionalCtaPrimary:hover {
@@ -101,7 +131,9 @@
     font-weight: 600;
     font-size: 0.9375rem;
     text-decoration: none;
-    transition: border-color 0.2s, transform 0.2s;
+    transition:
+        border-color 0.2s,
+        transform 0.2s;
 }
 
 .professionalCtaSecondary:hover {
@@ -146,7 +178,11 @@
 .powerVignette {
     position: absolute;
     inset: 0;
-    background: radial-gradient(ellipse 70% 60% at 50% 50%, transparent 30%, rgba(0, 0, 5, 0.7) 100%);
+    background: radial-gradient(
+        ellipse 70% 60% at 50% 50%,
+        transparent 30%,
+        rgba(0, 0, 5, 0.7) 100%
+    );
     pointer-events: none;
 }
 
@@ -157,6 +193,22 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
+    width: min(100%, 1100px);
+    background: linear-gradient(
+        160deg,
+        rgba(252, 207, 109, 0.14) 0%,
+        rgba(191, 95, 255, 0.24) 36%,
+        rgba(79, 14, 133, 0.42) 72%,
+        rgba(8, 0, 24, 0.62) 100%
+    );
+    border: 1px solid rgba(191, 95, 255, 0.32);
+    border-radius: 16px;
+    padding: clamp(1.2rem, 2.5vw, 2rem);
+    backdrop-filter: blur(9px);
+    -webkit-backdrop-filter: blur(9px);
+    box-shadow:
+        0 12px 40px rgba(0, 0, 0, 0.34),
+        inset 0 1px 0 rgba(255, 255, 255, 0.12);
 }
 
 .powerGreeting {
@@ -175,7 +227,13 @@
     line-height: 0.95;
     letter-spacing: -0.04em;
     margin-bottom: 1.5rem;
-    background: linear-gradient(135deg, #ffffff 0%, #fde68a 25%, #bf5fff 65%, #5b21b6 100%);
+    background: linear-gradient(
+        135deg,
+        #ffffff 0%,
+        #fde68a 25%,
+        #bf5fff 65%,
+        #5b21b6 100%
+    );
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -218,12 +276,18 @@
     text-decoration: none;
     letter-spacing: 0.05em;
     text-transform: uppercase;
-    box-shadow: 0 0 24px rgba(191, 95, 255, 0.45), 0 0 48px rgba(191, 95, 255, 0.2);
-    transition: box-shadow 0.2s, transform 0.2s;
+    box-shadow:
+        0 0 24px rgba(191, 95, 255, 0.45),
+        0 0 48px rgba(191, 95, 255, 0.2);
+    transition:
+        box-shadow 0.2s,
+        transform 0.2s;
 }
 
 .powerCtaPrimary:hover {
-    box-shadow: 0 0 40px rgba(191, 95, 255, 0.75), 0 0 80px rgba(191, 95, 255, 0.3);
+    box-shadow:
+        0 0 40px rgba(191, 95, 255, 0.75),
+        0 0 80px rgba(191, 95, 255, 0.3);
     transform: translateY(-3px);
 }
 
@@ -241,7 +305,10 @@
     text-decoration: none;
     letter-spacing: 0.05em;
     text-transform: uppercase;
-    transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+    transition:
+        border-color 0.2s,
+        box-shadow 0.2s,
+        transform 0.2s;
 }
 
 .powerCtaSecondary:hover {
@@ -302,10 +369,33 @@
 .zenContent {
     position: relative;
     z-index: 1;
+    width: min(100%, 880px);
+    border-radius: 16px;
+    padding: clamp(0.9rem, 2vw, 1.3rem);
+    background: linear-gradient(
+        160deg,
+        rgba(181, 224, 177, 0.16) 0%,
+        rgba(82, 138, 81, 0.2) 35%,
+        rgba(26, 48, 22, 0.34) 68%,
+        rgba(12, 20, 10, 0.56) 100%
+    );
+    border: 1px solid rgba(132, 208, 150, 0.26);
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.24),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px) saturate(115%);
+    -webkit-backdrop-filter: blur(8px) saturate(115%);
 }
 
 .zenInner {
     max-width: 520px;
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    padding: 0;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    box-shadow: none;
 }
 
 .zenGreeting {
@@ -365,7 +455,9 @@
     text-decoration: none;
     border-bottom: 1px solid var(--border);
     padding-bottom: 2px;
-    transition: border-color 0.2s, color 0.2s;
+    transition:
+        border-color 0.2s,
+        color 0.2s;
 }
 
 .zenLinkPrimary:hover {
@@ -379,7 +471,9 @@
     text-decoration: none;
     border-bottom: 1px solid var(--border);
     padding-bottom: 2px;
-    transition: border-color 0.2s, color 0.2s;
+    transition:
+        border-color 0.2s,
+        color 0.2s;
 }
 
 .zenLinkSecondary:hover {
@@ -411,4 +505,185 @@
     height: 40px;
     background: linear-gradient(to bottom, var(--text-muted), transparent);
     animation: hero-pulse 2s ease-in-out infinite;
+}
+
+@media (max-width: 768px) {
+    .professionalSection,
+    .powerSection,
+    .zenSection {
+        min-height: auto;
+        padding: 5.75rem 0 6.25rem;
+    }
+
+    .professionalContent,
+    .powerContent,
+    .zenContent {
+        width: 100%;
+        border-radius: 12px;
+        padding: 1rem;
+    }
+
+    .professionalInner,
+    .zenInner {
+        max-width: none;
+    }
+
+    .professionalGreeting,
+    .powerGreeting,
+    .zenGreeting {
+        margin-bottom: 1rem;
+    }
+
+    .professionalName,
+    .powerName,
+    .zenName {
+        margin-bottom: 0.85rem;
+        line-height: 1.02;
+    }
+
+    .professionalTitle,
+    .powerTitle,
+    .zenTitle {
+        margin-bottom: 1.25rem;
+    }
+
+    .professionalSummary,
+    .powerSummary,
+    .zenSummary {
+        max-width: none;
+        margin-bottom: 1.5rem;
+        line-height: 1.55;
+    }
+
+    .professionalTitle {
+        color: rgba(230, 237, 243, 0.9);
+        text-shadow: 0 1px 10px rgba(4, 10, 24, 0.32);
+    }
+
+    .professionalSummary {
+        color: rgba(230, 237, 243, 0.88);
+        text-shadow: 0 1px 8px rgba(4, 10, 24, 0.28);
+    }
+
+    .powerTitle {
+        color: rgba(242, 238, 255, 0.92);
+        text-shadow: 0 1px 10px rgba(26, 6, 44, 0.34);
+    }
+
+    .powerSummary {
+        color: rgba(242, 238, 255, 0.9);
+        text-shadow: 0 1px 9px rgba(26, 6, 44, 0.3);
+    }
+
+    .zenTitle {
+        color: rgba(230, 240, 226, 0.94);
+        text-shadow: 0 1px 8px rgba(8, 14, 7, 0.26);
+    }
+
+    .zenSummary {
+        color: rgba(230, 240, 226, 0.9);
+        text-shadow: 0 1px 8px rgba(8, 14, 7, 0.24);
+    }
+
+    .professionalCtas,
+    .powerCtas,
+    .zenLinks {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.75rem;
+    }
+
+    .professionalCtaPrimary,
+    .professionalCtaSecondary,
+    .powerCtaPrimary,
+    .powerCtaSecondary,
+    .zenLinkPrimary,
+    .zenLinkSecondary {
+        width: 100%;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .professionalStats,
+    .powerStats {
+        width: 100%;
+        margin-top: 1.9rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem 1.2rem;
+    }
+
+    .professionalStatValue,
+    .powerStatValue {
+        margin-bottom: 0.2rem;
+    }
+
+    .professionalStatLabel,
+    .powerStatLabel {
+        letter-spacing: 0.06em;
+        font-size: 0.7rem;
+        color: rgba(230, 237, 243, 0.62);
+        text-shadow: 0 1px 6px rgba(4, 10, 24, 0.3);
+    }
+
+    .powerStatLabel {
+        color: rgba(242, 238, 255, 0.66);
+        text-shadow: 0 1px 6px rgba(26, 6, 44, 0.3);
+    }
+
+    .powerStatDivider {
+        display: none;
+    }
+
+    .scrollIndicator {
+        display: none;
+    }
+
+    .powerContent {
+        background: linear-gradient(
+            165deg,
+            rgba(252, 207, 109, 0.16) 0%,
+            rgba(191, 95, 255, 0.3) 38%,
+            rgba(8, 0, 24, 0.72) 100%
+        );
+    }
+
+    .professionalContent {
+        background: linear-gradient(
+            165deg,
+            rgba(130, 186, 255, 0.24) 0%,
+            rgba(80, 133, 238, 0.22) 30%,
+            rgba(8, 16, 38, 0.72) 100%
+        );
+    }
+
+    .zenContent {
+        background: linear-gradient(
+            165deg,
+            rgba(181, 224, 177, 0.18) 0%,
+            rgba(82, 138, 81, 0.22) 35%,
+            rgba(12, 20, 10, 0.66) 100%
+        );
+    }
+}
+
+@media (max-width: 480px) {
+    .professionalCtas,
+    .powerCtas,
+    .zenLinks {
+        grid-template-columns: 1fr;
+    }
+
+    .professionalStats,
+    .powerStats {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.85rem;
+    }
+
+    .professionalContent,
+    .powerContent,
+    .zenContent {
+        padding: 0.9rem;
+    }
 }
