@@ -25,7 +25,8 @@ const lora = Lora({ variable: '--font-lora', subsets: ['latin'] });
 const materialSymbols = localFont({
     src: '../../../public/fonts/MaterialSymbolsOutlined.ttf',
     variable: '--font-material-symbols',
-    display: 'optional',
+    display: 'swap',
+    preload: true,
 });
 
 const BASE_URL = 'https://www.rjohnvictor.com';
