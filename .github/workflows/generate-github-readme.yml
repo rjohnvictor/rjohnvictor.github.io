@@ -16,6 +16,10 @@ on:
             - templates/github-readme.template.md
     workflow_dispatch:
 
+concurrency:
+    group: generate-github-readme-main
+    cancel-in-progress: false
+
 permissions:
     contents: write
     pull-requests: write
