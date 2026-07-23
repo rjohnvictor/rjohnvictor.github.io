@@ -7,6 +7,10 @@ on:
             - GITHUB_README.md
     workflow_dispatch:
 
+concurrency:
+    group: create-profile-readme-pr
+    cancel-in-progress: true
+
 permissions:
     contents: read
 
@@ -57,9 +61,11 @@ jobs:
                   TITLE="chore: sync profile README from portfolio"
                   BODY="Automated PR from portfolio repository after README generation."
 
-                  git checkout -B "$BRANCH"
+                  git fetch origin "$BRANCH" || true
+                  git fetch origin main
+                  git checkout -B "$BRANCH" origin/main
                   git add README.md
-                  git commit -m "$TITLE"
+                  git commit -m "$TITLE" || echo "No commit needed"
                   git push --force-with-lease origin "$BRANCH"
 
                   PR_NUMBER=$(gh pr list \
