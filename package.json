@@ -6,7 +6,9 @@
         "dev": "next dev --turbopack",
         "build": "next build --turbopack",
         "start": "next start",
-        "lint": "eslint"
+        "lint": "eslint",
+        "generate:github-readme": "node scripts/generate-github-readme.mjs",
+        "check:github-readme": "node scripts/generate-github-readme.mjs --check"
     },
     "dependencies": {
         "@emotion/react": "^11.14.0",

@@ -1,0 +1,83 @@
+name: Create Profile README PR
+
+on:
+    push:
+        branches: [main]
+        paths:
+            - GITHUB_README.md
+    workflow_dispatch:
+
+permissions:
+    contents: read
+
+jobs:
+    create-pr:
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Create GitHub App token
+              id: app-token
+              uses: actions/create-github-app-token@v1
+              with:
+                  app-id: ${{ secrets.WORKFLOW_APP_ID }}
+                  private-key: ${{ secrets.WORKFLOW_APP_PRIVATE_KEY }}
+                  owner: rjohnvictor
+                  repositories: rjohnvictor
+
+            - name: Checkout portfolio repo
+              uses: actions/checkout@v4
+              with:
+                  path: portfolio
+
+            - name: Checkout profile repo
+              uses: actions/checkout@v4
+              with:
+                  repository: rjohnvictor/rjohnvictor
+                  token: ${{ steps.app-token.outputs.token }}
+                  path: profile
+
+            - name: Copy generated README
+              run: cp portfolio/GITHUB_README.md profile/README.md
+
+            - name: Create or update pull request in profile repo
+              env:
+                  GH_TOKEN: ${{ steps.app-token.outputs.token }}
+              run: |
+                  cd profile
+
+                  if git diff --quiet -- README.md; then
+                    echo "Profile README already up to date"
+                    exit 0
+                  fi
+
+                  git config user.name "github-actions[bot]"
+                  git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+                  BRANCH="chore/sync-profile-readme"
+                  TITLE="chore: sync profile README from portfolio"
+                  BODY="Automated PR from portfolio repository after README generation."
+
+                  git checkout -B "$BRANCH"
+                  git add README.md
+                  git commit -m "$TITLE"
+                  git push --force-with-lease origin "$BRANCH"
+
+                  PR_NUMBER=$(gh pr list \
+                    --repo rjohnvictor/rjohnvictor \
+                    --head "$BRANCH" \
+                    --json number \
+                    --jq '.[0].number')
+
+                  if [ -n "$PR_NUMBER" ]; then
+                    gh pr edit "$PR_NUMBER" \
+                      --repo rjohnvictor/rjohnvictor \
+                      --title "$TITLE" \
+                      --body "$BODY"
+                  else
+                    gh pr create \
+                      --repo rjohnvictor/rjohnvictor \
+                      --base main \
+                      --head "$BRANCH" \
+                      --title "$TITLE" \
+                      --body "$BODY"
+                  fi
