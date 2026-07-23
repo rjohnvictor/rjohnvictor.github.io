@@ -3,12 +3,6 @@ name: Generate GitHub README (Human in the Loop)
 on:
     push:
         branches: [main]
-        paths:
-            - messages/en.json
-            - src/data/portfolio/**
-            - scripts/generate-github-readme.mjs
-            - templates/github-readme.template.md
-            - .github/workflows/generate-github-readme.yml
     pull_request:
         paths:
             - messages/en.json
