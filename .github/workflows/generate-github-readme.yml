@@ -61,8 +61,9 @@ jobs:
 
                   git checkout -B "$BRANCH"
                   git add GITHUB_README.md
+                  git diff --cached --quiet && echo "No staged changes" && exit 0
                   git commit -m "$TITLE"
-                  git push --force-with-lease origin "$BRANCH"
+                  git push -u origin "$BRANCH"
 
                   PR_NUMBER=$(gh pr list \
                     --repo rjohnvictor/rjohnvictor.github.io \
