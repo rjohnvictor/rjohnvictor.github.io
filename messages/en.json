@@ -145,15 +145,16 @@
                 "role": "Solutions Engineer Level 4",
                 "progression": "Intern -> Junior Engineer -> Junior Solutions Engineer -> Solutions Engineer Level 1 -> Level 2 -> Level 3 -> Level 4",
                 "bullets": [
-                    "Led architecture and delivery of enterprise dashboard solutions and API platforms.",
-                    "Owned projects through the complete software development lifecycle from solution design to production operations.",
-                    "Mentored engineers and interns through technical workshops and day-to-day delivery support.",
-                    "Conducted technical sessions on Git, GitHub, Docker, Kubernetes, CI/CD, and cloud-native engineering.",
-                    "Participated in technical interviews and hiring panels.",
-                    "Migrated CI/CD from Drone to GitHub Actions with reusable workflows.",
-                    "Introduced GitOps practices using ArgoCD, Helm, and Kustomize.",
-                    "Led security improvements and large-scale framework migrations.",
-                    "Represent the engineering team through knowledge sharing, internal initiatives, and participation in the company cultural committee."
+                    "Lead end-to-end delivery of enterprise applications and custom solutions, overseeing architecture, implementation, deployment, and production support.",
+                    "Drive Agile project execution by defining technical roadmaps, planning deliverables, coordinating cross-functional teams, and ensuring successful project outcomes.",
+                    "Collaborate with engineering, product, UX/UI, sales, and customer-facing teams to translate business requirements into scalable technical solutions.",
+                    "Serve as the technical lead for strategic initiatives, guiding implementation, resolving complex engineering challenges, and ensuring alignment with project milestones.",
+                    "Lead architecture discussions, establish engineering best practices, conduct code reviews, and maintain high standards for quality, scalability, and maintainability.",
+                    "Champion DevOps and cloud-native engineering by improving CI/CD pipelines, deployment automation, infrastructure reliability, and developer workflows.",
+                    "Drive framework modernization, platform migrations, security enhancements, and performance optimizations across enterprise applications.",
+                    "Mentor engineers and interns through technical guidance, design reviews, workshops, and day-to-day engineering support.",
+                    "Contribute to project planning, technical estimation, roadmap definition, and cross-team coordination to align engineering execution with business objectives.",
+                    "Partner with stakeholders to evaluate emerging technologies, AI capabilities, and engineering best practices to continuously improve product delivery."
                 ]
             }
         }
