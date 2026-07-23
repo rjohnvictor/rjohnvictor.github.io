@@ -18,6 +18,7 @@ on:
 
 permissions:
     contents: write
+    pull-requests: write
 
 jobs:
     generate:
@@ -35,18 +36,48 @@ jobs:
             - name: Generate README
               run: npm run generate:github-readme
 
-            - name: Commit generated README
+            - name: Create or update PR for generated README
               if: github.event_name == 'push'
+              env:
+                  GH_TOKEN: ${{ github.token }}
               run: |
                   if git diff --quiet -- GITHUB_README.md; then
-                    echo "No changes to commit"
+                    echo "No generated README changes"
                     exit 0
                   fi
+
                   git config user.name "github-actions[bot]"
                   git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+                  BRANCH="chore/sync-generated-github-readme"
+                  TITLE="chore: sync generated GitHub README"
+                  BODY="Automated update of GITHUB_README.md from source content."
+
+                  git checkout -B "$BRANCH"
                   git add GITHUB_README.md
-                  git commit -m "chore: sync generated GitHub README"
-                  git push
+                  git commit -m "$TITLE"
+                  git push --force-with-lease origin "$BRANCH"
+
+                  PR_NUMBER=$(gh pr list \
+                    --repo rjohnvictor/rjohnvictor.github.io \
+                    --head "$BRANCH" \
+                    --base main \
+                    --json number \
+                    --jq '.[0].number')
+
+                  if [ -n "$PR_NUMBER" ]; then
+                    gh pr edit "$PR_NUMBER" \
+                      --repo rjohnvictor/rjohnvictor.github.io \
+                      --title "$TITLE" \
+                      --body "$BODY"
+                  else
+                    gh pr create \
+                      --repo rjohnvictor/rjohnvictor.github.io \
+                      --base main \
+                      --head "$BRANCH" \
+                      --title "$TITLE" \
+                      --body "$BODY"
+                  fi
 
             - name: Verify no drift on PR
               if: github.event_name == 'pull_request'
