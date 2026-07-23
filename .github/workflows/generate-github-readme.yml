@@ -1,4 +1,4 @@
-name: Generate GitHub README (PR Mode)
+name: Generate GitHub README (Human in the Loop)
 
 on:
     push:
@@ -18,13 +18,8 @@ on:
             - .github/workflows/generate-github-readme.yml
     workflow_dispatch:
 
-concurrency:
-    group: generate-github-readme-main
-    cancel-in-progress: false
-
 permissions:
-    contents: write
-    pull-requests: write
+    contents: read
 
 jobs:
     generate:
@@ -42,49 +37,20 @@ jobs:
             - name: Generate README
               run: npm run generate:github-readme
 
-            - name: Create or update PR for generated README
-              if: github.event_name == 'push'
-              env:
-                  GH_TOKEN: ${{ github.token }}
+            - name: Upload generated README
+              uses: actions/upload-artifact@v4
+              with:
+                  name: generated-github-readme
+                  path: GITHUB_README.md
+
+            - name: Add human review instructions
               run: |
-                  if git diff --quiet -- GITHUB_README.md; then
-                    echo "No generated README changes"
-                    exit 0
-                  fi
-
-                  git config user.name "github-actions[bot]"
-                  git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-
-                  BRANCH="chore/sync-generated-github-readme"
-                  TITLE="chore: sync generated GitHub README"
-                  BODY="Automated update of GITHUB_README.md from source content."
-
-                  git checkout -B "$BRANCH"
-                  git add GITHUB_README.md
-                  git diff --cached --quiet && echo "No staged changes" && exit 0
-                  git commit -m "$TITLE"
-                  git push -u origin "$BRANCH"
-
-                  PR_NUMBER=$(gh pr list \
-                    --repo rjohnvictor/rjohnvictor.github.io \
-                    --head "$BRANCH" \
-                    --base main \
-                    --json number \
-                    --jq '.[0].number')
-
-                  if [ -n "$PR_NUMBER" ]; then
-                    gh pr edit "$PR_NUMBER" \
-                      --repo rjohnvictor/rjohnvictor.github.io \
-                      --title "$TITLE" \
-                      --body "$BODY"
-                  else
-                    gh pr create \
-                      --repo rjohnvictor/rjohnvictor.github.io \
-                      --base main \
-                      --head "$BRANCH" \
-                      --title "$TITLE" \
-                      --body "$BODY"
-                  fi
+                  {
+                    echo "### Human review required"
+                    echo ""
+                    echo "The workflow generated GITHUB_README.md and uploaded it as an artifact."
+                    echo "Review the artifact, then commit and push the file manually if the change looks correct."
+                  } >> "$GITHUB_STEP_SUMMARY"
 
             - name: Verify no drift on PR
               if: github.event_name == 'pull_request'
