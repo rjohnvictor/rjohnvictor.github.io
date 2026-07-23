@@ -1,4 +1,4 @@
-name: Generate GitHub README
+name: Generate GitHub README (PR Mode)
 
 on:
     push:
