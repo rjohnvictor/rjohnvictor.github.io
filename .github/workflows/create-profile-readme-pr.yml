@@ -1,6 +1,11 @@
 name: Create Profile README PR
 
 on:
+    workflow_run:
+        workflows:
+            - 'Generate GitHub README (Human in the Loop)'
+        types:
+            - completed
     push:
         branches: [main]
         paths:
@@ -13,10 +18,12 @@ concurrency:
 
 permissions:
     contents: read
+    actions: read
 
 jobs:
     create-pr:
         runs-on: ubuntu-latest
+        if: github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success'
 
         steps:
             - name: Create GitHub App token
@@ -39,6 +46,16 @@ jobs:
                   repository: rjohnvictor/rjohnvictor
                   token: ${{ steps.app-token.outputs.token }}
                   path: profile
+
+            - name: Download generated README artifact
+              if: github.event_name == 'workflow_run'
+              uses: actions/download-artifact@v4
+              with:
+                  name: generated-github-readme
+                  path: portfolio
+                  repository: ${{ github.repository }}
+                  run-id: ${{ github.event.workflow_run.id }}
+                  github-token: ${{ github.token }}
 
             - name: Copy generated README
               run: cp portfolio/GITHUB_README.md profile/README.md
