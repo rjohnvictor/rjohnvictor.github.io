@@ -8,12 +8,14 @@ on:
             - src/data/portfolio/**
             - scripts/generate-github-readme.mjs
             - templates/github-readme.template.md
+            - .github/workflows/generate-github-readme.yml
     pull_request:
         paths:
             - messages/en.json
             - src/data/portfolio/**
             - scripts/generate-github-readme.mjs
             - templates/github-readme.template.md
+            - .github/workflows/generate-github-readme.yml
     workflow_dispatch:
 
 concurrency:
