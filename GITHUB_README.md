@@ -1,4 +1,5 @@
 <!-- AUTO-GENERATED FILE. Source: messages/en.json + src/data/portfolio/*.ts -->
+
 <h1 align="center">Hello, I'm R. John Victor</h1>
 
 <h3 align="center">Solutions Engineer • Platform Engineer • UI/UX Engineer</h3>
@@ -6,26 +7,28 @@
 <p align="center">Building things that stand the test of time.</p>
 
 <p align="center">
-  <a href="https://www.linkedin.com/in/r-john-victor-295a6382">
-    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
+  <a href="https://github.com/rjohnvictor" aria-label="GitHub">
+    <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
   </a>
   &nbsp;
-  <a href="https://github.com/rjohnvictor">
-    <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github" alt="GitHub" />
+  <a href="https://www.linkedin.com/in/r-john-victor-295a6382" aria-label="LinkedIn">
+    <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
   </a>
   &nbsp;
-  <a href="mailto:johnvictor2406@gmail.com">
-    <img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
+  <a href="mailto:johnvictor2406@gmail.com" aria-label="Email">
+    <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
   </a>
   &nbsp;
-  <a href="https://rjohnvictor.com">
-    <img src="https://img.shields.io/badge/Website-Visit-000000?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Website" />
+  <a href="https://rjohnvictor.com" aria-label="Website">
+    <img src="https://img.shields.io/badge/Portfolio-111827?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Website" />
   </a>
 </p>
 
----
+<hr />
 
-## About
+<p align="center"><sub><strong>✦ About</strong></sub></p>
+
+## ✨ Engineer who cares about the craft.
 
 I'm R. John Victor, a Full Stack Software Engineer based in India with over 8 years of experience. I specialize in building web applications and cloud-native systems that are fast, maintainable, and built to last.
 
@@ -35,29 +38,39 @@ I believe great software comes from clarity of purpose, disciplined architecture
 
 ---
 
-## Skills
+<p align="center"><sub><strong>⚙️ Skills</strong></sub></p>
+
+## 🧠 What I work with.
 
 ### Frontend
+
 React • Next.js • Angular • TypeScript • JavaScript • HTML5 • CSS3 • MUI
 
 ### Backend
+
 Node.js • NestJS • Express • Golang • Python
 
 ### Cloud and DevOps
+
 AWS Services • Docker • Kubernetes • Terraform • GitHub Actions • CI/CD • OIDC • Linux
 
 ### Databases
+
 PostgreSQL • MySQL • MongoDB
 
 ### State and APIs
+
 NgRx • Redux • Zustand • TanStack Query • REST APIs • Auth & Authorization
 
 ### Interests
+
 AI / LLMs • RAG • LangChain • Platform Engineering • Distributed Systems
 
 ---
 
-## Experience
+<p align="center"><sub><strong>🧭 Experience</strong></sub></p>
+
+## 🏗️ Where I've worked.
 
 ### Meltwater
 Solutions Engineer Level 4 (May 2018 - Present)
@@ -79,7 +92,9 @@ Key contributions:
 
 ---
 
-## Impact delivered.
+<p align="center"><sub><strong>🏅 Achievements</strong></sub></p>
+
+## 🎯 Impact delivered.
 
 - Delivered and scaled 12+ dashboard and API solutions across enterprise products.
 - Built multiple dashboard-based solutions including IMDA, HONOR, Hotel Radisson Groups, Samvada and FWD programs.
@@ -94,7 +109,9 @@ Key contributions:
 
 ---
 
-## Education
+<p align="center"><sub><strong>🎓 Education</strong></sub></p>
+
+## 📚 Where I studied.
 
 - Master of Computer Applications (MCA), Computer Science - Christ University, Bangalore (65.67% - First Class)
 - Bachelor of Computer Application, Computer Science - Loyola College (80% - First Class with Distinction)
@@ -104,7 +121,9 @@ Key contributions:
 
 ---
 
-## Featured Work
+<p align="center"><sub><strong>🪄 Featured Work</strong></sub></p>
+
+## 💼 Flagship projects.
 
 ### 1) Network Graph Widget (2026)
 Introduced interactive relationship visualization into Meltwater's Unified Search platform.
@@ -182,7 +201,9 @@ GitHub Actions • Kubernetes • ArgoCD • Helm • Kustomize • AWS
 
 ---
 
-## Technical Contributions
+<p align="center"><sub><strong>🔧 Technical Contributions</strong></sub></p>
+
+## 🚀 Engineering contributions.
 
 ### Platform Engineering
 Drone CI -> GitHub Actions migration • Reusable GitHub Actions • GitOps adoption • ArgoCD • Helm • Kustomize • Kubernetes • Secrets Management • OIDC Authentication
@@ -198,22 +219,27 @@ Dependency upgrades • Security fixes • Framework migrations • Production h
 
 ---
 
-## Manifesto
+<p align="center"><sub><strong>🗣️ Manifesto</strong></sub></p>
 
-Resilience. Journey. Vision.
+## 🧱 Resilience. Journey. Vision.
 
 ### 1) Resilience
+
 Software is messy. Requirements change, systems fail, deadlines slip. What separates great engineers is how they respond — with methodical thinking, grit, and a bias for action.
 
 ### 2) Journey
+
 I don't believe in destinations. Every project, every bug, every late-night debugging session is a step forward. The engineer I am today exists because I stayed curious and kept building.
 
 ### 3) Vision
+
 Code is the easy part. Seeing three years ahead — knowing which abstractions will hold, which shortcuts will cost you — that's the hard part. I build with the long game in mind.
 
 ---
 
-## Engineering Philosophy
+<p align="center"><sub><strong>🧠 Engineering Philosophy</strong></sub></p>
+
+## 🌿 How I think about software.
 
 - Clean Architecture: Separation of concerns at every layer. Business logic should never bleed into transport or persistence layers.
 - Type Safety: TypeScript end-to-end. Types are documentation that the compiler enforces.
@@ -224,17 +250,41 @@ Code is the easy part. Seeing three years ahead — knowing which abstractions w
 
 ---
 
-## Beyond Code
+<p align="center"><sub><strong>🌌 Beyond Code</strong></sub></p>
+
+## 🎬 Beyond Code
 
 Outside engineering, I enjoy mechanical watches, photography, fitness, and character-driven storytelling.
 
 ---
 
-## Contact
+<p align="center"><sub><strong>📫 Contact</strong></sub></p>
 
-- LinkedIn: https://www.linkedin.com/in/r-john-victor-295a6382
-- Portfolio: https://rjohnvictor.com
-- Email: johnvictor2406@gmail.com
-- GitHub: https://github.com/rjohnvictor
+## 🤝 Let's work together.
+
+<p align="center">
+  <a href="https://www.linkedin.com/in/r-john-victor-295a6382" aria-label="LinkedIn">
+    <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
+  </a>
+  &nbsp;&nbsp;
+  <a href="https://github.com/rjohnvictor" aria-label="GitHub">
+    <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" alt="GitHub" />
+  </a>
+  &nbsp;&nbsp;
+  <a href="mailto:johnvictor2406@gmail.com" aria-label="Email">
+    <img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" />
+  </a>
+  &nbsp;&nbsp;
+  <a href="https://rjohnvictor.com" aria-label="Website">
+    <img src="https://img.shields.io/badge/Portfolio-111827?style=for-the-badge&logo=googlechrome&logoColor=white" alt="Website" />
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://www.linkedin.com/in/r-john-victor-295a6382">LinkedIn</a> ·
+  <a href="https://github.com/rjohnvictor">GitHub</a> ·
+  <a href="mailto:johnvictor2406@gmail.com">Email</a> ·
+  <a href="https://rjohnvictor.com">Portfolio</a>
+</p>
 
 <p align="center"><strong>Building things that stand the test of time.</strong></p>
