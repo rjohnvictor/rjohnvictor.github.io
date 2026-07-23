@@ -36,6 +36,12 @@ const SEO_TITLE =
     'R John Victor | Solutions Engineer | Full Stack, Platform & Cloud Engineer';
 const DESCRIPTION =
     'R John Victor is a Solutions Engineer with 8+ years of experience building enterprise software, cloud-native platforms, and scalable full-stack applications using React, Next.js, NestJS, Go, AWS, Kubernetes, and TypeScript.';
+const SOCIAL_IMAGE_PATH = '/opengraph-image';
+const SOCIAL_IMAGE_FALLBACK_PATH = '/og-fallback.png';
+const SOCIAL_IMAGE_URL = `${BASE_URL}${SOCIAL_IMAGE_PATH}`;
+const SOCIAL_IMAGE_FALLBACK_URL = `${BASE_URL}${SOCIAL_IMAGE_FALLBACK_PATH}`;
+const SOCIAL_IMAGE_ALT =
+    'R John Victor - Solutions Engineer, Full Stack, Platform and Cloud Engineer';
 
 export async function generateStaticParams() {
     return [{ locale: 'en' }, { locale: 'hi' }, { locale: 'ta' }];
@@ -109,12 +115,41 @@ export async function generateMetadata({
             siteName: BRAND_NAME,
             locale: 'en_US',
             type: 'website',
+            images: [
+                {
+                    url: SOCIAL_IMAGE_FALLBACK_URL,
+                    width: 512,
+                    height: 512,
+                    alt: SOCIAL_IMAGE_ALT,
+                },
+                {
+                    url: SOCIAL_IMAGE_URL,
+                    width: 1200,
+                    height: 630,
+                    alt: SOCIAL_IMAGE_ALT,
+                },
+            ],
         },
         twitter: {
             card: 'summary_large_image',
             title: SEO_TITLE,
             description: DESCRIPTION,
+            site: '@rjohnvictor',
             creator: '@rjohnvictor',
+            images: [SOCIAL_IMAGE_FALLBACK_URL, SOCIAL_IMAGE_URL],
+        },
+        category: 'technology',
+        other: {
+            'og:image:alt': SOCIAL_IMAGE_ALT,
+            'og:image:secure_url': SOCIAL_IMAGE_FALLBACK_URL,
+            'og:image:type': 'image/png',
+            'og:image:width': '512',
+            'og:image:height': '512',
+            'twitter:image:alt': SOCIAL_IMAGE_ALT,
+            'twitter:domain': 'rjohnvictor.com',
+            'theme-color': '#0f172a',
+            'apple-mobile-web-app-capable': 'yes',
+            'apple-mobile-web-app-status-bar-style': 'black-translucent',
         },
         alternates: {
             canonical: `${BASE_URL}/${canonicalLocale}`,
