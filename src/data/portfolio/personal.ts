@@ -2,7 +2,7 @@ import { HERO } from './hero';
 
 export const PERSONAL = {
     name: HERO.name,
-    profileImage: 'https://avatars.githubusercontent.com/rjohnvictor?v=4',
+    profileImage: 'https://avatars.githubusercontent.com/rjohnvictor?v=5',
     location: 'India',
     locationMapQuery: 'India',
     yearsExperience: 8,
