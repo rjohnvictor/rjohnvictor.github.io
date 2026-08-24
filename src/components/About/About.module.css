@@ -443,16 +443,19 @@
 
     .profilePreviewPanel {
         width: min(420px, calc(100vw - 1rem));
+        max-height: calc(100dvh - 1.5rem);
+        overflow-y: auto;
         padding: 0.62rem;
     }
 
     .profileCardPopup {
-        --card-height: 380px;
-        width: 210px;
+        width: min(210px, calc(100vw - 6rem));
+        height: auto;
+        aspect-ratio: 272 / 480;
     }
 
     .profilePopupFlipControls {
-        width: min(100%, 310px);
+        width: min(100%, calc(100vw - 1.5rem));
     }
 }
 
