@@ -162,11 +162,298 @@
 
 .profileCard {
     --card-height: 248px;
+    --pc-face-bg: linear-gradient(
+        150deg,
+        #102030 0%,
+        #1c3248 44%,
+        #0b1520 100%
+    );
+    --pc-face-inset-top: rgba(207, 229, 255, 0.3);
+    --pc-face-inset-bottom: rgba(6, 21, 36, 0.84);
+    --pc-theme-ring: 0 0 0 rgba(0, 0, 0, 0);
+    --pc-name: #e8f2ff;
+    --pc-hp: #8ec9ff;
+    --pc-frame-border: rgba(99, 162, 224, 0.52);
+    --pc-frame-bg: #091422;
+    --pc-overlay-1: rgba(88, 166, 255, 0.14);
+    --pc-overlay-2: rgba(56, 139, 253, 0.18);
+    --pc-overlay-3: rgba(11, 38, 68, 0.16);
+    --pc-inner-border: rgba(99, 162, 224, 0.42);
+    --pc-heading: #d7eaff;
+    --pc-row-border: rgba(99, 162, 224, 0.24);
+    --pc-label: #a7d3ff;
+    --pc-value: #e7f2ff;
+    --pc-hint: #c3ddff;
+    --pc-pill-border: rgba(99, 162, 224, 0.52);
+    --pc-pill-text: #d8ebff;
+    --pc-pill-bg: rgba(12, 35, 61, 0.74);
+    --pc-pill-hover-bg: rgba(20, 51, 86, 0.86);
+    --pc-view-border: rgba(99, 162, 224, 0.62);
+    --pc-view-text: #d9edff;
+    --pc-view-bg: rgba(11, 26, 45, 0.88);
+    --pc-view-hover-bg: rgba(18, 43, 70, 0.9);
     position: relative;
     width: 182px;
     height: var(--card-height);
     perspective: 1200px;
     touch-action: manipulation;
+}
+
+:global([data-theme='power']) .profileCard {
+    --pc-face-bg: linear-gradient(
+        150deg,
+        #19002e 0%,
+        #30005f 44%,
+        #0d0018 100%
+    );
+    --pc-face-inset-top: rgba(245, 226, 255, 0.22);
+    --pc-face-inset-bottom: rgba(18, 0, 34, 0.84);
+    --pc-theme-ring: 0 0 0 1px color-mix(in srgb, var(--accent) 42%, #fbbf24);
+    --pc-name: #f8ecff;
+    --pc-hp: #ffd166;
+    --pc-frame-border: rgba(191, 95, 255, 0.52);
+    --pc-frame-bg: #120022;
+    --pc-overlay-1: rgba(191, 95, 255, 0.16);
+    --pc-overlay-2: rgba(139, 0, 212, 0.2);
+    --pc-overlay-3: rgba(251, 191, 36, 0.14);
+    --pc-inner-border: rgba(191, 95, 255, 0.42);
+    --pc-heading: #f3dcff;
+    --pc-row-border: rgba(191, 95, 255, 0.24);
+    --pc-label: #d79cff;
+    --pc-value: #f8edff;
+    --pc-hint: #e7c5ff;
+    --pc-pill-border: rgba(191, 95, 255, 0.52);
+    --pc-pill-text: #f7e9ff;
+    --pc-pill-bg: rgba(34, 0, 64, 0.76);
+    --pc-pill-hover-bg: rgba(52, 0, 97, 0.86);
+    --pc-view-border: rgba(191, 95, 255, 0.64);
+    --pc-view-text: #f6e8ff;
+    --pc-view-bg: rgba(25, 0, 46, 0.9);
+    --pc-view-hover-bg: rgba(45, 0, 82, 0.92);
+}
+
+:global([data-theme='zen']) .profileCard {
+    --pc-face-bg: linear-gradient(
+        148deg,
+        #132117 0%,
+        #203726 46%,
+        #0d170f 100%
+    );
+    --pc-face-inset-top: rgba(223, 247, 221, 0.22);
+    --pc-face-inset-bottom: rgba(9, 22, 12, 0.82);
+    --pc-theme-ring: 0 0 0 rgba(0, 0, 0, 0);
+    --pc-name: #e7f4e1;
+    --pc-hp: #a5e7b8;
+    --pc-frame-border: rgba(118, 176, 112, 0.5);
+    --pc-frame-bg: #0e1911;
+    --pc-overlay-1: rgba(134, 239, 172, 0.12);
+    --pc-overlay-2: rgba(74, 222, 128, 0.16);
+    --pc-overlay-3: rgba(35, 73, 39, 0.14);
+    --pc-inner-border: rgba(118, 176, 112, 0.4);
+    --pc-heading: #d6edd0;
+    --pc-row-border: rgba(118, 176, 112, 0.2);
+    --pc-label: #9dd495;
+    --pc-value: #e5f3e1;
+    --pc-hint: #bcdcb5;
+    --pc-pill-border: rgba(118, 176, 112, 0.52);
+    --pc-pill-text: #d7edd2;
+    --pc-pill-bg: rgba(19, 39, 22, 0.74);
+    --pc-pill-hover-bg: rgba(30, 58, 35, 0.84);
+    --pc-view-border: rgba(118, 176, 112, 0.62);
+    --pc-view-text: #d8eed3;
+    --pc-view-bg: rgba(14, 30, 17, 0.88);
+    --pc-view-hover-bg: rgba(24, 49, 29, 0.9);
+}
+
+.profileViewFull {
+    position: absolute;
+    right: 8px;
+    bottom: 8px;
+    z-index: 4;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border: 1px solid var(--pc-view-border);
+    border-radius: 999px;
+    padding: 0;
+    color: var(--pc-view-text);
+    background: var(--pc-view-bg);
+    font-family: var(--font-geist-mono);
+    font-size: 0.5rem;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    backdrop-filter: blur(2px);
+    cursor: pointer;
+}
+
+.profileViewFullIcon {
+    font-size: 0.95rem;
+    line-height: 1;
+}
+
+.profileViewFull:hover {
+    background: var(--pc-view-hover-bg);
+}
+
+.profileViewFull:focus-visible {
+    outline: 2px solid color-mix(in srgb, var(--accent) 58%, #ffd9c1);
+    outline-offset: 1px;
+}
+
+.profilePreviewOverlay {
+    position: fixed;
+    inset: 0;
+    z-index: 60;
+    display: grid;
+    place-items: center;
+    background: rgba(3, 5, 8, 0.84);
+    backdrop-filter: blur(4px);
+    padding: 1.25rem;
+}
+
+.profilePreviewPanel {
+    position: relative;
+    width: min(560px, calc(100vw - 2.5rem));
+    border: 1px solid var(--pc-frame-border);
+    border-radius: 14px;
+    background: transparent;
+    box-shadow: none;
+    padding: 0.9rem;
+}
+
+.profilePreviewCardWrap {
+    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    display: grid;
+    place-items: center;
+}
+
+.profileCardPopup {
+    --card-height: 480px;
+    width: 272px;
+    cursor: default;
+}
+
+.profileCardPopup .profileCardFlipper.isFlipped {
+    transform: rotateY(180deg);
+}
+
+.profileCardPopup .profileFace {
+    padding: 11px 11px 14px;
+    border-radius: 16px;
+}
+
+.profileCardPopup .profileFrame {
+    height: auto;
+    aspect-ratio: 2 / 3;
+    border-radius: 12px;
+}
+
+.profileCardPopup .profileName {
+    font-size: 0.76rem;
+}
+
+.profileCardPopup .profileHp {
+    font-size: 0.72rem;
+}
+
+.profileCardPopup .profileTitle {
+    font-size: 0.68rem;
+}
+
+.profileCardPopup .profileBackHeading {
+    font-size: 0.72rem;
+}
+
+.profileCardPopup .profileBackLabel {
+    font-size: 0.62rem;
+}
+
+.profileCardPopup .profileBackValue {
+    font-size: 0.66rem;
+}
+
+.profileCardPopup .profileBackHint {
+    font-size: 0.58rem;
+}
+
+.profileCardPopup .profileLocationMap {
+    font-size: 0.62rem;
+    padding: 0.2rem 0.56rem;
+}
+
+.profilePopupFlipControls {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: min(100%, 390px);
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+}
+
+.profilePopupFlipButton {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border: 1px solid var(--pc-pill-border);
+    border-radius: 999px;
+    padding: 0;
+    color: var(--pc-pill-text);
+    background: var(--pc-pill-bg);
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+.profilePopupFlipButton[aria-pressed='true'] {
+    border-color: color-mix(in srgb, var(--accent) 58%, var(--pc-pill-border));
+    box-shadow: 0 0 0 1px color-mix(in srgb, var(--accent) 30%, transparent);
+    background: color-mix(in srgb, var(--pc-pill-bg) 65%, var(--accent) 35%);
+}
+
+.profilePopupFlipButton:hover {
+    background: var(--pc-pill-hover-bg);
+}
+
+.profilePopupFlipButton:focus-visible {
+    outline: 2px solid color-mix(in srgb, var(--accent) 62%, #ffffff);
+    outline-offset: 1px;
+}
+
+.profilePopupFlipIcon {
+    font-size: 1.45rem;
+    line-height: 1;
+}
+
+@media (max-width: 768px) {
+    .profilePreviewOverlay {
+        padding: 0.75rem;
+    }
+
+    .profilePreviewPanel {
+        width: min(420px, calc(100vw - 1rem));
+        padding: 0.62rem;
+    }
+
+    .profileCardPopup {
+        --card-height: 380px;
+        width: 210px;
+    }
+
+    .profilePopupFlipControls {
+        width: min(100%, 310px);
+    }
 }
 
 .profileCardFlipper {
@@ -186,11 +473,12 @@
     inset: 0;
     padding: 8px 8px 10px;
     border-radius: 14px;
-    background: linear-gradient(150deg, #2b0206 0%, #49070c 44%, #120104 100%);
+    background: var(--pc-face-bg);
     box-shadow:
         0 10px 24px rgba(0, 0, 0, 0.34),
-        inset 0 1px 0 rgba(255, 215, 188, 0.26),
-        inset 0 -1px 0 rgba(38, 4, 7, 0.82);
+        inset 0 1px 0 var(--pc-face-inset-top),
+        inset 0 -1px 0 var(--pc-face-inset-bottom),
+        var(--pc-theme-ring);
     backface-visibility: hidden;
     will-change: transform;
     isolation: isolate;
@@ -221,7 +509,7 @@
 
 .profileName {
     margin: 0;
-    color: #ffe2cf;
+    color: var(--pc-name);
     font-size: 0.66rem;
     font-weight: 700;
     line-height: 1.1;
@@ -230,7 +518,7 @@
 
 .profileHp {
     margin: 0;
-    color: #ff997f;
+    color: var(--pc-hp);
     font-family: var(--font-geist-mono);
     font-size: 0.62rem;
     font-weight: 700;
@@ -245,9 +533,9 @@
     z-index: 1;
     height: 156px;
     border-radius: 10px;
-    border: 1px solid rgba(186, 74, 57, 0.52);
+    border: 1px solid var(--pc-frame-border);
     overflow: hidden;
-    background: #0b0d14;
+    background: var(--pc-frame-bg);
     box-shadow:
         inset 0 0 0 1px rgba(255, 255, 255, 0.14),
         0 5px 14px rgba(0, 0, 0, 0.26);
@@ -268,9 +556,9 @@
         ),
         linear-gradient(
             150deg,
-            rgba(199, 65, 54, 0.14) 18%,
-            rgba(148, 24, 35, 0.18) 50%,
-            rgba(45, 8, 12, 0.15) 78%
+            var(--pc-overlay-1) 18%,
+            var(--pc-overlay-2) 50%,
+            var(--pc-overlay-3) 78%
         );
     mix-blend-mode: screen;
     opacity: 0.32;
@@ -285,7 +573,7 @@
     position: absolute;
     inset: 4px;
     border-radius: 12px;
-    border: 1px solid rgba(186, 74, 57, 0.42);
+    border: 1px solid var(--pc-inner-border);
     pointer-events: none;
 }
 
@@ -300,7 +588,7 @@
 
 .profileBackHeading {
     margin: 0;
-    color: #ffd8be;
+    color: var(--pc-heading);
     font-family: var(--font-geist-mono);
     font-size: 0.64rem;
     letter-spacing: 0.1em;
@@ -318,12 +606,12 @@
     justify-content: space-between;
     align-items: flex-start;
     gap: 0.6rem;
-    border-bottom: 1px solid rgba(186, 74, 57, 0.22);
+    border-bottom: 1px solid var(--pc-row-border);
     padding-bottom: 0.26rem;
 }
 
 .profileBackLabel {
-    color: #ff977e;
+    color: var(--pc-label);
     font-family: var(--font-geist-mono);
     font-size: 0.56rem;
     letter-spacing: 0.08em;
@@ -333,7 +621,7 @@
 }
 
 .profileBackValue {
-    color: #ffe4d0;
+    color: var(--pc-value);
     font-size: 0.58rem;
     font-weight: 700;
     line-height: 1.15;
@@ -351,7 +639,7 @@
 
 .profileBackHint {
     margin: 0;
-    color: #ffb49a;
+    color: var(--pc-hint);
     font-family: var(--font-geist-mono);
     font-size: 0.52rem;
     letter-spacing: 0.06em;
@@ -373,7 +661,7 @@
 
 .profileTitle {
     margin: 0;
-    color: #ffe2cf;
+    color: var(--pc-name);
     font-size: 0.6rem;
     font-weight: 700;
     line-height: 1.18;
@@ -393,11 +681,11 @@
     align-items: center;
     gap: 0.28rem;
     margin-top: 0.15rem;
-    border: 1px solid rgba(186, 74, 57, 0.52);
+    border: 1px solid var(--pc-pill-border);
     border-radius: 999px;
     padding: 0.16rem 0.46rem;
-    color: #ffd9c1;
-    background: rgba(44, 8, 12, 0.74);
+    color: var(--pc-pill-text);
+    background: var(--pc-pill-bg);
     font-family: var(--font-geist-mono);
     font-size: 0.56rem;
     font-weight: 700;
@@ -408,19 +696,12 @@
 }
 
 .profileLocationMap:hover {
-    background: rgba(66, 12, 19, 0.84);
+    background: var(--pc-pill-hover-bg);
 }
 
 .profileMapIcon {
     display: inline-flex;
     line-height: 0;
-}
-
-:global([data-theme='power']) .profileFace {
-    background: linear-gradient(148deg, #260108 0%, #500711 46%, #100104 100%);
-    box-shadow:
-        0 12px 26px rgba(0, 0, 0, 0.42),
-        0 0 0 1px color-mix(in srgb, var(--accent) 25%, #9f1239);
 }
 
 @media (hover: hover) and (pointer: fine) {
@@ -429,10 +710,21 @@
         transform: rotateY(180deg);
     }
 
+    .profileCardPopup:hover .profileCardFlipper,
+    .profileCardPopup:focus-within .profileCardFlipper {
+        transform: none;
+    }
+
     .profileCard:hover .profileFace::before,
     .profileCard:focus-within .profileFace::before {
         opacity: 0.78;
         transform: translateX(56%) rotate(5deg);
+    }
+
+    .profileCardPopup:hover .profileFace::before,
+    .profileCardPopup:focus-within .profileFace::before {
+        opacity: 0.32;
+        transform: translateX(-58%) rotate(5deg);
     }
 }
 

@@ -48,6 +48,7 @@ export default function Navbar({ dict, locale }: Props) {
     const [query, setQuery] = useState('');
     const [highlightedOption, setHighlightedOption] =
         useState<CommandOption | null>(null);
+    const [commandShortcut, setCommandShortcut] = useState('Ctrl+K');
     const languageRef = useRef<HTMLDivElement>(null);
 
     const localeOptions = [
@@ -153,10 +154,14 @@ export default function Navbar({ dict, locale }: Props) {
         );
     }, [filteredNavigationOptions, highlightedOption]);
 
-    const commandShortcut =
-        typeof navigator !== 'undefined' && /mac/i.test(navigator.platform)
-            ? '⌘K'
-            : 'Ctrl+K';
+    useEffect(() => {
+        const timeout = window.setTimeout(() => {
+            const isMac = /mac/i.test(navigator.platform);
+            setCommandShortcut(isMac ? '⌘K' : 'Ctrl+K');
+        }, 0);
+
+        return () => window.clearTimeout(timeout);
+    }, []);
 
     const openCommandPalette = useCallback(() => {
         setMenuOpen(false);

@@ -3,9 +3,9 @@
 import {
     createContext,
     useContext,
-    useState,
     useEffect,
-    ReactNode,
+    useState,
+    type ReactNode,
 } from 'react';
 
 export type AppTheme = 'professional' | 'power' | 'zen';
@@ -23,23 +23,28 @@ const ThemeContext = createContext<ThemeContextValue>({
 const VALID_THEMES: AppTheme[] = ['professional', 'power', 'zen'];
 
 export function ThemeProvider({ children }: { children: ReactNode }) {
-    const [theme, setThemeState] = useState<AppTheme>(() => {
-        if (typeof window === 'undefined') return 'professional';
+    const [theme, setThemeState] = useState<AppTheme>('professional');
 
-        const attr = document.documentElement.getAttribute(
-            'data-theme',
-        ) as AppTheme | null;
-        if (attr && VALID_THEMES.includes(attr)) {
-            return attr;
-        }
+    useEffect(() => {
+        const schedule = globalThis.setTimeout.bind(globalThis);
+        const cancel = schedule(() => {
+            const attr = document.documentElement.getAttribute(
+                'data-theme',
+            ) as AppTheme | null;
+            const stored = localStorage.getItem(
+                'portfolio-theme',
+            ) as AppTheme | null;
+            const resolvedTheme =
+                (stored && VALID_THEMES.includes(stored) && stored) ||
+                (attr && VALID_THEMES.includes(attr) && attr) ||
+                'professional';
 
-        const stored = localStorage.getItem(
-            'portfolio-theme',
-        ) as AppTheme | null;
-        return stored && VALID_THEMES.includes(stored)
-            ? stored
-            : 'professional';
-    });
+            setThemeState(resolvedTheme);
+            document.documentElement.setAttribute('data-theme', resolvedTheme);
+        }, 0);
+
+        return () => globalThis.clearTimeout(cancel);
+    }, []);
 
     useEffect(() => {
         document.documentElement.setAttribute('data-theme', theme);

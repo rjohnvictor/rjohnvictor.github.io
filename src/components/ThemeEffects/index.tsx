@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useTheme } from '@/context/ThemeContext';
 import PowerLevelIntro from '../PowerLevelIntro';
 
@@ -10,10 +10,23 @@ import PowerLevelIntro from '../PowerLevelIntro';
  */
 export default function ThemeEffects() {
     const { theme } = useTheme();
-    const [introSeen, setIntroSeen] = useState(() => {
-        if (typeof window === 'undefined') return true;
-        return Boolean(sessionStorage.getItem('portfolio-intro-seen'));
-    });
+    const [introSeen, setIntroSeen] = useState(true);
+
+    useEffect(() => {
+        const timeout = window.setTimeout(() => {
+            if (theme !== 'power') {
+                setIntroSeen(true);
+                return;
+            }
+
+            setIntroSeen(
+                Boolean(sessionStorage.getItem('portfolio-intro-seen')),
+            );
+        }, 0);
+
+        return () => window.clearTimeout(timeout);
+    }, [theme]);
+
     const showIntro = theme === 'power' && !introSeen;
 
     if (!showIntro) return null;

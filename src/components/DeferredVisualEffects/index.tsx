@@ -78,21 +78,30 @@ function scheduleIdle(callback: () => void, timeoutMs: number) {
 }
 
 export default function DeferredVisualEffects() {
-    const [allowTerrain] = useState(() => {
-        if (typeof window === 'undefined') return false;
-
-        const override = getTerrainOverride();
-        if (override !== null) return override;
-
-        const reducedMotion = window.matchMedia(REDUCED_MOTION_QUERY).matches;
-        const isMobile = window.matchMedia(MOBILE_QUERY).matches;
-        const isSlowNetwork = isSlowConnection();
-        const isLighthouse = isLighthouseAudit();
-
-        return !(reducedMotion || (isMobile && isSlowNetwork) || isLighthouse);
-    });
-
+    const [allowTerrain, setAllowTerrain] = useState(false);
     const [showCursor, setShowCursor] = useState(false);
+
+    useEffect(() => {
+        const timeout = window.setTimeout(() => {
+            const override = getTerrainOverride();
+            if (override !== null) {
+                setAllowTerrain(override);
+                return;
+            }
+
+            const reducedMotion =
+                window.matchMedia(REDUCED_MOTION_QUERY).matches;
+            const isMobile = window.matchMedia(MOBILE_QUERY).matches;
+            const isSlowNetwork = isSlowConnection();
+            const isLighthouse = isLighthouseAudit();
+
+            setAllowTerrain(
+                !(reducedMotion || (isMobile && isSlowNetwork) || isLighthouse),
+            );
+        }, 0);
+
+        return () => window.clearTimeout(timeout);
+    }, []);
 
     useEffect(() => {
         const reducedMotion = window.matchMedia(REDUCED_MOTION_QUERY).matches;

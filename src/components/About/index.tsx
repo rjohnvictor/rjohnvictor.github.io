@@ -1,6 +1,7 @@
 'use client';
 
 import { useEffect, useMemo, useState } from 'react';
+import { createPortal } from 'react-dom';
 import { PERSONAL } from '@/data/portfolio/personal';
 import { QUICK_FACT_KEYS } from '@/data/portfolio/quickFacts';
 import type { Dictionary } from '@/types/dictionary';
@@ -81,150 +82,256 @@ function ProfileCard({ dict }: { dict: Dictionary }) {
     const fallbackHp = Math.max(99, PERSONAL.yearsExperience * 13);
     const hp = useGithubContributionHp(fallbackHp);
     const cardData = PERSONAL.profileCard;
-    const [isFlipped, setIsFlipped] = useState(false);
+    const [isPreviewOpen, setIsPreviewOpen] = useState(false);
+    const [isPreviewFlipped, setIsPreviewFlipped] = useState(false);
     const locationMapUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(
         PERSONAL.locationMapQuery ?? PERSONAL.location,
     )}`;
 
     const handleCardClick = (event: React.MouseEvent<HTMLDivElement>) => {
-        if ((event.target as HTMLElement).closest('a')) return;
-        setIsFlipped((prev) => !prev);
+        if ((event.target as HTMLElement).closest('a, button')) return;
+        setIsPreviewOpen(true);
     };
 
     const handleCardKeyDown = (event: React.KeyboardEvent<HTMLDivElement>) => {
+        if ((event.target as HTMLElement).closest('a, button')) return;
         if (event.key === 'Enter' || event.key === ' ') {
             event.preventDefault();
-            setIsFlipped((prev) => !prev);
+            setIsPreviewOpen(true);
         }
     };
 
-    return (
-        <div
-            className={styles.profileCard}
-            role="button"
-            tabIndex={0}
-            aria-pressed={isFlipped}
-            aria-label={dict.about.profileCard.values[cardData.flipHintKey]}
-            onClick={handleCardClick}
-            onKeyDown={handleCardKeyDown}
-        >
-            <div
-                className={`${styles.profileCardFlipper}${isFlipped ? ` ${styles.isFlipped}` : ''}`}
-            >
-                <div
-                    className={`${styles.profileFace} ${styles.profileFaceFront}`}
-                >
-                    <div className={styles.profileCardTop}>
-                        <p className={styles.profileName}>{PERSONAL.name}</p>
-                        <p className={styles.profileHp}>HP {hp}</p>
-                    </div>
+    const openPreview = () => {
+        setIsPreviewFlipped(false);
+        setIsPreviewOpen(true);
+    };
 
-                    <div className={styles.profileFrame}>
-                        {/* eslint-disable-next-line @next/next/no-img-element */}
-                        <img
-                            src={PERSONAL.profileImage}
-                            alt={`${PERSONAL.name} profile`}
-                            className={styles.profileImage}
-                            loading="lazy"
-                            decoding="async"
-                        />
-                    </div>
+    const closePreview = () => setIsPreviewOpen(false);
 
-                    <div className={styles.profileCardBottom}>
-                        <p className={styles.profileTitle}>
-                            {
-                                dict.about.profileCard.values[
-                                    cardData.frontTitleKey
-                                ]
-                            }
-                        </p>
-                        <a
-                            href={locationMapUrl}
-                            target="_blank"
-                            rel="noreferrer"
-                            className={styles.profileLocationMap}
-                            aria-label={`Open ${PERSONAL.location} on map`}
-                        >
-                            <span className={styles.profileMapIcon}>
-                                <svg
-                                    width="10"
-                                    height="10"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path
-                                        d="M12 22c3.6-4.2 7-7.9 7-12a7 7 0 10-14 0c0 4.1 3.4 7.8 7 12z"
-                                        stroke="currentColor"
-                                        strokeWidth="2"
-                                    />
-                                    <circle
-                                        cx="12"
-                                        cy="10"
-                                        r="2.5"
-                                        stroke="currentColor"
-                                        strokeWidth="2"
-                                    />
-                                </svg>
-                            </span>
-                            <span>{PERSONAL.location}</span>
-                        </a>
-                    </div>
+    useEffect(() => {
+        if (!isPreviewOpen) return;
+
+        const onKeyDown = (event: KeyboardEvent) => {
+            if (event.key === 'Escape') {
+                setIsPreviewOpen(false);
+                return;
+            }
+
+            if (event.key === 'ArrowLeft') {
+                setIsPreviewFlipped(false);
+                return;
+            }
+
+            if (event.key === 'ArrowRight') {
+                setIsPreviewFlipped(true);
+            }
+        };
+
+        window.addEventListener('keydown', onKeyDown);
+
+        return () => {
+            window.removeEventListener('keydown', onKeyDown);
+        };
+    }, [isPreviewOpen]);
+
+    const cardFaces = (
+        <>
+            <div className={`${styles.profileFace} ${styles.profileFaceFront}`}>
+                <div className={styles.profileCardTop}>
+                    <p className={styles.profileName}>{PERSONAL.name}</p>
+                    <p className={styles.profileHp}>HP {hp}</p>
                 </div>
 
-                <div
-                    className={`${styles.profileFace} ${styles.profileFaceBack}`}
-                >
-                    <p className={styles.profileBackHeading}>
-                        {dict.about.profileCard.values[cardData.backHeadingKey]}
-                    </p>
-                    <div className={styles.profileBackRows}>
-                        <div className={styles.profileBackRow}>
-                            <span className={styles.profileBackLabel}>
-                                {dict.about.profileCard.labels.experience}
-                            </span>
-                            <span className={styles.profileBackValue}>
-                                {PERSONAL.yearsExperience}
-                                {dict.about.profileCard.yearsSuffix}
-                            </span>
-                        </div>
-                        <div className={styles.profileBackRow}>
-                            <span className={styles.profileBackLabel}>
-                                {dict.about.profileCard.labels.role}
-                            </span>
-                            <span className={styles.profileBackValue}>
-                                {
-                                    dict.about.profileCard.values[
-                                        cardData.roleKey
-                                    ]
-                                }
-                            </span>
-                        </div>
-                        <div className={styles.profileBackRow}>
-                            <span className={styles.profileBackLabel}>
-                                {dict.about.profileCard.labels.hobbies}
-                            </span>
-                            <span
-                                className={`${styles.profileBackValue} ${styles.profileBackValueList}`}
-                            >
-                                {cardData.hobbyKeys
-                                    .map(
-                                        (hobbyKey) =>
-                                            dict.about.profileCard.values[
-                                                hobbyKey
-                                            ],
-                                    )
-                                    .join(', ')}
-                            </span>
-                        </div>
-                    </div>
+                <div className={styles.profileFrame}>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img
+                        src={PERSONAL.profileImage}
+                        alt={`${PERSONAL.name} profile`}
+                        className={styles.profileImage}
+                        loading="lazy"
+                        decoding="async"
+                    />
+                </div>
 
-                    <p className={styles.profileBackHint}>
-                        {dict.about.profileCard.values[cardData.flipHintKey]}
+                <div className={styles.profileCardBottom}>
+                    <p className={styles.profileTitle}>
+                        {dict.about.profileCard.values[cardData.frontTitleKey]}
                     </p>
+                    <a
+                        href={locationMapUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        className={styles.profileLocationMap}
+                        aria-label={`Open ${PERSONAL.location} on map`}
+                    >
+                        <span className={styles.profileMapIcon}>
+                            <svg
+                                width="10"
+                                height="10"
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                    d="M12 22c3.6-4.2 7-7.9 7-12a7 7 0 10-14 0c0 4.1 3.4 7.8 7 12z"
+                                    stroke="currentColor"
+                                    strokeWidth="2"
+                                />
+                                <circle
+                                    cx="12"
+                                    cy="10"
+                                    r="2.5"
+                                    stroke="currentColor"
+                                    strokeWidth="2"
+                                />
+                            </svg>
+                        </span>
+                        <span>{PERSONAL.location}</span>
+                    </a>
                 </div>
             </div>
-        </div>
+
+            <div className={`${styles.profileFace} ${styles.profileFaceBack}`}>
+                <p className={styles.profileBackHeading}>
+                    {dict.about.profileCard.values[cardData.backHeadingKey]}
+                </p>
+                <div className={styles.profileBackRows}>
+                    <div className={styles.profileBackRow}>
+                        <span className={styles.profileBackLabel}>
+                            {dict.about.profileCard.labels.experience}
+                        </span>
+                        <span className={styles.profileBackValue}>
+                            {PERSONAL.yearsExperience}
+                            {dict.about.profileCard.yearsSuffix}
+                        </span>
+                    </div>
+                    <div className={styles.profileBackRow}>
+                        <span className={styles.profileBackLabel}>
+                            {dict.about.profileCard.labels.role}
+                        </span>
+                        <span className={styles.profileBackValue}>
+                            {dict.about.profileCard.values[cardData.roleKey]}
+                        </span>
+                    </div>
+                    <div className={styles.profileBackRow}>
+                        <span className={styles.profileBackLabel}>
+                            {dict.about.profileCard.labels.hobbies}
+                        </span>
+                        <span
+                            className={`${styles.profileBackValue} ${styles.profileBackValueList}`}
+                        >
+                            {cardData.hobbyKeys
+                                .map(
+                                    (hobbyKey) =>
+                                        dict.about.profileCard.values[hobbyKey],
+                                )
+                                .join(', ')}
+                        </span>
+                    </div>
+                </div>
+
+                <p className={styles.profileBackHint}>
+                    {dict.about.profileCard.values[cardData.flipHintKey]}
+                </p>
+            </div>
+        </>
+    );
+
+    return (
+        <>
+            <div
+                className={styles.profileCard}
+                role="button"
+                tabIndex={0}
+                aria-haspopup="dialog"
+                aria-expanded={isPreviewOpen}
+                aria-label={dict.about.profileCard.values[cardData.flipHintKey]}
+                onClick={handleCardClick}
+                onKeyDown={handleCardKeyDown}
+            >
+                <div className={styles.profileCardFlipper}>{cardFaces}</div>
+
+                <button
+                    type="button"
+                    className={styles.profileViewFull}
+                    aria-label={`View full profile card of ${PERSONAL.name}`}
+                    onClick={openPreview}
+                >
+                    <span
+                        className={`material-symbols-outlined ${styles.profileViewFullIcon}`}
+                        aria-hidden="true"
+                    >
+                        fullscreen
+                    </span>
+                </button>
+            </div>
+
+            {isPreviewOpen
+                ? createPortal(
+                      <div
+                          className={styles.profilePreviewOverlay}
+                          role="dialog"
+                          aria-modal="true"
+                          aria-label={`${PERSONAL.name} profile card preview`}
+                          onClick={(event) => {
+                              if (event.target === event.currentTarget) {
+                                  closePreview();
+                              }
+                          }}
+                      >
+                          <div className={styles.profilePreviewPanel}>
+                              <div className={styles.profilePreviewCardWrap}>
+                                  <div
+                                      className={`${styles.profileCard} ${styles.profileCardPopup}`}
+                                  >
+                                      <div
+                                          className={`${styles.profileCardFlipper}${isPreviewFlipped ? ` ${styles.isFlipped}` : ''}`}
+                                      >
+                                          {cardFaces}
+                                      </div>
+                                  </div>
+
+                                  <div
+                                      className={styles.profilePopupFlipControls}
+                                  >
+                                      <button
+                                          type="button"
+                                          className={styles.profilePopupFlipButton}
+                                          onClick={() =>
+                                              setIsPreviewFlipped(false)
+                                          }
+                                          aria-label="Show front side"
+                                          aria-pressed={!isPreviewFlipped}
+                                      >
+                                          <span
+                                              className={`material-symbols-outlined ${styles.profilePopupFlipIcon}`}
+                                          >
+                                              arrow_back
+                                          </span>
+                                      </button>
+                                      <button
+                                          type="button"
+                                          className={styles.profilePopupFlipButton}
+                                          onClick={() =>
+                                              setIsPreviewFlipped(true)
+                                          }
+                                          aria-label="Show back side"
+                                          aria-pressed={isPreviewFlipped}
+                                      >
+                                          <span
+                                              className={`material-symbols-outlined ${styles.profilePopupFlipIcon}`}
+                                          >
+                                              arrow_forward
+                                          </span>
+                                      </button>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>,
+                      document.body,
+                  )
+                : null}
+        </>
     );
 }
 
